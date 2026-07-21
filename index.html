@@ -3,839 +3,370 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emperor Guild Studios — Proposal for BG Technical</title>
-
+<title>Strategic Partnership Proposal — Celfa Furniture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --purple-950:#180E2B;
-    --purple-900:#241436;
-    --purple-800:#4C1D95;
-    --purple-600:#7C3AED;
-    --purple-500:#9159F0;
-    --lavender-50:#F7F4FC;
-    --lavender-100:#EEE7FA;
-    --ink:#171225;
-    --slate:#665F78;
-    --slate-light:#948DA6;
-    --gold:#C9A227;
-    --green:#22C55E;
-    --amber:#F5A524;
-    --grey-dot:#D6D1E3;
-    --line:#E4DEF3;
-    --radius:14px;
-    --shadow-card: 0 1px 2px rgba(24,14,43,0.06), 0 8px 24px -12px rgba(76,29,149,0.18);
+    --purple-deep: #34095C;
+    --purple: #5B21B6;
+    --purple-light: #9B6DF0;
+    --purple-mist: #F4EFFB;
+    --black: #0B0710;
+    --ink: #211729;
+    --grey: #6E6478;
+    --hairline: #E6DCF4;
+    --paper: #FFFDFC;
+    --gold: #C9A227;
   }
 
-  *{box-sizing:border-box;}
+  *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
+
   body{
-    margin:0;
-    font-family:'Inter',sans-serif;
+    font-family:'Poppins', sans-serif;
     color:var(--ink);
-    background:#fff;
+    background:#E9E1F4;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
-    line-height:1.6;
   }
-  h1,h2,h3,.display{
-    font-family:'Space Grotesk',sans-serif;
-    letter-spacing:-0.01em;
-  }
-  .mono{
-    font-family:'JetBrains Mono',monospace;
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
 
-  .wrap{
-    max-width:1080px;
+  .sheet{
+    max-width:1120px;
     margin:0 auto;
-    padding:0 28px;
+    background:var(--paper);
+    box-shadow:0 40px 90px rgba(52,9,92,0.22);
+    display:grid;
+    grid-template-columns:300px 1fr;
+    min-height:100vh;
   }
 
-  /* ---------- reveal animation (progressive enhancement: visible by default) ---------- */
-  .reveal{
-    opacity:1;
-    transform:none;
-    transition:opacity .6s ease, transform .6s ease;
-  }
-  .reveal.pre-hide{
-    opacity:0;
-    transform:translateY(18px);
-  }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{opacity:1 !important;transform:none !important;transition:none !important;}
-    html{scroll-behavior:auto;}
-  }
-
-  /* ---------- status dot system ---------- */
-  .dot{
-    display:inline-block;
-    width:8px;height:8px;
-    border-radius:50%;
-    flex:none;
-  }
-  .dot-green{background:var(--green); box-shadow:0 0 0 3px rgba(34,197,94,0.15);}
-  .dot-amber{background:var(--amber); box-shadow:0 0 0 3px rgba(245,165,36,0.15);}
-  .dot-grey{background:var(--grey-dot);}
-
-  /* ---------- HERO ---------- */
-  .hero{
+  /* ===================== RAIL ===================== */
+  .rail{
     background:
-      radial-gradient(1100px 480px at 18% -10%, rgba(124,58,237,0.35), transparent 60%),
-      radial-gradient(900px 500px at 100% 0%, rgba(201,162,39,0.10), transparent 55%),
-      linear-gradient(180deg, var(--purple-950) 0%, var(--purple-900) 100%);
+      radial-gradient(circle at 18% 12%, rgba(155,109,240,0.35), transparent 45%),
+      linear-gradient(200deg, var(--black) 10%, var(--purple-deep) 100%);
     color:#fff;
-    padding:44px 0 56px;
     position:relative;
+    padding:52px 40px 40px;
     overflow:hidden;
   }
-  .hero::after{
+
+  .rail::after{
     content:"";
     position:absolute;
     inset:0;
     background-image:
-      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
-    background-size:44px 44px;
-    mask-image:linear-gradient(180deg, rgba(0,0,0,0.9), transparent 75%);
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.045) 0px, rgba(255,255,255,0.045) 1px, transparent 1px, transparent 64px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.045) 0px, rgba(255,255,255,0.045) 1px, transparent 1px, transparent 64px);
     pointer-events:none;
   }
-  .hero-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    position:relative;
-    z-index:2;
+
+  .rail-inner{ position:relative; z-index:2; display:flex; flex-direction:column; height:100%; }
+
+  .logo-mark{ display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+  .logo-mark img{ height:38px; width:auto; display:block; filter:brightness(0) invert(1); }
+  .logo-word{ font-size:13.5px; font-weight:600; letter-spacing:0.02em; line-height:1.35; }
+  .logo-word span{ display:block; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); font-weight:400; margin-top:2px; }
+
+  .rail-tag{
+    margin-top:36px;
+    display:inline-flex;
+    align-self:flex-start;
+    font-size:10.5px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid rgba(201,162,39,0.5);
+    padding:6px 14px;
+    border-radius:999px;
+    font-weight:500;
   }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .brand img{
-    height:38px;width:38px;
-    object-fit:contain;
-    border-radius:9px;
-  }
-  .brand-fallback{
-    height:38px;width:38px;
-    border-radius:9px;
-    background:linear-gradient(135deg, var(--purple-600), var(--gold));
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Space Grotesk',sans-serif;
+
+  .rail-title{
+    margin-top:28px;
+    font-size:27px;
     font-weight:700;
-    font-size:16px;
-    color:#fff;
+    line-height:1.28;
+    letter-spacing:-0.01em;
   }
-  .brand-name{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:600;
-    font-size:15px;
-    letter-spacing:0.03em;
+
+  .rail-parties{
+    margin-top:auto;
+    padding-top:48px;
+    display:grid;
+    gap:22px;
   }
-  .brand-name small{
-    display:block;
-    font-family:'Inter',sans-serif;
-    font-weight:400;
-    font-size:11px;
+
+  .rail-party-label{ font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:5px; }
+  .rail-party-name{ font-size:15px; font-weight:600; }
+
+  .rail-nav{
+    margin-top:40px;
+    display:grid;
+    gap:2px;
+  }
+
+  .rail-nav a{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    text-decoration:none;
     color:rgba(255,255,255,0.55);
-    letter-spacing:0.01em;
-  }
-  .tag-pill{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    color:rgba(255,255,255,0.8);
-    border:1px solid rgba(255,255,255,0.18);
-    background:rgba(255,255,255,0.05);
-    padding:6px 12px;
-    border-radius:999px;
-    display:flex;align-items:center;gap:8px;
-  }
-
-  .hero-title{
-    position:relative;z-index:2;
-    margin:52px 0 8px;
-    font-size:clamp(30px,4.4vw,46px);
-    font-weight:700;
-    line-height:1.12;
-    max-width:720px;
-  }
-  .hero-title span{color:var(--gold);}
-  .hero-sub{
-    position:relative;z-index:2;
-    max-width:600px;
-    color:rgba(255,255,255,0.72);
-    font-size:15.5px;
-    margin-bottom:34px;
-  }
-
-  .readout{
-    position:relative;z-index:2;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:1px;
-    background:rgba(255,255,255,0.12);
-    border:1px solid rgba(255,255,255,0.14);
-    border-radius:12px;
-    overflow:hidden;
-    backdrop-filter:blur(6px);
-  }
-  .readout-cell{
-    background:rgba(255,255,255,0.03);
-    padding:14px 18px;
-  }
-  .readout-label{
-    font-family:'JetBrains Mono',monospace;
-    font-size:10.5px;
-    letter-spacing:0.06em;
-    color:rgba(255,255,255,0.5);
-    text-transform:uppercase;
-    margin-bottom:5px;
-  }
-  .readout-value{
-    font-size:14px;
-    font-weight:500;
-    color:#fff;
-  }
-
-  /* ---------- SECTION generic ---------- */
-  section{
-    padding:64px 0;
-  }
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11.5px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--purple-600);
-    margin-bottom:10px;
-    display:flex;align-items:center;gap:8px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:18px;height:1.5px;
-    background:var(--purple-600);
-    display:inline-block;
-  }
-  h2.section-title{
-    font-size:clamp(22px,2.6vw,30px);
-    font-weight:600;
-    margin:0 0 12px;
-    color:var(--ink);
-  }
-  .section-lead{
-    color:var(--slate);
-    max-width:640px;
-    font-size:15px;
-    margin-bottom:32px;
-  }
-
-  /* ---------- Intro letter ---------- */
-  .intro{
-    background:var(--lavender-50);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
-  .intro-grid{
-    display:grid;
-    grid-template-columns:1fr 1.6fr;
-    gap:40px;
-    align-items:start;
-  }
-  .intro-meta{
-    font-size:13px;
-  }
-  .intro-meta .row{
-    display:flex;
-    justify-content:space-between;
-    padding:10px 0;
-    border-bottom:1px dashed var(--line);
-  }
-  .intro-meta .row:last-child{border-bottom:none;}
-  .intro-meta .k{color:var(--slate);}
-  .intro-meta .v{font-weight:600;text-align:right;}
-  .intro-body p{margin:0 0 14px;color:var(--ink);font-size:15.5px;}
-  .intro-body strong{color:var(--purple-800);}
-
-  /* ---------- Feature grid ---------- */
-  .feature-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-  }
-  .feature-card{
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:18px 18px 16px;
-    background:#fff;
-    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  }
-  .feature-card:hover{
-    transform:translateY(-3px);
-    box-shadow:var(--shadow-card);
-    border-color:rgba(124,58,237,0.35);
-  }
-  .feature-card .fc-head{
-    display:flex;align-items:center;gap:9px;
-    margin-bottom:6px;
-  }
-  .feature-card .fc-head .dot{width:7px;height:7px;}
-  .feature-card h3{
-    font-size:14.5px;
-    font-weight:600;
-    margin:0;
-  }
-  .feature-card p{
-    font-size:13px;
-    color:var(--slate);
-    margin:0;
-  }
-  .feature-more{
-    grid-column:1 / -1;
-    font-size:13px;
-    color:var(--purple-600);
-    font-weight:500;
-    padding-top:2px;
-  }
-
-  /* ---------- Packages / comparison ---------- */
-  .pkg-cards{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-    margin-bottom:26px;
-  }
-  .pkg-card{
-    border-radius:18px;
-    overflow:hidden;
-    border:1px solid var(--line);
-    background:#fff;
-    box-shadow:var(--shadow-card);
-    display:flex;
-    flex-direction:column;
-  }
-  .pkg-card.featured{
-    border:1px solid var(--purple-600);
-    position:relative;
-  }
-  .pkg-badge{
-    position:absolute;
-    top:14px;right:14px;
-    background:var(--gold);
-    color:#241436;
-    font-family:'JetBrains Mono',monospace;
-    font-size:10px;
-    font-weight:600;
-    letter-spacing:0.04em;
-    padding:4px 9px;
-    border-radius:999px;
-    text-transform:uppercase;
-  }
-  .pkg-head{
-    padding:26px 24px 22px;
-    background:linear-gradient(160deg, var(--purple-900), var(--purple-950));
-    color:#fff;
-  }
-  .pkg-card.featured .pkg-head{
-    background:linear-gradient(160deg, #5B21B6, #3B0F87);
-  }
-  .pkg-name{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11.5px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:rgba(255,255,255,0.6);
-    margin-bottom:10px;
-  }
-  .pkg-price{
-    font-size:32px;
-    font-weight:700;
-    font-family:'Space Grotesk',sans-serif;
-  }
-  .pkg-price sup{
-    font-size:16px;
-    font-weight:600;
-    margin-right:2px;
-    color:rgba(255,255,255,0.75);
-    top:-0.6em;
-  }
-  .pkg-tagline{
-    font-size:13px;
-    color:rgba(255,255,255,0.65);
-    margin-top:6px;
-  }
-  .pkg-body{
-    padding:20px 24px 24px;
-    flex:1;
-  }
-  .pkg-body .item{
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    padding:9px 0;
-    font-size:13.5px;
-    border-bottom:1px solid var(--lavender-100);
-  }
-  .pkg-body .item:last-child{border-bottom:none;}
-  .pkg-body .item .dot{margin-top:6px;}
-  .pkg-body .item.off{color:var(--slate-light);}
-
-  .scope-note{
-    font-size:13px;
-    color:var(--slate);
-    background:var(--lavender-50);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:14px 16px;
-    display:flex;
-    gap:10px;
-  }
-  .scope-note .mark{
-    font-family:'JetBrains Mono',monospace;
-    color:var(--purple-600);
-    font-weight:600;
-  }
-
-  /* ---------- Requirements checklist ---------- */
-  .checklist{
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    overflow:hidden;
-  }
-  .checklist .row{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    padding:16px 20px;
-    border-bottom:1px solid var(--line);
-    font-size:14.5px;
-    background:#fff;
-  }
-  .checklist .row:last-child{border-bottom:none;}
-  .checklist .row.done{background:var(--lavender-50);}
-  .checklist .status{
-    font-family:'JetBrains Mono',monospace;
-    font-size:10.5px;
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    margin-left:auto;
-    padding:3px 9px;
-    border-radius:6px;
-    flex:none;
-  }
-  .status.pending{color:var(--slate);background:var(--lavender-100);}
-  .status.received{color:#166534;background:#DCFCE7;}
-
-  /* ---------- Why us ---------- */
-  .why-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-  }
-  .why-card{
-    border-radius:var(--radius);
-    padding:20px;
-    background:var(--lavender-50);
-    border:1px solid var(--line);
-  }
-  .why-card h3{
-    font-size:15px;
-    margin:0 0 6px;
-    display:flex;align-items:center;gap:8px;
-  }
-  .why-card p{
-    font-size:13.5px;
-    color:var(--slate);
-    margin:0;
-  }
-
-  /* ---------- Payment + timeline ---------- */
-  .split{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:32px;
-  }
-  .bar-row{margin-bottom:16px;}
-  .bar-row .lbl{
-    display:flex;justify-content:space-between;
-    font-size:13px;margin-bottom:6px;
-  }
-  .bar-row .lbl .name{color:var(--ink);font-weight:500;}
-  .bar-row .lbl .pct{font-family:'JetBrains Mono',monospace;color:var(--purple-600);font-weight:600;}
-  .bar-track{
-    height:8px;background:var(--lavender-100);
-    border-radius:999px;overflow:hidden;
-  }
-  .bar-fill{
-    height:100%;
-    border-radius:999px;
-    background:linear-gradient(90deg, var(--purple-600), var(--purple-800));
-  }
-
-  .tl-track{
-    position:relative;
-    padding-left:22px;
-    border-left:2px solid var(--line);
-  }
-  .tl-item{
-    position:relative;
-    padding-bottom:22px;
-  }
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-item::before{
-    content:"";
-    position:absolute;
-    left:-27px;top:3px;
-    width:10px;height:10px;
-    border-radius:50%;
-    background:var(--purple-600);
-    box-shadow:0 0 0 4px var(--lavender-100);
-  }
-  .tl-item .m{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--purple-600);margin-bottom:2px;}
-  .tl-item .t{font-weight:600;font-size:14.5px;}
-  .fine{font-size:12px;color:var(--slate-light);margin-top:14px;}
-
-  /* ---------- Closing ---------- */
-  .closing{
-    background:
-      radial-gradient(800px 400px at 50% -20%, rgba(124,58,237,0.35), transparent 60%),
-      linear-gradient(180deg, var(--purple-950), var(--purple-900));
-    color:#fff;
-    text-align:center;
-    padding:70px 0 50px;
-  }
-  .closing .partner-line{
-    font-size:15.5px;
-    color:rgba(255,255,255,0.8);
-    max-width:560px;
-    margin:0 auto 30px;
-  }
-  .closing h2{
-    font-size:clamp(26px,4vw,42px);
-    line-height:1.2;
-    margin:0 0 6px;
-    font-weight:700;
-  }
-  .closing h2 .accent{color:var(--gold);}
-  .closing .validity{
-    margin-top:26px;
     font-size:12.5px;
-    color:rgba(255,255,255,0.45);
+    font-weight:500;
+    padding:9px 0;
+    border-top:1px solid rgba(255,255,255,0.09);
+    transition:color .15s ease;
   }
-  .closing .contact{
-    margin-top:14px;
-    font-family:'JetBrains Mono',monospace;
-    font-size:13px;
-    color:rgba(255,255,255,0.85);
+  .rail-nav a:first-child{ border-top:none; }
+  .rail-nav a:hover{ color:#fff; }
+  .rail-nav a b{ color:var(--purple-light); font-weight:700; font-size:11px; }
+
+  /* ===================== CONTENT ===================== */
+  .content{ padding:56px 60px 0; }
+
+  section{ padding:0 0 50px; border-bottom:1px solid var(--hairline); margin-bottom:50px; scroll-margin-top:24px; }
+  section:last-of-type{ border-bottom:none; margin-bottom:0; }
+
+  .section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:22px; }
+  .section-num{ font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#fff; background:linear-gradient(135deg, var(--purple), var(--purple-deep)); width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
+  h2{ font-size:23px; font-weight:700; letter-spacing:-0.01em; color:var(--black); }
+
+  p{ font-size:15px; color:var(--ink); margin-bottom:15px; max-width:660px; }
+  p:last-child{ margin-bottom:0; }
+
+  p.lede{
+    font-size:18px;
+    color:var(--purple-deep);
+    font-weight:500;
+    line-height:1.55;
+    max-width:600px;
   }
 
-  footer{
-    background:var(--purple-950);
-    color:rgba(255,255,255,0.4);
-    text-align:center;
-    font-size:12px;
-    padding:18px 0;
+  .quiet{ color:var(--grey); }
+
+  .callout{
+    margin-top:20px;
+    background:var(--purple-mist);
+    border-left:3px solid var(--purple);
+    border-radius:2px 10px 10px 2px;
+    padding:20px 24px;
+    max-width:660px;
+  }
+  .callout p{ color:var(--purple-deep); font-size:14.5px; margin-bottom:0; }
+
+  ul.offer-list{ list-style:none; display:grid; gap:13px; max-width:640px; margin-top:8px; }
+  ul.offer-list li{ position:relative; padding-left:26px; font-size:14.5px; color:var(--ink); }
+  ul.offer-list li::before{
+    content:"";
+    position:absolute; left:0; top:8px;
+    width:8px; height:8px; border-radius:50%;
+    background:var(--purple-light);
+    box-shadow:0 0 0 3px var(--purple-mist);
   }
 
-  @media (max-width:760px){
-    .intro-grid,.split,.pkg-cards,.why-grid{grid-template-columns:1fr;}
-    .feature-grid{grid-template-columns:1fr 1fr;}
-    .readout{grid-template-columns:1fr;}
-    .hero-top{flex-wrap:wrap;gap:14px;}
+  .ask-box{ margin-top:26px; border:1px solid var(--hairline); border-radius:14px; overflow:hidden; max-width:660px; }
+  .ask-box-head{ background:var(--black); color:#fff; padding:13px 22px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; }
+  .ask-box-body{ padding:22px; display:grid; gap:16px; }
+  .ask-item{ display:flex; gap:15px; align-items:flex-start; }
+  .ask-item .num{ flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--purple-mist); color:var(--purple-deep); font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; }
+  .ask-item p{ margin-bottom:0; font-size:14.5px; }
+
+  .benefits{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .benefit-card{ border-radius:14px; padding:26px 24px; }
+  .benefit-card.celfa{ background:var(--purple-mist); border:1px solid var(--hairline); }
+  .benefit-card.egs{ background:linear-gradient(160deg, var(--black), var(--purple-deep)); color:#fff; }
+  .benefit-card h3{ font-size:12px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; font-weight:600; }
+  .benefit-card.celfa h3{ color:var(--purple-deep); }
+  .benefit-card.egs h3{ color:var(--gold); }
+  .benefit-card ul{ list-style:none; display:grid; gap:11px; }
+  .benefit-card li{ position:relative; padding-left:18px; font-size:13.5px; line-height:1.55; }
+  .benefit-card.celfa li{ color:var(--ink); }
+  .benefit-card.egs li{ color:rgba(255,255,255,0.88); }
+  .benefit-card li::before{ content:"–"; position:absolute; left:0; color:var(--purple-light); font-weight:700; }
+
+  .commit-quote{
+    font-size:19px; font-weight:600; color:var(--black); line-height:1.5;
+    max-width:620px; border-left:3px solid var(--gold); padding-left:20px; margin-bottom:18px;
   }
-  @media (max-width:520px){
-    .feature-grid{grid-template-columns:1fr;}
+
+  .signoff{ padding:44px 60px 0; }
+  .signoff p{ max-width:660px; }
+  .signature-block{
+    margin-top:36px; padding:28px 0 44px; border-top:1px solid var(--hairline);
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;
+  }
+  .sig-name{ font-size:19px; font-weight:700; color:var(--black); margin-bottom:3px; }
+  .sig-role{ font-size:12.5px; color:var(--grey); }
+  .sig-mark{ font-family:'Poppins', sans-serif; font-style:italic; font-weight:600; font-size:24px; color:var(--purple); }
+
+  .footer{
+    background:var(--black); color:rgba(255,255,255,0.6);
+    padding:26px 60px; display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:10px; font-size:12px; grid-column:1 / -1;
+  }
+  .footer strong{ color:#fff; font-weight:600; }
+
+  @media (max-width:860px){
+    .sheet{ grid-template-columns:1fr; }
+    .rail{ padding:40px 28px; }
+    .rail-parties{ margin-top:28px; padding-top:0; }
+    .content{ padding:40px 28px 0; }
+    .signoff{ padding:36px 28px 0; }
+    .footer{ padding:22px 28px; }
+    .benefits{ grid-template-columns:1fr; }
+  }
+
+  @media print{
+    body{ background:#fff; }
+    .sheet{ box-shadow:none; display:block; }
+    .rail{ break-inside:avoid; }
   }
 </style>
 </head>
 <body>
+<div class="sheet">
 
-<!-- ================= HERO ================= -->
-<div class="hero">
-  <div class="wrap">
-    <div class="hero-top">
-      <div class="brand">
-        <img src="logo-icon.png" alt="Emperor Guild Studios logo"
-             onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'brand-fallback',textContent:'EG'}))">
-        <div class="brand-name">EMPEROR GUILD STUDIOS<small>Software Development &amp; Business Technology Partner</small></div>
+  <!-- LEFT RAIL -->
+  <aside class="rail">
+    <div class="rail-inner">
+      <div class="logo-mark">
+        <img src="logo-icon.png" alt="Emperor Guild Studios logo">
+        <div class="logo-word">Emperor Guild Studios<span>Creative &amp; Digital Agency</span></div>
       </div>
-      <div class="tag-pill"><span class="dot dot-green"></span>PROPOSAL ACTIVE</div>
+
+      <div class="rail-tag">Partnership Proposal</div>
+      <div class="rail-title">Building a lasting digital partnership with Celfa Furniture</div>
+
+      <nav class="rail-nav">
+        <a href="#s1"><b>01</b> Executive Summary</a>
+        <a href="#s2"><b>02</b> Background</a>
+        <a href="#s3"><b>03</b> Proposed Partnership</a>
+        <a href="#s4"><b>04</b> Mutual Benefits</a>
+        <a href="#s5"><b>05</b> Our Commitment</a>
+        <a href="#s6"><b>06</b> Conclusion</a>
+      </nav>
+
+      <div class="rail-parties">
+        <div>
+          <div class="rail-party-label">Submitted By</div>
+          <div class="rail-party-name">Emperor Guild Studios</div>
+        </div>
+        <div>
+          <div class="rail-party-label">Presented To</div>
+          <div class="rail-party-name">The Management of Celfa Furniture</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div>
+    <div class="content">
+
+      <section id="s1">
+        <div class="section-head"><span class="section-num">01</span><h2>Executive Summary</h2></div>
+        <p class="lede">Emperor Guild Studios respectfully presents this proposal with the objective of establishing a long-term strategic partnership with Celfa Furniture.</p>
+        <p>We believe that by combining our expertise in digital innovation with Celfa Furniture's commitment to excellence, both organizations can achieve greater heights.</p>
+        <p>Before presenting this proposal, we would like to express our sincere appreciation to the management of Celfa Furniture for the confidence, generosity, and support extended to us. Your decision to provide our team with a conducive and professional office workspace has significantly contributed to our operations and productivity.</p>
+        <div class="callout">
+          <p>This gesture reflects your belief in our vision, and we remain sincerely grateful for the opportunity to grow within an environment that encourages innovation and excellence.</p>
+        </div>
+      </section>
+
+      <section id="s2">
+        <div class="section-head"><span class="section-num">02</span><h2>Background</h2></div>
+        <p>Today, our world is a global village. In today's highly competitive business environment, a company's digital presence has become one of its most valuable assets.</p>
+        <p>Customers increasingly rely on online platforms to discover businesses, evaluate brands, and make purchasing decisions. A professionally managed digital presence strengthens credibility, improves visibility, attracts new customers, and creates sustainable business growth.</p>
+        <p>As a technology company specializing in software development, branding, digital marketing, Search Engine Optimization (SEO), and business automation, Emperor Guild Studios is well positioned to help Celfa Furniture establish and maintain a powerful digital presence that reflects her quality and reputation.</p>
+      </section>
+
+      <section id="s3">
+        <div class="section-head"><span class="section-num">03</span><h2>Proposed Partnership</h2></div>
+        <p>Emperor Guild Studios respectfully proposes a strategic partnership in which we serve as Celfa Furniture's dedicated technology and digital solutions partner. As part of this partnership, Emperor Guild Studios will provide:</p>
+
+        <ul class="offer-list">
+          <li>Design and development of a modern, responsive, and professionally branded corporate website.</li>
+          <li>Comprehensive Search Engine Optimization (SEO) to improve online visibility and search engine rankings.</li>
+          <li>Development and management of a strong digital brand identity.</li>
+          <li>Continuous website maintenance, security updates, and technical support.</li>
+          <li>Digital strategy consultation to support business growth and improve customer engagement.</li>
+          <li>Ongoing technology advisory services and support for future digital initiatives.</li>
+        </ul>
+
+        <div class="ask-box">
+          <div class="ask-box-head">In Consideration, We Respectfully Propose</div>
+          <div class="ask-box-body">
+            <div class="ask-item"><div class="num">1</div><p>A monthly operational retainer to support the dedicated team responsible for delivering continuous digital services.</p></div>
+            <div class="ask-item"><div class="num">2</div><p>Supporting approved development projects and operational initiatives that contribute to the continued success of Emperor Guild Studios.</p></div>
+          </div>
+        </div>
+
+        <p style="margin-top:22px;">This monthly operational retainer and project support will enable Emperor Guild Studios to maintain the personnel, technical resources, and development capacity required to consistently deliver high-quality digital solutions while also responding promptly to Celfa Furniture's evolving technology needs.</p>
+        <p>This proposal is designed to establish a mutually beneficial partnership in which both organizations invest in each other's long-term success.</p>
+      </section>
+
+      <section id="s4">
+        <div class="section-head"><span class="section-num">04</span><h2>Mutual Benefits</h2></div>
+        <div class="benefits">
+          <div class="benefit-card celfa">
+            <h3>Benefits to Celfa Furniture</h3>
+            <ul>
+              <li>A modern and professional online presence that reflects the quality of your brand.</li>
+              <li>Improved visibility through effective Search Engine Optimization (SEO).</li>
+              <li>Increased customer confidence and stronger brand recognition.</li>
+              <li>Dedicated technical expertise without the need to engage multiple service providers.</li>
+              <li>Continuous digital support, maintenance, and future technology development.</li>
+              <li>A long-term technology partner committed to supporting your business growth.</li>
+            </ul>
+          </div>
+          <div class="benefit-card egs">
+            <h3>Benefits to Emperor Guild Studios</h3>
+            <ul>
+              <li>Consistent monthly operational funding that supports sustainable business growth.</li>
+              <li>Greater capacity to invest in innovation and emerging technologies.</li>
+              <li>Long-term operational stability that enables continuous improvement in service delivery.</li>
+              <li>A strategic partnership with an established organization that shares our commitment to excellence.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="s5">
+        <div class="section-head"><span class="section-num">05</span><h2>Our Commitment</h2></div>
+        <p class="commit-quote">Emperor Guild Studios is committed to delivering innovative, reliable, and high-quality digital solutions.</p>
+        <p>Every service provided under this partnership will be delivered with professionalism, integrity, and a focus on measurable business outcomes.</p>
+        <p>Our objective extends beyond developing a website. We aspire to become Celfa Furniture's trusted technology partner, continuously providing innovative digital solutions that strengthen your market presence around this blue marble planet.</p>
+      </section>
+
+      <section id="s6">
+        <div class="section-head"><span class="section-num">06</span><h2>Conclusion</h2></div>
+        <p>We sincerely appreciate the opportunity to collaborate with Celfa Furniture and once again extend our heartfelt gratitude for the invaluable support already demonstrated through the provision of office workspace for Emperor Guild Studios. Your confidence in our vision has provided a strong foundation upon which we continue to grow.</p>
+        <p>We respectfully submit this proposal for your consideration and welcome the opportunity to discuss it further. We look forward to building a partnership founded on trust, shared purpose, and mutual prosperity.</p>
+        <p class="quiet">Thank you for your time, confidence, and continued support.</p>
+      </section>
+
     </div>
 
-    <h1 class="hero-title reveal">Remote Field Monitoring Platform<br><span>— Frontend Proposal</span></h1>
-    <p class="hero-sub reveal">Prepared for BG Technical Ltd. — a Web, Android &amp; iOS interface for real‑time well monitoring, built from your Mido reference and ready to scale with your field operations.</p>
+    <div class="signoff">
+      <p>Respectfully submitted,</p>
+      <div class="signature-block">
+        <div>
+          <div class="sig-name">Francis Chiebuka</div>
+          <div class="sig-role">Founder, Emperor Guild Studios</div>
+        </div>
+        <div class="sig-mark">Emperor Guild Studios</div>
+      </div>
+    </div>
 
-    <div class="readout reveal">
-      <div class="readout-cell">
-        <div class="readout-label">Prepared For</div>
-        <div class="readout-value">BG Technical Ltd.</div>
-      </div>
-      <div class="readout-cell">
-        <div class="readout-label">Scope</div>
-        <div class="readout-value">Frontend — Web / Android / iOS</div>
-      </div>
-      <div class="readout-cell">
-        <div class="readout-label">Date Issued</div>
-        <div class="readout-value">6th July, 2026</div>
-      </div>
+    <div class="footer">
+      <div><strong>Emperor Guild Studios</strong> — Brand Identity · UI/UX · Web &amp; App Development · Motion Design</div>
+      <div>emperorguildstudios.com &nbsp;·&nbsp; 08166993801</div>
     </div>
   </div>
+
 </div>
-
-<!-- ================= INTRO ================= -->
-<section class="intro">
-  <div class="wrap intro-grid reveal">
-    <div class="intro-meta">
-      <div class="row"><span class="k">Client</span><span class="v">BG Technical Ltd.</span></div>
-      <div class="row"><span class="k">Project</span><span class="v">Field Monitoring App</span></div>
-      <div class="row"><span class="k">Reference</span><span class="v">Mido Mockup</span></div>
-      <div class="row"><span class="k">Studio</span><span class="v">Emperor Guild Studios</span></div>
-    </div>
-    <div class="intro-body">
-      <p>Dear BG Technical Team,</p>
-      <p>Thank you for the opportunity to work on your Remote Field Monitoring Platform. Below is our proposal to design and build the <strong>frontend for your Web App, Android App, and iOS App</strong> — the dashboards, screens, and user experience your team and engineers will rely on every day to monitor wells, track production, manage maintenance, and respond to alerts in real time.</p>
-      <p>The proposal is based on the reference from the Mido link sent to us.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FEATURES ================= -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow reveal">Software Scope</div>
-    <h2 class="section-title reveal">Some features in the Web App software</h2>
-    <p class="section-lead reveal">A unified monitoring interface across three platforms based on choice (Web, Android, iOS) covering:</p>
-
-    <div class="feature-grid reveal">
-      <div class="feature-card">
-        <div class="fc-head"><span class="dot dot-green"></span><h3>Wells / Assets Overview</h3></div>
-        <p>See status across every asset at a glance.</p>
-      </div>
-      <div class="feature-card">
-        <div class="fc-head"><span class="dot dot-green"></span><h3>Production Data Screens</h3></div>
-        <p>Track output and performance per well.</p>
-      </div>
-      <div class="feature-card">
-        <div class="fc-head"><span class="dot dot-green"></span><h3>Live Map View</h3></div>
-        <p>GPS-based asset locations with colour‑coded status.</p>
-      </div>
-      <div class="feature-card">
-        <div class="fc-head"><span class="dot dot-green"></span><h3>Per-Well Drill-Down</h3></div>
-        <p>Go from overview to the detail of a single well.</p>
-      </div>
-      <div class="feature-card">
-        <div class="fc-head"><span class="dot dot-green"></span><h3>System Health Monitoring</h3></div>
-        <p>Battery, solar charging, and connectivity, etc.</p>
-      </div>
-      <div class="feature-card">
-        <div class="fc-head"><span class="dot dot-green"></span><h3>Data Explorer</h3></div>
-        <p>Graphs, charts, and timestamped historical logs.</p>
-      </div>
-      <div class="feature-card">
-        <div class="fc-head"><span class="dot dot-green"></span><h3>Report Generation</h3></div>
-        <p>Export reports in PDF &amp; Excel format.</p>
-      </div>
-      <div class="feature-card">
-        <div class="fc-head"><span class="dot dot-amber"></span><h3>And More</h3></div>
-        <p>Based on what's available from the Mido link.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PACKAGES ================= -->
-<section style="background:var(--lavender-50); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <div class="eyebrow reveal">Investment</div>
-    <h2 class="section-title reveal">Choose your package</h2>
-    <p class="section-lead reveal">Both packages are built on the same solid foundation. The Advanced package adds full mobile coverage — so you can start where your budget allows and scale as your project grows.</p>
-
-    <div class="pkg-cards reveal">
-      <div class="pkg-card">
-        <div class="pkg-head">
-          <div class="pkg-name">Basic</div>
-          <div class="pkg-price mono"><sup>₦</sup>2,800,000</div>
-          <div class="pkg-tagline">Get online, get monitoring</div>
-        </div>
-        <div class="pkg-body">
-          <div class="item"><span class="dot dot-green"></span><span>Full web dashboard — every feature above, built for browser use</span></div>
-          <div class="item off"><span class="dot dot-grey"></span><span>Android app</span></div>
-          <div class="item off"><span class="dot dot-grey"></span><span>iOS app</span></div>
-        </div>
-      </div>
-
-      <div class="pkg-card featured">
-        <div class="pkg-badge">Recommended</div>
-        <div class="pkg-head">
-          <div class="pkg-name">Advanced</div>
-          <div class="pkg-price mono"><sup>₦</sup>3,600,000</div>
-          <div class="pkg-tagline">Add mobile &amp; smarter ops</div>
-        </div>
-        <div class="pkg-body">
-          <div class="item"><span class="dot dot-green"></span><span>Everything in Basic</span></div>
-          <div class="item"><span class="dot dot-green"></span><span>Native Android app included</span></div>
-          <div class="item"><span class="dot dot-green"></span><span>Native iOS app included</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="scope-note reveal">
-      <span class="mark">NOTE</span>
-      <span>Backend integration, API endpoints, hardware, and the Nvidia/AWS data pipeline are outside this scope. We build the user interface that consumes them.</span>
-    </div>
-  </div>
-</section>
-
-<!-- ================= REQUIREMENTS ================= -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow reveal">Before Kickoff</div>
-    <h2 class="section-title reveal">What we'll need from BG Technical</h2>
-    <p class="section-lead reveal">To keep the project on schedule and avoid delays, please provide the following:</p>
-
-    <div class="checklist reveal">
-      <div class="row done">
-        <span class="dot dot-green"></span>
-        <span>Access to the existing mockup (Mido prototype link) for design reference</span>
-        <span class="status received">Received</span>
-      </div>
-      <div class="row">
-        <span class="dot dot-amber"></span>
-        <span>Brand assets — logo, colour palette, and any existing design guidelines</span>
-        <span class="status pending">Pending</span>
-      </div>
-      <div class="row">
-        <span class="dot dot-amber"></span>
-        <span>A single point of contact for daily/weekly clarifications and approvals</span>
-        <span class="status pending">Pending</span>
-      </div>
-      <div class="row">
-        <span class="dot dot-amber"></span>
-        <span>Timely feedback for communication</span>
-        <span class="status pending">Pending</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WHY US ================= -->
-<section style="background:var(--lavender-50); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <div class="eyebrow reveal">Why Work With Us</div>
-    <h2 class="section-title reveal">Built for how you'll actually run this</h2>
-
-    <div class="why-grid reveal">
-      <div class="why-card">
-        <h3>💳 Most Flexible Payment Plans in the Industry</h3>
-        <p>We structure payments around milestones that work for your cash flow, not against it.</p>
-      </div>
-      <div class="why-card">
-        <h3>🔒 No Hidden Fees</h3>
-        <p>The price you see is exactly what you pay. No surprise charges, ever.</p>
-      </div>
-      <div class="why-card">
-        <h3>📈 Proven Track Record</h3>
-        <p>We've built successful platforms for Nigerian businesses and clients beyond Africa.</p>
-      </div>
-      <div class="why-card">
-        <h3>🇳🇬 Local Support</h3>
-        <p>We're based in Nigeria and understand the market — we've worked with multiple firms like yours.</p>
-      </div>
-      <div class="why-card" style="grid-column:1 / -1;">
-        <h3>🚀 Future-Ready</h3>
-        <p>Your platform is built to grow as your business and field operations expand.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PAYMENT + TIMELINE ================= -->
-<section>
-  <div class="wrap split reveal">
-    <div>
-      <div class="eyebrow">Payment</div>
-      <h2 class="section-title">Flexible payment plan</h2>
-      <p class="section-lead" style="margin-bottom:22px;">Milestone-based, and adjustable to fit your internal approval process.</p>
-
-      <div class="bar-row">
-        <div class="lbl"><span class="name">Upfront — project kickoff</span><span class="pct">50%</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:50%;"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="lbl"><span class="name">Mid-project — design/prototype review</span><span class="pct">30%</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:80%;"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="lbl"><span class="name">Final delivery &amp; handover</span><span class="pct">20%</span></div>
-        <div class="bar-track"><div class="bar-fill" style="width:100%;"></div></div>
-      </div>
-      <p class="fine">Other arrangements can be discussed to suit your internal budget approval timeline.</p>
-    </div>
-
-    <div>
-      <div class="eyebrow">Timeline</div>
-      <h2 class="section-title">Development timeline</h2>
-      <p class="section-lead" style="margin-bottom:22px;">Both packages are delivered on the same schedule.</p>
-
-      <div class="tl-track">
-        <div class="tl-item">
-          <div class="m">MONTH 01</div>
-          <div class="t">Basic Package — build &amp; review</div>
-        </div>
-        <div class="tl-item">
-          <div class="m">MONTH 02</div>
-          <div class="t">Advanced Package — mobile apps &amp; final handover</div>
-        </div>
-      </div>
-      <p class="fine">Timeline begins after initial payment and all requirements are provided.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CLOSING ================= -->
-<div class="closing">
-  <div class="wrap">
-    <p class="partner-line reveal">We are beyond software developers — we are your business partners, ready to guide you in every way possible.</p>
-    <h2 class="reveal">Avoid Mediocrity.<br>Enter the <span class="accent">Spotlight</span>.<br>Transform Your Business Now.</h2>
-    <div class="contact reveal">Contact us for more details or enquiries at 08166993801</div>
-    <div class="validity reveal">This quotation is valid for 15 days from the date sent. Prices may be subject to change after this period.</div>
-  </div>
-</div>
-
-<footer>
-  EMPEROR GUILD STUDIOS — Avoid Mediocrity and Be the Best.
-</footer>
-
-<script>
-  // Progressive enhancement only: content is visible by default (see CSS).
-  // If supported, elements below the initial viewport get a subtle reveal-on-scroll effect.
-  try {
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var vh = window.innerHeight;
-      var els = document.querySelectorAll('.reveal');
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if (e.isIntersecting) {
-            e.target.classList.remove('pre-hide');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      els.forEach(function(el){
-        var rect = el.getBoundingClientRect();
-        if (rect.top > vh * 0.9) {
-          el.classList.add('pre-hide');
-          io.observe(el);
-        }
-      });
-    }
-  } catch (e) { /* fail silently: content stays visible */ }
-</script>
-
 </body>
 </html>
