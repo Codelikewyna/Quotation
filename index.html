@@ -3,370 +3,1052 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Strategic Partnership Proposal — Celfa Furniture</title>
+<title>Gold Link Marketplace — Project Proposal | CodeLikeWyna Tech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400;1,9..40,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --purple-deep: #34095C;
-    --purple: #5B21B6;
-    --purple-light: #9B6DF0;
-    --purple-mist: #F4EFFB;
-    --black: #0B0710;
-    --ink: #211729;
-    --grey: #6E6478;
-    --hairline: #E6DCF4;
-    --paper: #FFFDFC;
-    --gold: #C9A227;
+    --black:#0B0B0C;
+    --black-soft:#1A1A1D;
+    --yellow:#F4C10F;
+    --yellow-deep:#C6960B;
+    --yellow-pale:#FFF4CC;
+    --white:#FFFFFF;
+    --paper:#FAFAF7;
+    --gray:#6E6E76;
+    --gray-light:#9A9AA1;
+    --line:#E8E6DF;
+    --line-dark:#2A2A2E;
+    --radius:14px;
+    --serifless:'DM Sans', sans-serif;
   }
 
-  *{box-sizing:border-box; margin:0; padding:0;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+
   html{scroll-behavior:smooth;}
 
   body{
-    font-family:'Poppins', sans-serif;
-    color:var(--ink);
-    background:#E9E1F4;
-    line-height:1.7;
+    font-family:var(--serifless);
+    background:var(--paper);
+    color:var(--black);
     -webkit-font-smoothing:antialiased;
+    line-height:1.6;
   }
 
-  .sheet{
-    max-width:1120px;
-    margin:0 auto;
-    background:var(--paper);
-    box-shadow:0 40px 90px rgba(52,9,92,0.22);
+  ::selection{background:var(--yellow);color:var(--black);}
+
+  a{color:inherit;text-decoration:none;}
+
+  img{max-width:100%;display:block;}
+
+  /* ---------- LAYOUT SHELL ---------- */
+  .shell{
     display:grid;
-    grid-template-columns:300px 1fr;
+    grid-template-columns:280px 1fr;
     min-height:100vh;
   }
 
-  /* ===================== RAIL ===================== */
-  .rail{
-    background:
-      radial-gradient(circle at 18% 12%, rgba(155,109,240,0.35), transparent 45%),
-      linear-gradient(200deg, var(--black) 10%, var(--purple-deep) 100%);
-    color:#fff;
-    position:relative;
-    padding:52px 40px 40px;
+  /* ---------- SIDEBAR ---------- */
+  .sidebar{
+    position:sticky;
+    top:0;
+    height:100vh;
+    background:var(--black);
+    color:var(--white);
+    padding:32px 26px 26px;
+    display:flex;
+    flex-direction:column;
+    overflow-y:auto;
+    border-right:1px solid var(--line-dark);
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:6px;
+  }
+
+  .brand-mark{
+    width:44px;height:44px;
+    border-radius:10px;
+    background:var(--yellow);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
     overflow:hidden;
   }
-
-  .rail::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.045) 0px, rgba(255,255,255,0.045) 1px, transparent 1px, transparent 64px),
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.045) 0px, rgba(255,255,255,0.045) 1px, transparent 1px, transparent 64px);
-    pointer-events:none;
+  .brand-mark img{width:100%;height:100%;object-fit:cover;}
+  .brand-mark .fallback{
+    font-weight:900;
+    font-size:15px;
+    letter-spacing:-0.5px;
+    color:var(--black);
   }
 
-  .rail-inner{ position:relative; z-index:2; display:flex; flex-direction:column; height:100%; }
-
-  .logo-mark{ display:flex; align-items:center; gap:12px; margin-bottom:8px; }
-  .logo-mark img{ height:38px; width:auto; display:block; filter:brightness(0) invert(1); }
-  .logo-word{ font-size:13.5px; font-weight:600; letter-spacing:0.02em; line-height:1.35; }
-  .logo-word span{ display:block; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.5); font-weight:400; margin-top:2px; }
-
-  .rail-tag{
-    margin-top:36px;
-    display:inline-flex;
-    align-self:flex-start;
+  .brand-name{
+    font-size:14.5px;
+    font-weight:800;
+    letter-spacing:0.2px;
+    line-height:1.15;
+  }
+  .brand-sub{
     font-size:10.5px;
-    letter-spacing:0.18em;
+    color:var(--gray-light);
+    letter-spacing:1.6px;
     text-transform:uppercase;
-    color:var(--gold);
-    border:1px solid rgba(201,162,39,0.5);
-    padding:6px 14px;
-    border-radius:999px;
-    font-weight:500;
+    margin-top:2px;
   }
 
-  .rail-title{
-    margin-top:28px;
-    font-size:27px;
+  .sidebar-divider{
+    height:1px;
+    background:var(--line-dark);
+    margin:24px 0 18px;
+  }
+
+  .sidebar-label{
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1.8px;
+    color:var(--gray-light);
+    margin-bottom:12px;
     font-weight:700;
-    line-height:1.28;
-    letter-spacing:-0.01em;
   }
 
-  .rail-parties{
-    margin-top:auto;
-    padding-top:48px;
-    display:grid;
-    gap:22px;
+  .toc{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    flex:1;
   }
 
-  .rail-party-label{ font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:5px; }
-  .rail-party-name{ font-size:15px; font-weight:600; }
-
-  .rail-nav{
-    margin-top:40px;
-    display:grid;
-    gap:2px;
-  }
-
-  .rail-nav a{
+  .toc a{
     display:flex;
     align-items:baseline;
     gap:10px;
-    text-decoration:none;
-    color:rgba(255,255,255,0.55);
-    font-size:12.5px;
+    padding:8px 8px;
+    border-radius:8px;
+    font-size:13px;
+    color:var(--gray-light);
     font-weight:500;
-    padding:9px 0;
-    border-top:1px solid rgba(255,255,255,0.09);
-    transition:color .15s ease;
+    transition:background .15s ease, color .15s ease;
   }
-  .rail-nav a:first-child{ border-top:none; }
-  .rail-nav a:hover{ color:#fff; }
-  .rail-nav a b{ color:var(--purple-light); font-weight:700; font-size:11px; }
+  .toc a:hover{background:rgba(255,255,255,0.06);color:var(--white);}
+  .toc a.active{background:var(--yellow);color:var(--black);font-weight:700;}
 
-  /* ===================== CONTENT ===================== */
-  .content{ padding:56px 60px 0; }
-
-  section{ padding:0 0 50px; border-bottom:1px solid var(--hairline); margin-bottom:50px; scroll-margin-top:24px; }
-  section:last-of-type{ border-bottom:none; margin-bottom:0; }
-
-  .section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:22px; }
-  .section-num{ font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#fff; background:linear-gradient(135deg, var(--purple), var(--purple-deep)); width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex:0 0 auto; }
-  h2{ font-size:23px; font-weight:700; letter-spacing:-0.01em; color:var(--black); }
-
-  p{ font-size:15px; color:var(--ink); margin-bottom:15px; max-width:660px; }
-  p:last-child{ margin-bottom:0; }
-
-  p.lede{
-    font-size:18px;
-    color:var(--purple-deep);
-    font-weight:500;
-    line-height:1.55;
-    max-width:600px;
+  .toc .num{
+    font-variant-numeric:tabular-nums;
+    font-size:11px;
+    opacity:0.7;
+    min-width:18px;
   }
+  .toc a.active .num{opacity:1;}
 
-  .quiet{ color:var(--grey); }
-
-  .callout{
+  .sidebar-footer{
     margin-top:20px;
-    background:var(--purple-mist);
-    border-left:3px solid var(--purple);
-    border-radius:2px 10px 10px 2px;
-    padding:20px 24px;
-    max-width:660px;
+    padding-top:18px;
+    border-top:1px solid var(--line-dark);
+    font-size:11px;
+    color:var(--gray-light);
+    line-height:1.6;
   }
-  .callout p{ color:var(--purple-deep); font-size:14.5px; margin-bottom:0; }
+  .sidebar-footer strong{color:var(--white);}
 
-  ul.offer-list{ list-style:none; display:grid; gap:13px; max-width:640px; margin-top:8px; }
-  ul.offer-list li{ position:relative; padding-left:26px; font-size:14.5px; color:var(--ink); }
-  ul.offer-list li::before{
+  /* ---------- MAIN CONTENT ---------- */
+  main{
+    padding:0;
+    max-width:920px;
+  }
+
+  /* Cover / hero */
+  .cover{
+    background:var(--black);
+    color:var(--white);
+    padding:100px 72px 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cover::before{
     content:"";
-    position:absolute; left:0; top:8px;
-    width:8px; height:8px; border-radius:50%;
-    background:var(--purple-light);
-    box-shadow:0 0 0 3px var(--purple-mist);
+    position:absolute;
+    top:-120px;right:-120px;
+    width:420px;height:420px;
+    background:radial-gradient(circle, rgba(244,193,15,0.16) 0%, rgba(244,193,15,0) 70%);
+  }
+  .cover::after{
+    content:"";
+    position:absolute;
+    bottom:0;left:0;right:0;
+    height:6px;
+    background:linear-gradient(90deg, var(--yellow-deep), var(--yellow) 40%, var(--yellow-pale));
   }
 
-  .ask-box{ margin-top:26px; border:1px solid var(--hairline); border-radius:14px; overflow:hidden; max-width:660px; }
-  .ask-box-head{ background:var(--black); color:#fff; padding:13px 22px; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; }
-  .ask-box-body{ padding:22px; display:grid; gap:16px; }
-  .ask-item{ display:flex; gap:15px; align-items:flex-start; }
-  .ask-item .num{ flex:0 0 auto; width:26px; height:26px; border-radius:50%; background:var(--purple-mist); color:var(--purple-deep); font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; }
-  .ask-item p{ margin-bottom:0; font-size:14.5px; }
-
-  .benefits{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
-  .benefit-card{ border-radius:14px; padding:26px 24px; }
-  .benefit-card.celfa{ background:var(--purple-mist); border:1px solid var(--hairline); }
-  .benefit-card.egs{ background:linear-gradient(160deg, var(--black), var(--purple-deep)); color:#fff; }
-  .benefit-card h3{ font-size:12px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; font-weight:600; }
-  .benefit-card.celfa h3{ color:var(--purple-deep); }
-  .benefit-card.egs h3{ color:var(--gold); }
-  .benefit-card ul{ list-style:none; display:grid; gap:11px; }
-  .benefit-card li{ position:relative; padding-left:18px; font-size:13.5px; line-height:1.55; }
-  .benefit-card.celfa li{ color:var(--ink); }
-  .benefit-card.egs li{ color:rgba(255,255,255,0.88); }
-  .benefit-card li::before{ content:"–"; position:absolute; left:0; color:var(--purple-light); font-weight:700; }
-
-  .commit-quote{
-    font-size:19px; font-weight:600; color:var(--black); line-height:1.5;
-    max-width:620px; border-left:3px solid var(--gold); padding-left:20px; margin-bottom:18px;
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:11.5px;
+    letter-spacing:2.2px;
+    text-transform:uppercase;
+    color:var(--yellow);
+    font-weight:700;
+    margin-bottom:28px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:2px;
+    background:var(--yellow);
+    display:inline-block;
   }
 
-  .signoff{ padding:44px 60px 0; }
-  .signoff p{ max-width:660px; }
-  .signature-block{
-    margin-top:36px; padding:28px 0 44px; border-top:1px solid var(--hairline);
-    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;
+  .cover h1{
+    font-size:clamp(38px, 5.2vw, 58px);
+    font-weight:900;
+    letter-spacing:-1.6px;
+    line-height:1.03;
+    max-width:640px;
+    position:relative;
+    z-index:1;
   }
-  .sig-name{ font-size:19px; font-weight:700; color:var(--black); margin-bottom:3px; }
-  .sig-role{ font-size:12.5px; color:var(--grey); }
-  .sig-mark{ font-family:'Poppins', sans-serif; font-style:italic; font-weight:600; font-size:24px; color:var(--purple); }
+  .cover h1 span{color:var(--yellow);}
 
-  .footer{
-    background:var(--black); color:rgba(255,255,255,0.6);
-    padding:26px 60px; display:flex; justify-content:space-between; align-items:center;
-    flex-wrap:wrap; gap:10px; font-size:12px; grid-column:1 / -1;
+  .cover-meta{
+    margin-top:44px;
+    display:grid;
+    grid-template-columns:repeat(3, auto);
+    gap:48px;
+    position:relative;
+    z-index:1;
   }
-  .footer strong{ color:#fff; font-weight:600; }
+  .cover-meta .item .k{
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--gray-light);
+    margin-bottom:6px;
+    font-weight:700;
+  }
+  .cover-meta .item .v{
+    font-size:15px;
+    font-weight:700;
+  }
 
-  @media (max-width:860px){
-    .sheet{ grid-template-columns:1fr; }
-    .rail{ padding:40px 28px; }
-    .rail-parties{ margin-top:28px; padding-top:0; }
-    .content{ padding:40px 28px 0; }
-    .signoff{ padding:36px 28px 0; }
-    .footer{ padding:22px 28px; }
-    .benefits{ grid-template-columns:1fr; }
+  /* Section base */
+  .section{
+    padding:64px 72px;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:24px;
+  }
+  .section:last-of-type{border-bottom:none;}
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:28px;
+  }
+  .section-num{
+    font-size:13px;
+    font-weight:800;
+    color:var(--yellow-deep);
+    letter-spacing:0.5px;
+    background:var(--yellow-pale);
+    padding:3px 10px;
+    border-radius:20px;
+  }
+  .section-head h2{
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-0.6px;
+  }
+
+  .section p{
+    font-size:15.5px;
+    color:#3A3A3E;
+    max-width:70ch;
+    margin-bottom:14px;
+  }
+  .section p:last-child{margin-bottom:0;}
+
+  .section p strong{color:var(--black);font-weight:700;}
+
+  /* feature / list grids */
+  .pill-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:6px;
+  }
+  .pill{
+    font-size:13px;
+    font-weight:600;
+    padding:7px 14px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    background:var(--white);
+    color:var(--black-soft);
+  }
+
+  .check-list{
+    list-style:none;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px 24px;
+    margin-top:10px;
+  }
+  .check-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:14.5px;
+    color:#3A3A3E;
+  }
+  .check-list li::before{
+    content:"";
+    flex-shrink:0;
+    width:16px;height:16px;
+    margin-top:3px;
+    border-radius:5px;
+    background:var(--yellow);
+    background-image:linear-gradient(135deg, var(--yellow), var(--yellow-deep));
+  }
+
+  .subhead{
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    font-weight:800;
+    color:var(--gray);
+    margin:28px 0 12px;
+  }
+  .subhead:first-child{margin-top:0;}
+
+  /* nav phone list */
+  .nav-strip{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:18px;
+  }
+  .nav-strip span{
+    font-size:12.5px;
+    font-weight:700;
+    padding:6px 12px;
+    background:var(--black);
+    color:var(--white);
+    border-radius:6px;
+  }
+  .nav-strip span:nth-child(odd){background:var(--black-soft);}
+
+  /* callout / investment card */
+  .invest-card{
+    background:var(--black);
+    color:var(--white);
+    border-radius:20px;
+    padding:44px 48px;
+    position:relative;
+    overflow:hidden;
+    margin-top:8px;
+  }
+  .invest-card::after{
+    content:"";
+    position:absolute;
+    top:-80px;right:-80px;
+    width:260px;height:260px;
+    background:radial-gradient(circle, rgba(244,193,15,0.18), transparent 70%);
+  }
+  .invest-label{
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--yellow);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .invest-amount{
+    font-size:clamp(34px, 4.4vw, 48px);
+    font-weight:900;
+    letter-spacing:-1.2px;
+    border-bottom:4px solid var(--yellow);
+    display:inline-block;
+    padding-bottom:8px;
+  }
+  .invest-note{
+    margin-top:18px;
+    font-size:14px;
+    color:var(--gray-light);
+    max-width:56ch;
+    position:relative;
+    z-index:1;
+  }
+  .invest-includes{
+    margin-top:22px;
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+    position:relative;
+    z-index:1;
+  }
+  .invest-includes .inc{
+    font-size:13px;
+    color:var(--white);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .invest-includes .inc::before{
+    content:"✓";
+    color:var(--yellow);
+    font-weight:900;
+  }
+
+  /* milestone bar - signature element */
+  .milestone-bar{
+    display:flex;
+    width:100%;
+    height:64px;
+    border-radius:12px;
+    overflow:hidden;
+    margin:22px 0 8px;
+    box-shadow:0 1px 0 rgba(0,0,0,0.05);
+  }
+  .ms-seg{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 20px;
+    position:relative;
+  }
+  .ms-seg .pct{font-size:20px;font-weight:900;letter-spacing:-0.4px;}
+  .ms-seg .label{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;font-weight:700;opacity:0.85;}
+  .ms-seg-1{background:var(--yellow-deep);color:var(--black);flex:0 0 40%;}
+  .ms-seg-2{background:var(--yellow);color:var(--black);flex:0 0 40%;}
+  .ms-seg-3{background:var(--black);color:var(--yellow);flex:0 0 20%;}
+
+  .milestone-cards{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    margin-top:24px;
+  }
+  .ms-card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 20px 22px;
+    background:var(--white);
+  }
+  .ms-card .tag{
+    display:inline-block;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:0.4px;
+    color:var(--black);
+    background:var(--yellow-pale);
+    padding:3px 10px;
+    border-radius:20px;
+    margin-bottom:12px;
+  }
+  .ms-card h4{
+    font-size:15px;
+    font-weight:800;
+    margin-bottom:4px;
+  }
+  .ms-card .trigger{
+    font-size:12.5px;
+    color:var(--gray);
+    margin-bottom:12px;
+  }
+  .ms-card ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .ms-card ul li{
+    font-size:13px;
+    color:#3A3A3E;
+    padding-left:14px;
+    position:relative;
+  }
+  .ms-card ul li::before{
+    content:"–";
+    position:absolute;left:0;
+    color:var(--yellow-deep);
+    font-weight:800;
+  }
+
+  /* tables */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:8px;
+    font-size:14px;
+  }
+  th{
+    text-align:left;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:var(--gray);
+    font-weight:800;
+    padding:10px 14px;
+    border-bottom:2px solid var(--black);
+  }
+  td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    color:#3A3A3E;
+  }
+  tr:last-child td{border-bottom:none;}
+
+  /* exclusions / two-col note blocks */
+  .note-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-top:10px;
+  }
+  .note-block{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:20px 22px;
+    background:var(--white);
+  }
+  .note-block h4{
+    font-size:13px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:0.6px;
+    margin-bottom:10px;
+    color:var(--black);
+  }
+  .note-block ul{
+    list-style:none;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .note-block li{
+    font-size:13.5px;
+    color:#3A3A3E;
+    padding-left:16px;
+    position:relative;
+  }
+  .note-block li::before{
+    content:"×";
+    position:absolute;left:0;
+    color:var(--yellow-deep);
+    font-weight:900;
+  }
+
+  .terms-list{
+    list-style:none;
+    counter-reset:term;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-top:8px;
+  }
+  .terms-list li{
+    counter-increment:term;
+    padding-left:38px;
+    position:relative;
+    font-size:14.5px;
+    color:#3A3A3E;
+  }
+  .terms-list li::before{
+    content:counter(term);
+    position:absolute;
+    left:0;top:-1px;
+    width:24px;height:24px;
+    border-radius:7px;
+    background:var(--black);
+    color:var(--yellow);
+    font-size:11px;
+    font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* acceptance */
+  .accept{
+    background:var(--black-soft);
+    border-radius:20px;
+    padding:44px 48px;
+    color:var(--white);
+  }
+  .accept-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    margin-top:30px;
+  }
+  .accept-col h4{
+    font-size:11.5px;
+    text-transform:uppercase;
+    letter-spacing:1.6px;
+    color:var(--yellow);
+    font-weight:800;
+    margin-bottom:20px;
+  }
+  .sig-line{
+    border-bottom:1px solid rgba(255,255,255,0.25);
+    padding:14px 0 8px;
+    margin-bottom:18px;
+    font-size:13px;
+    color:var(--gray-light);
+  }
+  .sig-line .filled{color:var(--white);font-weight:600;}
+
+  .valid-note{
+    margin-top:8px;
+    font-size:13px;
+    color:var(--gray-light);
+    max-width:60ch;
+  }
+
+  /* footer */
+  .doc-footer{
+    padding:40px 72px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--gray);
+    font-size:12.5px;
+  }
+  .doc-footer .fmark{
+    display:flex;align-items:center;gap:10px;
+    font-weight:800;
+    color:var(--black);
+  }
+  .doc-footer .fmark .dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);}
+
+  /* responsive */
+  @media (max-width: 920px){
+    .shell{grid-template-columns:1fr;}
+    .sidebar{position:relative;height:auto;}
+    .cover, .section, .doc-footer{padding-left:32px;padding-right:32px;}
+    .check-list, .note-grid, .milestone-cards, .cover-meta{grid-template-columns:1fr;}
   }
 
   @media print{
-    body{ background:#fff; }
-    .sheet{ box-shadow:none; display:block; }
-    .rail{ break-inside:avoid; }
+    .sidebar{display:none;}
+    .shell{grid-template-columns:1fr;}
+    .section{break-inside:avoid;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
   }
 </style>
 </head>
 <body>
-<div class="sheet">
 
-  <!-- LEFT RAIL -->
-  <aside class="rail">
-    <div class="rail-inner">
-      <div class="logo-mark">
-        <img src="logo-icon.png" alt="Emperor Guild Studios logo">
-        <div class="logo-word">Emperor Guild Studios<span>Creative &amp; Digital Agency</span></div>
+<div class="shell">
+
+  <!-- SIDEBAR / TOC -->
+  <nav class="sidebar" aria-label="Table of contents">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="clw-logo.jpg" alt="CodeLikeWyna Tech logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback" style="display:none;align-items:center;justify-content:center;width:100%;height:100%;">CLW</div>
       </div>
-
-      <div class="rail-tag">Partnership Proposal</div>
-      <div class="rail-title">Building a lasting digital partnership with Celfa Furniture</div>
-
-      <nav class="rail-nav">
-        <a href="#s1"><b>01</b> Executive Summary</a>
-        <a href="#s2"><b>02</b> Background</a>
-        <a href="#s3"><b>03</b> Proposed Partnership</a>
-        <a href="#s4"><b>04</b> Mutual Benefits</a>
-        <a href="#s5"><b>05</b> Our Commitment</a>
-        <a href="#s6"><b>06</b> Conclusion</a>
-      </nav>
-
-      <div class="rail-parties">
-        <div>
-          <div class="rail-party-label">Submitted By</div>
-          <div class="rail-party-name">Emperor Guild Studios</div>
-        </div>
-        <div>
-          <div class="rail-party-label">Presented To</div>
-          <div class="rail-party-name">The Management of Celfa Furniture</div>
-        </div>
+      <div>
+        <div class="brand-name">CodeLikeWyna Tech</div>
+        <div class="brand-sub">Proposal</div>
       </div>
     </div>
-  </aside>
+
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-label">Contents</div>
+    <ul class="toc">
+      <li><a href="#s1"><span class="num">01</span> Executive Summary</a></li>
+      <li><a href="#s2"><span class="num">02</span> Understanding</a></li>
+      <li><a href="#s3"><span class="num">03</span> Objectives</a></li>
+      <li><a href="#s4"><span class="num">04</span> Deliverables</a></li>
+      <li><a href="#s5"><span class="num">05</span> Website Features</a></li>
+      <li><a href="#s6"><span class="num">06</span> App Features</a></li>
+      <li><a href="#s7"><span class="num">07</span> Integrations</a></li>
+      <li><a href="#s8"><span class="num">08</span> Timeline</a></li>
+      <li><a href="#s9"><span class="num">09</span> Investment</a></li>
+      <li><a href="#s10"><span class="num">10</span> Payment Milestones</a></li>
+      <li><a href="#s11"><span class="num">11</span> Client Responsibilities</a></li>
+      <li><a href="#s12"><span class="num">12</span> Exclusions</a></li>
+      <li><a href="#s13"><span class="num">13</span> Additional Costs</a></li>
+      <li><a href="#s14"><span class="num">14</span> Terms &amp; Conditions</a></li>
+      <li><a href="#s15"><span class="num">15</span> Acceptance</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      Prepared for <strong>Gold Link / Simpay Technologies</strong><br>
+      by <strong>CodeLikeWyna Tech</strong><br>
+      29 July 2026
+    </div>
+  </nav>
 
   <!-- MAIN CONTENT -->
-  <div>
-    <div class="content">
+  <main>
 
-      <section id="s1">
-        <div class="section-head"><span class="section-num">01</span><h2>Executive Summary</h2></div>
-        <p class="lede">Emperor Guild Studios respectfully presents this proposal with the objective of establishing a long-term strategic partnership with Celfa Furniture.</p>
-        <p>We believe that by combining our expertise in digital innovation with Celfa Furniture's commitment to excellence, both organizations can achieve greater heights.</p>
-        <p>Before presenting this proposal, we would like to express our sincere appreciation to the management of Celfa Furniture for the confidence, generosity, and support extended to us. Your decision to provide our team with a conducive and professional office workspace has significantly contributed to our operations and productivity.</p>
-        <div class="callout">
-          <p>This gesture reflects your belief in our vision, and we remain sincerely grateful for the opportunity to grow within an environment that encourages innovation and excellence.</p>
+    <!-- COVER -->
+    <header class="cover">
+      <div class="eyebrow">Project Proposal</div>
+      <h1>Development of the <span>Gold Link</span> Marketplace Platform</h1>
+      <div class="cover-meta">
+        <div class="item">
+          <div class="k">Prepared By</div>
+          <div class="v">CodeLikeWyna Tech</div>
         </div>
-      </section>
-
-      <section id="s2">
-        <div class="section-head"><span class="section-num">02</span><h2>Background</h2></div>
-        <p>Today, our world is a global village. In today's highly competitive business environment, a company's digital presence has become one of its most valuable assets.</p>
-        <p>Customers increasingly rely on online platforms to discover businesses, evaluate brands, and make purchasing decisions. A professionally managed digital presence strengthens credibility, improves visibility, attracts new customers, and creates sustainable business growth.</p>
-        <p>As a technology company specializing in software development, branding, digital marketing, Search Engine Optimization (SEO), and business automation, Emperor Guild Studios is well positioned to help Celfa Furniture establish and maintain a powerful digital presence that reflects her quality and reputation.</p>
-      </section>
-
-      <section id="s3">
-        <div class="section-head"><span class="section-num">03</span><h2>Proposed Partnership</h2></div>
-        <p>Emperor Guild Studios respectfully proposes a strategic partnership in which we serve as Celfa Furniture's dedicated technology and digital solutions partner. As part of this partnership, Emperor Guild Studios will provide:</p>
-
-        <ul class="offer-list">
-          <li>Design and development of a modern, responsive, and professionally branded corporate website.</li>
-          <li>Comprehensive Search Engine Optimization (SEO) to improve online visibility and search engine rankings.</li>
-          <li>Development and management of a strong digital brand identity.</li>
-          <li>Continuous website maintenance, security updates, and technical support.</li>
-          <li>Digital strategy consultation to support business growth and improve customer engagement.</li>
-          <li>Ongoing technology advisory services and support for future digital initiatives.</li>
-        </ul>
-
-        <div class="ask-box">
-          <div class="ask-box-head">In Consideration, We Respectfully Propose</div>
-          <div class="ask-box-body">
-            <div class="ask-item"><div class="num">1</div><p>A monthly operational retainer to support the dedicated team responsible for delivering continuous digital services.</p></div>
-            <div class="ask-item"><div class="num">2</div><p>Supporting approved development projects and operational initiatives that contribute to the continued success of Emperor Guild Studios.</p></div>
-          </div>
+        <div class="item">
+          <div class="k">Prepared For</div>
+          <div class="v">Gold Link / Simpay Technologies</div>
         </div>
-
-        <p style="margin-top:22px;">This monthly operational retainer and project support will enable Emperor Guild Studios to maintain the personnel, technical resources, and development capacity required to consistently deliver high-quality digital solutions while also responding promptly to Celfa Furniture's evolving technology needs.</p>
-        <p>This proposal is designed to establish a mutually beneficial partnership in which both organizations invest in each other's long-term success.</p>
-      </section>
-
-      <section id="s4">
-        <div class="section-head"><span class="section-num">04</span><h2>Mutual Benefits</h2></div>
-        <div class="benefits">
-          <div class="benefit-card celfa">
-            <h3>Benefits to Celfa Furniture</h3>
-            <ul>
-              <li>A modern and professional online presence that reflects the quality of your brand.</li>
-              <li>Improved visibility through effective Search Engine Optimization (SEO).</li>
-              <li>Increased customer confidence and stronger brand recognition.</li>
-              <li>Dedicated technical expertise without the need to engage multiple service providers.</li>
-              <li>Continuous digital support, maintenance, and future technology development.</li>
-              <li>A long-term technology partner committed to supporting your business growth.</li>
-            </ul>
-          </div>
-          <div class="benefit-card egs">
-            <h3>Benefits to Emperor Guild Studios</h3>
-            <ul>
-              <li>Consistent monthly operational funding that supports sustainable business growth.</li>
-              <li>Greater capacity to invest in innovation and emerging technologies.</li>
-              <li>Long-term operational stability that enables continuous improvement in service delivery.</li>
-              <li>A strategic partnership with an established organization that shares our commitment to excellence.</li>
-            </ul>
-          </div>
+        <div class="item">
+          <div class="k">Project Duration</div>
+          <div class="v">2 Months</div>
         </div>
-      </section>
-
-      <section id="s5">
-        <div class="section-head"><span class="section-num">05</span><h2>Our Commitment</h2></div>
-        <p class="commit-quote">Emperor Guild Studios is committed to delivering innovative, reliable, and high-quality digital solutions.</p>
-        <p>Every service provided under this partnership will be delivered with professionalism, integrity, and a focus on measurable business outcomes.</p>
-        <p>Our objective extends beyond developing a website. We aspire to become Celfa Furniture's trusted technology partner, continuously providing innovative digital solutions that strengthen your market presence around this blue marble planet.</p>
-      </section>
-
-      <section id="s6">
-        <div class="section-head"><span class="section-num">06</span><h2>Conclusion</h2></div>
-        <p>We sincerely appreciate the opportunity to collaborate with Celfa Furniture and once again extend our heartfelt gratitude for the invaluable support already demonstrated through the provision of office workspace for Emperor Guild Studios. Your confidence in our vision has provided a strong foundation upon which we continue to grow.</p>
-        <p>We respectfully submit this proposal for your consideration and welcome the opportunity to discuss it further. We look forward to building a partnership founded on trust, shared purpose, and mutual prosperity.</p>
-        <p class="quiet">Thank you for your time, confidence, and continued support.</p>
-      </section>
-
-    </div>
-
-    <div class="signoff">
-      <p>Respectfully submitted,</p>
-      <div class="signature-block">
-        <div>
-          <div class="sig-name">Francis Chiebuka</div>
-          <div class="sig-role">Founder, Emperor Guild Studios</div>
-        </div>
-        <div class="sig-mark">Emperor Guild Studios</div>
       </div>
-    </div>
+    </header>
 
-    <div class="footer">
-      <div><strong>Emperor Guild Studios</strong> — Brand Identity · UI/UX · Web &amp; App Development · Motion Design</div>
-      <div>emperorguildstudios.com &nbsp;·&nbsp; 08166993801</div>
-    </div>
-  </div>
+    <!-- 01 EXECUTIVE SUMMARY -->
+    <section class="section" id="s1">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2>Executive Summary</h2>
+      </div>
+      <p>CodeLikeWyna Tech is pleased to present this proposal for the design, development, testing, and deployment of the Gold Link digital marketplace — a trusted platform where verified gold vendors and buyers can safely buy and sell physical gold through a secure digital experience.</p>
+      <p>The solution consists of four connected pieces:</p>
+      <div class="pill-grid">
+        <span class="pill">Marketing Website</span>
+        <span class="pill">Marketplace Web App</span>
+        <span class="pill">Android Application</span>
+        <span class="pill">iOS Application</span>
+      </div>
+      <p style="margin-top:18px;">The project will be delivered over a period of <strong>two (2) months</strong>, beginning from the date the initial payment is received and all required project materials have been supplied by the client. Development follows a phased approach — the website is completed first, before work begins on the mobile applications — aligned with the roadmap discussed during planning.</p>
+      <p>The platform will support secure transactions through Simpay, vendor verification using Smile Identity, escrow payment functionality, buyer and vendor dashboards, transaction history, instant messaging, watchlists, and other marketplace features.</p>
+    </section>
 
+    <!-- 02 UNDERSTANDING -->
+    <section class="section" id="s2">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2>Understanding of the Project</h2>
+      </div>
+      <p>Gold Link is intended to become a marketplace where verified vendors can list physical gold for sale while buyers can securely purchase gold using trusted payment methods. The platform will provide separate experiences for buyers and vendors, while allowing administrators to monitor all marketplace activity.</p>
+      <p>The first deliverable is a website that introduces the business, builds trust, and directs users to download the mobile applications. Following the completion of the website, development proceeds with the marketplace platform and the Android and iOS applications.</p>
+    </section>
+
+    <!-- 03 OBJECTIVES -->
+    <section class="section" id="s3">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2>Project Objectives</h2>
+      </div>
+      <ul class="check-list">
+        <li>Build a professional online presence</li>
+        <li>Create a secure marketplace for buying and selling gold</li>
+        <li>Provide separate dashboards for buyers and vendors</li>
+        <li>Enable secure online payments</li>
+        <li>Implement escrow payment services</li>
+        <li>Verify users through KYC</li>
+        <li>Improve trust between buyers and sellers</li>
+        <li>Provide transaction tracking</li>
+        <li>Support future expansion into multiple African countries</li>
+        <li>Build a scalable platform for future features</li>
+      </ul>
+    </section>
+
+    <!-- 04 DELIVERABLES -->
+    <section class="section" id="s4">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2>Project Deliverables</h2>
+      </div>
+      <p>CodeLikeWyna Tech will deliver:</p>
+      <div class="pill-grid">
+        <span class="pill">Marketing Website</span>
+        <span class="pill">Marketplace Android App</span>
+        <span class="pill">Marketplace iOS App</span>
+        <span class="pill">Administration Dashboard</span>
+        <span class="pill">API Integrations</span>
+        <span class="pill">Deployment</span>
+        <span class="pill">Testing</span>
+        <span class="pill">Technical Documentation</span>
+        <span class="pill">Source Code (upon full payment)</span>
+      </div>
+    </section>
+
+    <!-- 05 WEBSITE FEATURES -->
+    <section class="section" id="s5">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <h2>Marketing Website</h2>
+      </div>
+      <p>The marketing website serves as the public face of the business and guides visitors to the mobile applications, rather than functioning as the buying portal.</p>
+      <div class="nav-strip" style="margin-top:18px;">
+        <span>Home</span><span>About Us</span><span>Services</span><span>How It Works</span>
+        <span>FAQ</span><span>Contact</span><span>Download App</span>
+        <span>Privacy Policy</span><span>Terms &amp; Conditions</span>
+      </div>
+    </section>
+
+    <!-- 06 APP FEATURES -->
+    <section class="section" id="s6">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <h2>Marketplace iOS &amp; Android Application</h2>
+      </div>
+
+      <div class="subhead">In-App Navigation</div>
+      <div class="nav-strip">
+        <span>Dashboard</span><span>Marketplace</span><span>My Transactions</span>
+        <span>Watchlist</span><span>Gold Vault (Coming Soon)</span><span>Messages</span>
+        <span>Verify &amp; KYC</span><span>Settings</span><span>Support</span>
+      </div>
+
+      <div class="subhead">Core Features</div>
+      <ul class="check-list">
+        <li>Buyer &amp; vendor dashboards</li>
+        <li>Gold listings with product images</li>
+        <li>Gold description, type &amp; weight</li>
+        <li>Vendor profiles &amp; registration number display</li>
+        <li>Vendor ratings <em>(future enhancement)</em></li>
+        <li>Search &amp; filters</li>
+        <li>Transaction history &amp; gold holdings summary</li>
+        <li>Escrow payment &amp; direct purchase option</li>
+        <li>Live gold market price display (USD-pegged)</li>
+        <li>Admin management portal</li>
+      </ul>
+      <p style="margin-top:20px;">Submission to Google Play and the Apple App Store will be carried out after successful testing. Approval timelines for app stores are outside the control of CodeLikeWyna Tech, particularly for finance-related applications.</p>
+    </section>
+
+    <!-- 07 INTEGRATIONS -->
+    <section class="section" id="s7">
+      <div class="section-head">
+        <span class="section-num">07</span>
+        <h2>Third-Party Integrations</h2>
+      </div>
+      <p>The project is expected to integrate with the following third-party services:</p>
+      <table>
+        <thead><tr><th>Service</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Simpay</strong></td><td>Transactions &amp; escrow service</td></tr>
+          <tr><td><strong>Smile Identity</strong></td><td>KYC / identity verification</td></tr>
+          <tr><td><strong>Gold Price Data Source</strong></td><td>Live market price feed</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:16px;">Additional integrations may be introduced in future phases as required, and may attract additional charges.</p>
+    </section>
+
+    <!-- 08 TIMELINE -->
+    <section class="section" id="s8">
+      <div class="section-head">
+        <span class="section-num">08</span>
+        <h2>Project Timeline</h2>
+      </div>
+      <p>The total project duration is <strong>2 months</strong>, assuming all required documents, branding assets, approvals, and technical credentials are supplied promptly by the client.</p>
+    </section>
+
+    <!-- 09 INVESTMENT -->
+    <section class="section" id="s9">
+      <div class="section-head">
+        <span class="section-num">09</span>
+        <h2>Project Investment</h2>
+      </div>
+      <p>The total investment for the design, development, testing, deployment, and delivery of the Gold Link platform — covering the complete scope referenced in chapters 4, 5 and 6 — is:</p>
+      <div class="invest-card">
+        <div class="invest-label">Total Project Cost</div>
+        <div class="invest-amount">₦2,840,000</div>
+        <div class="invest-note">Two Million, Eight Hundred and Forty Thousand Naira Only. Payable according to the milestone schedule outlined in Section 10.</div>
+        <div class="invest-includes">
+          <span class="inc">1 year domain</span>
+          <span class="inc">1 year Apple development fee</span>
+        </div>
+      </div>
+      <p style="margin-top:18px;">All payments made are non-refundable once work has commenced on the corresponding milestone, except where otherwise agreed in writing by both parties. Any additional features or services requested outside the agreed project scope will be quoted and billed separately through a written change request.</p>
+    </section>
+
+    <!-- 10 PAYMENT MILESTONES -->
+    <section class="section" id="s10">
+      <div class="section-head">
+        <span class="section-num">10</span>
+        <h2>Payment Milestones</h2>
+      </div>
+      <p>Payment is structured across three milestones, weighted to reflect delivery effort at each stage.</p>
+
+      <div class="milestone-bar">
+        <div class="ms-seg ms-seg-1"><span class="pct">40%</span><span class="label">Milestone 1</span></div>
+        <div class="ms-seg ms-seg-2"><span class="pct">40%</span><span class="label">Milestone 2</span></div>
+        <div class="ms-seg ms-seg-3"><span class="pct">20%</span><span class="label">Milestone 3</span></div>
+      </div>
+
+      <div class="milestone-cards">
+        <div class="ms-card">
+          <span class="tag">40% · ₦1,136,000</span>
+          <h4>Milestone 1</h4>
+          <div class="trigger">Paid before project commencement</div>
+          <ul>
+            <li>Marketing website &amp; landing page</li>
+            <li>UI/UX frontend design of app</li>
+            <li>Simpay backend for API communication with Gold Link app</li>
+          </ul>
+        </div>
+        <div class="ms-card">
+          <span class="tag">40% · ₦1,136,000</span>
+          <h4>Milestone 2</h4>
+          <div class="trigger">Paid before commencement of Milestone 2</div>
+          <ul>
+            <li>Backend &amp; API integration</li>
+            <li>KYC integration</li>
+          </ul>
+        </div>
+        <div class="ms-card">
+          <span class="tag">20% · ₦568,000</span>
+          <h4>Milestone 3</h4>
+          <div class="trigger">Paid after final deployment</div>
+          <ul>
+            <li>Android application</li>
+            <li>iOS application</li>
+            <li>Final testing &amp; deployment</li>
+            <li>Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 CLIENT RESPONSIBILITIES -->
+    <section class="section" id="s11">
+      <div class="section-head">
+        <span class="section-num">11</span>
+        <h2>Client Responsibilities</h2>
+      </div>
+      <p>The client agrees to provide:</p>
+      <ul class="check-list">
+        <li>Company registration documents</li>
+        <li>Logo &amp; branding assets</li>
+        <li>Business information</li>
+        <li>API credentials where applicable</li>
+        <li>Timely approvals &amp; feedback</li>
+        <li>Required legal / compliance documents for financial services</li>
+      </ul>
+      <p style="margin-top:16px;">Failure to provide required information on time may affect the project schedule.</p>
+    </section>
+
+    <!-- 12 EXCLUSIONS -->
+    <section class="section" id="s12">
+      <div class="section-head">
+        <span class="section-num">12</span>
+        <h2>Items Excluded From This Proposal</h2>
+      </div>
+      <p>The following are not included unless specifically agreed in writing:</p>
+      <div class="note-grid">
+        <div class="note-block">
+          <h4>Not in scope</h4>
+          <ul>
+            <li>Cloud savings functionality</li>
+            <li>Real-world Gold Vault integration</li>
+          </ul>
+        </div>
+        <div class="note-block">
+          <h4>Also excluded</h4>
+          <ul>
+            <li>Custom blockchain integrations</li>
+            <li>Future feature requests</li>
+            <li>Additional marketplace modules outside agreed scope</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 ADDITIONAL COSTS -->
+    <section class="section" id="s13">
+      <div class="section-head">
+        <span class="section-num">13</span>
+        <h2>Additional Costs <span style="color:var(--gray-light);font-weight:600;font-size:16px;">(that may occur)</span></h2>
+      </div>
+      <p>The quoted development fee does not include ongoing or third-party costs. Only if needed, these will be billed separately and approved by the client before implementation. Examples include:</p>
+      <table>
+        <tbody>
+          <tr><td>Gold price API subscription fees</td><td>Dedicated IP address</td></tr>
+          <tr><td>Smile Identity verification charges</td><td>Domain renewals (annual)</td></tr>
+          <tr><td>Payment gateway transaction fees</td><td>Apple Developer Program fee (annual, $99)</td></tr>
+          <tr><td>SMS / OTP services</td><td>Apple account management fee (different account)</td></tr>
+          <tr><td>Email delivery services</td><td>Government licensing / regulatory fees</td></tr>
+          <tr><td>Push notification services</td><td>CDN services</td></tr>
+          <tr><td>Cloud storage &amp; backup</td><td>Any additional service requested after commencement</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 14 TERMS -->
+    <section class="section" id="s14">
+      <div class="section-head">
+        <span class="section-num">14</span>
+        <h2>Terms &amp; Conditions</h2>
+      </div>
+      <ul class="terms-list">
+        <li>The project duration is two (2) months from the date the initial payment is received and all required project materials are provided.</li>
+        <li>Any delay caused by late client feedback, missing documents, branding assets, API credentials, approvals, or legal requirements will automatically extend the delivery timeline.</li>
+        <li>If client-caused delays significantly increase engineering effort or keep development resources allocated beyond the agreed schedule, CodeLikeWyna Tech reserves the right to apply additional charges after notifying the client.</li>
+        <li>Any work requested outside the agreed project scope will be treated as a change request and quoted separately.</li>
+        <li>Third-party approval processes, including Apple App Store review for finance-related applications, are outside the control of CodeLikeWyna Tech.</li>
+        <li>Ownership of the completed source code and intellectual property transfers to the client only after full payment has been received.</li>
+        <li>A post-launch bug-fix warranty applies only to issues directly related to the approved project scope. New features, enhancements, or changes requested after delivery will be treated as separate work.</li>
+      </ul>
+    </section>
+
+    <!-- 15 ACCEPTANCE -->
+    <section class="section" id="s15">
+      <div class="section-head">
+        <span class="section-num">15</span>
+        <h2>Acceptance</h2>
+      </div>
+      <p>The amount may be subject to change if the amount quoted is not agreed upon within the next 30 days. By signing this proposal, both parties acknowledge that they understand and accept the project scope, payment milestones, delivery timeline, responsibilities, and terms outlined in this document.</p>
+
+      <div class="accept" style="margin-top:24px;">
+        <div class="subhead" style="color:var(--gray-light);margin:0;">Signatures</div>
+        <div class="accept-grid">
+          <div class="accept-col">
+            <h4>Prepared By</h4>
+            <div class="sig-line"><span class="filled">CodeLikeWyna Tech</span></div>
+            <div class="sig-line"><span class="filled">29th July 2026</span> — Date</div>
+          </div>
+          <div class="accept-col">
+            <h4>Accepted By</h4>
+            <div class="sig-line">Client Name</div>
+            <div class="sig-line">Company</div>
+            <div class="sig-line">Date</div>
+            <div class="sig-line">Signature</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="doc-footer">
+      <div class="fmark"><span class="dot"></span> CodeLikeWyna Tech</div>
+      <div>Gold Link Marketplace Proposal · 29 July 2026</div>
+    </footer>
+
+  </main>
 </div>
+
+<script>
+  // Highlight active TOC item on scroll
+  const sections = document.querySelectorAll('.section');
+  const links = document.querySelectorAll('.toc a');
+  const byId = id => document.querySelector(`.toc a[href="#${id}"]`);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        links.forEach(l => l.classList.remove('active'));
+        const link = byId(entry.target.id);
+        if(link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
 </body>
 </html>
