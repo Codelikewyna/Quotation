@@ -3,598 +3,667 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gold Link Marketplace — Project Proposal | CodeLikeWyna Tech</title>
+<title>Proposal — University CBT Learning Platform | Emperor Guild Studios</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400;1,9..40,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --black:#0B0B0C;
-    --black-soft:#1A1A1D;
-    --yellow:#F4C10F;
-    --yellow-deep:#C6960B;
-    --yellow-pale:#FFF4CC;
-    --white:#FFFFFF;
-    --paper:#F1EFE9;
-    --gray:#6E6E76;
-    --gray-light:#9A9AA1;
-    --line:#E8E6DF;
-    --line-dark:#2A2A2E;
-    --page-w:900px;
+    --ink:#241436;
+    --violet:#4C1D95;
+    --gold:#C9A227;
+    --gold-soft:#E4C766;
+    --paper:#FAF8F4;
+    --paper-tint:#F2EEFB;
+    --muted:#6B6478;
+    --line:#E4DFF0;
+    --radius:14px;
   }
-
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    font-family:'DM Sans', sans-serif;
+    font-family:'Poppins',sans-serif;
+    color:var(--ink);
     background:var(--paper);
-    color:var(--black);
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
-    line-height:1.65;
   }
-  ::selection{background:var(--yellow);color:var(--black);}
-  a{color:inherit;text-decoration:none;}
   img{max-width:100%;display:block;}
-  ul{list-style:none;}
 
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease, transform .55s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.is-visible{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none;}
   }
 
-  /* ---------- TOP HEADER ---------- */
-  header.topbar{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(11,11,12,0.97);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line-dark);
-  }
-  .topbar-inner{
-    max-width:1180px;
-    margin:0 auto;
-    padding:14px 40px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:24px;
-  }
-  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;}
-  .brand-mark{width:38px;height:38px;border-radius:9px;background:var(--yellow);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-  .brand-mark img{width:100%;height:100%;object-fit:cover;}
-  .brand-mark .fallback{font-weight:900;font-size:13px;color:var(--black);display:none;align-items:center;justify-content:center;width:100%;height:100%;}
-  .brand-text{color:var(--white);}
-  .brand-name{font-size:14px;font-weight:800;line-height:1.15;}
-  .brand-sub{font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gray-light);}
-
-  .topnav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:flex-end;}
-  .topnav::-webkit-scrollbar{display:none;}
-  .topnav a{font-size:12.5px;font-weight:600;color:var(--gray-light);padding:8px 12px;border-radius:7px;white-space:nowrap;transition:color .15s ease, background .15s ease;}
-  .topnav a:hover{color:var(--white);background:rgba(255,255,255,0.06);}
-  .topnav a.active{color:var(--black);background:var(--yellow);font-weight:700;}
-  @media (max-width:900px){.topnav{display:none;}}
-
-  /* ---------- HERO ---------- */
-  .hero{background:var(--black);color:var(--white);position:relative;overflow:hidden;}
-  .hero-inner{max-width:1180px;margin:0 auto;padding:84px 40px 64px;position:relative;z-index:2;}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--yellow);font-weight:700;margin-bottom:26px;}
-  .eyebrow::before{content:"";width:22px;height:2px;background:var(--yellow);display:inline-block;}
-  .hero h1{font-size:clamp(34px, 4.4vw, 54px);font-weight:900;letter-spacing:-1.6px;line-height:1.05;max-width:820px;}
-  .hero h1 span{color:var(--yellow);}
-  .hero-sub{margin-top:20px;font-size:15.5px;color:var(--gray-light);max-width:64ch;}
-
-  .ingots{display:flex;gap:10px;margin-top:44px;}
-  .ingot{height:12px;border-radius:6px;background:linear-gradient(90deg, var(--yellow-deep), var(--yellow) 55%, var(--yellow-pale));}
-  .ingot.i1{width:120px;}
-  .ingot.i2{width:80px;}
-  .ingot.i3{width:44px;}
-
-  .hero::after{content:"";position:absolute;top:-160px;right:-120px;width:480px;height:480px;background:radial-gradient(circle, rgba(244,193,15,0.14) 0%, rgba(244,193,15,0) 70%);z-index:1;}
-
-  /* ---------- AT-A-GLANCE STAT STRIP ---------- */
-  .stat-strip{
-    max-width:1180px;
-    margin:0 auto;
-    padding:0 40px;
-    transform:translateY(-40px);
+  /* ---------- cover ---------- */
+  .cover{
     position:relative;
-    z-index:3;
+    background:
+      radial-gradient(1100px 600px at 85% -10%, rgba(201,162,39,0.16), transparent 60%),
+      linear-gradient(155deg,#241436 0%, #341A5C 45%, #4C1D95 100%);
+    color:#F4F1FA;
+    padding:44px 8vw 70px;
+    overflow:hidden;
   }
-  .stat-grid{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:16px;
+  .cover::after{
+    content:"";
+    position:absolute;
+    right:-120px; bottom:-160px;
+    width:420px; height:420px;
+    border-radius:50%;
+    border:1px solid rgba(228,199,102,0.18);
   }
-  @media (max-width:900px){.stat-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:560px){.stat-grid{grid-template-columns:1fr;}}
-  .stat-card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:22px 22px 20px;
-    box-shadow:0 14px 30px -18px rgba(11,11,12,0.25);
+  .cover::before{
+    content:"";
+    position:absolute;
+    right:-40px; bottom:-260px;
+    width:560px; height:560px;
+    border-radius:50%;
+    border:1px solid rgba(228,199,102,0.10);
   }
-  .stat-card .k{font-size:10.5px;text-transform:uppercase;letter-spacing:1.4px;color:var(--gray);font-weight:800;margin-bottom:8px;}
-  .stat-card .v{font-size:19px;font-weight:800;letter-spacing:-0.3px;color:var(--black);}
-  .stat-card.accent{background:var(--black);border-color:var(--black);}
-  .stat-card.accent .k{color:var(--yellow);}
-  .stat-card.accent .v{color:var(--white);}
-  .stat-ms{display:flex;gap:4px;margin-top:10px;}
-  .stat-ms span{height:6px;border-radius:4px;background:var(--yellow);}
-  .stat-ms .a{flex:0 0 40%;} .stat-ms .b{flex:0 0 40%;background:var(--yellow-deep);} .stat-ms .c{flex:0 0 20%;background:var(--line-dark);}
-
-  /* ---------- PAGE / DOCUMENT BODY ---------- */
-  .page{
-    max-width:var(--page-w);
-    margin:0 auto;
-    padding:76px 56px 100px;
-  }
-  @media (max-width:720px){
-    .page{padding:56px 24px 80px;}
-  }
-
-  .section{padding:44px 0;border-bottom:1px solid var(--line);scroll-margin-top:96px;}
-  .section:last-child{border-bottom:none;}
-  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;}
-  .section-num{font-size:12.5px;font-weight:800;color:var(--yellow-deep);letter-spacing:0.5px;background:var(--yellow-pale);padding:3px 10px;border-radius:20px;}
-  .section-head h2{font-size:24px;font-weight:800;letter-spacing:-0.5px;}
-  .section p{font-size:15.5px;color:#3A3A3E;margin-bottom:14px;max-width:72ch;}
-  .section p:last-child{margin-bottom:0;}
-  .section p strong{color:var(--black);font-weight:700;}
-
-  .pill-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
-  .pill{font-size:13px;font-weight:600;padding:7px 14px;border:1px solid var(--line);border-radius:20px;background:var(--white);color:var(--black-soft);}
-
-  .check-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:10px;}
-  @media (max-width:640px){.check-list{grid-template-columns:1fr;}}
-  .check-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:#3A3A3E;}
-  .check-list li::before{content:"";flex-shrink:0;width:16px;height:16px;margin-top:3px;border-radius:5px;background:linear-gradient(135deg, var(--yellow), var(--yellow-deep));}
-
-  .subhead{font-size:12px;text-transform:uppercase;letter-spacing:1.4px;font-weight:800;color:var(--gray);margin:26px 0 12px;}
-  .subhead:first-child{margin-top:0;}
-
-  .nav-strip{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
-  .nav-strip span{font-size:12.5px;font-weight:700;padding:6px 12px;background:var(--black);color:var(--white);border-radius:6px;}
-  .nav-strip span:nth-child(odd){background:var(--black-soft);}
-
-  .invest-card{background:var(--black);color:var(--white);border-radius:20px;padding:40px 42px;position:relative;overflow:hidden;margin-top:8px;}
-  .invest-card::after{content:"";position:absolute;top:-80px;right:-80px;width:260px;height:260px;background:radial-gradient(circle, rgba(244,193,15,0.18), transparent 70%);}
-  .invest-label{font-size:11.5px;text-transform:uppercase;letter-spacing:2px;color:var(--yellow);font-weight:700;margin-bottom:14px;}
-  .invest-amount{font-size:clamp(32px, 4vw, 44px);font-weight:900;letter-spacing:-1.2px;border-bottom:4px solid var(--yellow);display:inline-block;padding-bottom:8px;}
-  .invest-note{margin-top:18px;font-size:14px;color:var(--gray-light);max-width:56ch;position:relative;z-index:1;}
-  .invest-includes{margin-top:22px;display:flex;gap:24px;flex-wrap:wrap;position:relative;z-index:1;}
-  .invest-includes .inc{font-size:13px;color:var(--white);font-weight:600;display:flex;align-items:center;gap:8px;}
-  .invest-includes .inc::before{content:"✓";color:var(--yellow);font-weight:900;}
-
-  .milestone-bar{display:flex;width:100%;height:60px;border-radius:12px;overflow:hidden;margin:22px 0 8px;}
-  .ms-seg{display:flex;flex-direction:column;justify-content:center;padding:0 18px;}
-  .ms-seg .pct{font-size:19px;font-weight:900;letter-spacing:-0.4px;}
-  .ms-seg .label{font-size:10.5px;text-transform:uppercase;letter-spacing:1px;font-weight:700;opacity:0.85;}
-  .ms-seg-1{background:var(--yellow-deep);color:var(--black);flex:0 0 40%;}
-  .ms-seg-2{background:var(--yellow);color:var(--black);flex:0 0 40%;}
-  .ms-seg-3{background:var(--black);color:var(--yellow);flex:0 0 20%;}
-
-  .milestone-cards{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-top:22px;}
-  @media (max-width:760px){.milestone-cards{grid-template-columns:1fr;}}
-  .ms-card{border:1px solid var(--line);border-radius:14px;padding:20px 20px 22px;background:var(--white);}
-  .ms-card .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:0.4px;color:var(--black);background:var(--yellow-pale);padding:3px 10px;border-radius:20px;margin-bottom:12px;}
-  .ms-card h4{font-size:15px;font-weight:800;margin-bottom:4px;}
-  .ms-card .trigger{font-size:12.5px;color:var(--gray);margin-bottom:12px;}
-  .ms-card ul{display:flex;flex-direction:column;gap:6px;}
-  .ms-card ul li{font-size:13px;color:#3A3A3E;padding-left:14px;position:relative;}
-  .ms-card ul li::before{content:"–";position:absolute;left:0;color:var(--yellow-deep);font-weight:800;}
-
-  table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px;}
-  th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gray);font-weight:800;padding:10px 14px;border-bottom:2px solid var(--black);}
-  td{padding:12px 14px;border-bottom:1px solid var(--line);color:#3A3A3E;}
-  tr:last-child td{border-bottom:none;}
-
-  .note-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;}
-  @media (max-width:640px){.note-grid{grid-template-columns:1fr;}}
-  .note-block{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--white);}
-  .note-block h4{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;color:var(--black);}
-  .note-block ul{display:flex;flex-direction:column;gap:8px;}
-  .note-block li{font-size:13.5px;color:#3A3A3E;padding-left:16px;position:relative;}
-  .note-block li::before{content:"×";position:absolute;left:0;color:var(--yellow-deep);font-weight:900;}
-
-  .terms-list{list-style:none;counter-reset:term;display:flex;flex-direction:column;gap:16px;margin-top:8px;}
-  .terms-list li{counter-increment:term;padding-left:38px;position:relative;font-size:14.5px;color:#3A3A3E;}
-  .terms-list li::before{content:counter(term);position:absolute;left:0;top:-1px;width:24px;height:24px;border-radius:7px;background:var(--black);color:var(--yellow);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
-
-  .accept{background:var(--black-soft);border-radius:20px;padding:40px 42px;color:var(--white);}
-  .accept-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:26px;}
-  @media (max-width:640px){.accept-grid{grid-template-columns:1fr;}}
-  .accept-col h4{font-size:11.5px;text-transform:uppercase;letter-spacing:1.6px;color:var(--yellow);font-weight:800;margin-bottom:18px;}
-  .sig-line{border-bottom:1px solid rgba(255,255,255,0.25);padding:14px 0 8px;margin-bottom:16px;font-size:13px;color:var(--gray-light);}
-  .sig-line .filled{color:var(--white);font-weight:600;}
-
-  footer.doc-footer{
-    border-top:1px solid var(--line);
-    max-width:var(--page-w);
-    margin:0 auto;
-    padding:32px 56px 56px;
+  .cover-top{
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    color:var(--gray);
+    justify-content:space-between;
+    position:relative;
+    z-index:2;
+  }
+  .brand-mark{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand-mark img{
+    height:44px; width:44px;
+    object-fit:contain;
+    border-radius:10px;
+    background:rgba(255,255,255,0.06);
+    padding:4px;
+  }
+  .brand-mark span{
+    font-weight:600;
+    letter-spacing:.04em;
+    font-size:15px;
+    color:#F4F1FA;
+  }
+  .brand-mark small{
+    display:block;
+    font-weight:300;
+    font-size:10.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-top:2px;
+  }
+  .cover-tag{
+    font-size:11.5px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    border:1px solid rgba(228,199,102,0.35);
+    padding:8px 16px;
+    border-radius:100px;
+  }
+  .cover-title{
+    position:relative;
+    z-index:2;
+    max-width:820px;
+    margin-top:78px;
+  }
+  .cover-eyebrow{
     font-size:12.5px;
-    flex-wrap:wrap;
-    gap:10px;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-bottom:18px;
+    font-weight:500;
   }
-  .doc-footer .fmark{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--black);}
-  .doc-footer .fmark .dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);}
-
-  @media (max-width:640px){
-    .topbar-inner, .hero-inner, .stat-strip{padding-left:24px;padding-right:24px;}
-    .invest-card, .accept{padding:28px 24px;}
+  .cover-title h1{
+    font-size:clamp(30px,4.6vw,50px);
+    font-weight:700;
+    line-height:1.18;
+    letter-spacing:-0.01em;
+  }
+  .cover-rule{
+    width:64px; height:3px;
+    background:var(--gold);
+    margin:28px 0;
+    border-radius:2px;
+  }
+  .cover-meta{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:repeat(3,auto);
+    gap:44px;
+    margin-top:56px;
+    padding-top:28px;
+    border-top:1px solid rgba(244,241,250,0.14);
+    max-width:760px;
+  }
+  .cover-meta div span{
+    display:block;
+    font-size:10.5px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:rgba(244,241,250,0.55);
+    margin-bottom:6px;
+  }
+  .cover-meta div strong{
+    font-size:14.5px;
+    font-weight:500;
+    color:#F4F1FA;
   }
 
-  /* ---------- PRINT ---------- */
-  @page{ margin:16mm; }
-  @media print{
-    *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
-    body{background:var(--white);}
-    header.topbar{position:static;}
-    .topnav{display:none;}
-    .stat-strip{transform:none; margin-top:24px;}
-    .hero-inner{padding-top:40px;padding-bottom:40px;}
-    .page{padding:40px 4px 40px;}
-    .section{break-inside:avoid; padding:28px 0;}
-    .invest-card, .accept, .stat-card.accent{break-inside:avoid;}
-    .milestone-cards{break-inside:avoid;}
-    a[href]{color:inherit;}
+  /* ---------- shell / sections ---------- */
+  .shell{
+    max-width:880px;
+    margin:0 auto;
+    padding:0 8vw;
+  }
+  section.block{
+    padding:64px 0;
+    border-bottom:1px solid var(--line);
+  }
+  section.block:last-of-type{border-bottom:none;}
+  .tag-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:22px;
+  }
+  .tag-num{
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    color:var(--ink);
+    background:linear-gradient(135deg,var(--gold-soft),var(--gold));
+    width:34px;height:34px;
+    border-radius:9px;
+    display:flex;align-items:center;justify-content:center;
+    letter-spacing:0;
+  }
+  .tag-label{
+    font-size:11.5px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    font-weight:500;
+  }
+  h2.h-section{
+    font-size:clamp(22px,2.6vw,29px);
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin-bottom:22px;
+    color:var(--ink);
+  }
+  p{
+    color:#3B3350;
+    font-size:15.5px;
+    font-weight:400;
+    margin-bottom:14px;
+  }
+  p.lead{
+    font-size:17px;
+    font-weight:500;
+    color:var(--ink);
+  }
+  strong{color:var(--ink);font-weight:600;}
+  ul.styled{
+    list-style:none;
+    margin:18px 0 6px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px 24px;
+  }
+  ul.styled.single{grid-template-columns:1fr;}
+  ul.styled li{
+    position:relative;
+    padding-left:22px;
+    font-size:14.5px;
+    color:#3B3350;
+  }
+  ul.styled li::before{
+    content:"";
+    position:absolute;
+    left:0; top:8px;
+    width:8px;height:8px;
+    border-radius:2px;
+    background:var(--gold);
+    transform:rotate(45deg);
+  }
+
+  /* ---------- gallery ---------- */
+  .gallery{
+    display:grid;
+    grid-template-columns:1.35fr 1fr;
+    align-items:start;
+    gap:16px;
+    margin-top:8px;
+  }
+  .gallery figure{
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .gallery figure:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 34px -20px rgba(76,29,149,0.35);
+    border-color:var(--gold);
+  }
+  .gallery figure.tall{grid-row:span 2;}
+  .gallery img{
+    display:block;
+    width:100%;
+    height:auto;
+    flex-shrink:0;
+    object-fit:cover;
+    aspect-ratio:4/3;
+  }
+  .gallery figure.tall img{aspect-ratio:4/5;}
+  figcaption{
+    padding:16px 18px 18px;
+    border-top:1px solid var(--line);
+    background:#fff;
+    flex-shrink:0;
+  }
+  figcaption .fig-num{
+    display:block;
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+  figcaption .fig-text{
+    display:block;
+    font-size:13.5px;
+    font-weight:500;
+    color:var(--ink);
+    line-height:1.55;
+  }
+  .gallery-full{grid-column:1/-1;}
+  .gallery-full img{aspect-ratio:16/6;}
+
+  /* ---------- feature / opportunity grid inline handled via ul.styled ---------- */
+
+  /* ---------- budget table ---------- */
+  .table-wrap{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    margin-top:8px;
+    background:#fff;
+  }
+  table{width:100%;border-collapse:collapse;}
+  thead th{
+    background:linear-gradient(135deg,var(--ink),var(--violet));
+    color:#F4F1FA;
+    text-align:left;
+    font-size:11.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-weight:500;
+    padding:16px 20px;
+  }
+  tbody td{
+    padding:14px 20px;
+    font-size:14px;
+    color:#3B3350;
+    border-top:1px solid var(--line);
+  }
+  tbody tr:nth-child(even){background:var(--paper-tint);}
+  tbody td:first-child{font-weight:500;color:var(--ink);width:42%;}
+  tfoot td{
+    padding:18px 20px;
+    font-size:15px;
+    font-weight:700;
+    color:var(--ink);
+    background:#FBF4DE;
+    border-top:2px solid var(--gold);
+  }
+  tfoot td:last-child{text-align:right;color:var(--violet);font-size:18px;}
+
+  /* ---------- callout (equity) ---------- */
+  .callout{
+    position:relative;
+    background:var(--paper-tint);
+    border-left:4px solid var(--gold);
+    border-radius:0 var(--radius) var(--radius) 0;
+    padding:32px 34px;
+    margin-top:10px;
+  }
+  .callout::before{
+    content:"“";
+    position:absolute;
+    top:6px; left:20px;
+    font-size:64px;
+    font-weight:700;
+    color:var(--gold-soft);
+    line-height:1;
+    font-family:Georgia,serif;
+  }
+  .callout p{position:relative;z-index:1;}
+  .callout p.lead{margin-top:8px;}
+
+  /* ---------- conclusion / signature ---------- */
+  .conclusion p{font-size:16px;}
+  .signature{
+    margin-top:36px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .signature .name{
+    font-size:19px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .signature .role{
+    font-size:13px;
+    color:var(--muted);
+    margin-top:4px;
+    letter-spacing:.02em;
+  }
+  .sign-rule{
+    width:180px;height:2px;
+    background:linear-gradient(90deg,var(--gold),transparent);
+    margin-bottom:14px;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    background:linear-gradient(135deg,#241436,#3A1B66);
+    color:rgba(244,241,250,0.75);
+    padding:34px 8vw;
+    text-align:center;
+    font-size:12px;
+    letter-spacing:.05em;
+  }
+  footer strong{color:var(--gold-soft);}
+
+  @media (max-width:720px){
+    .cover{padding:32px 6vw 54px;}
+    .cover-top{flex-direction:column;align-items:flex-start;gap:16px;}
+    .cover-title{margin-top:46px;}
+    .cover-meta{grid-template-columns:1fr;gap:18px;}
+    .shell{padding:0 6vw;}
+    ul.styled{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:1fr;}
+    .gallery figure.tall{grid-row:auto;}
+    section.block{padding:46px 0;}
   }
 </style>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <div class="brand-mark">
-        <img src="clw-logo.jpg" alt="CodeLikeWyna Tech logo"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="fallback">CLW</div>
-      </div>
-      <div class="brand-text">
-        <div class="brand-name">CodeLikeWyna Tech</div>
-        <div class="brand-sub">Project Proposal</div>
+<!-- ================= COVER ================= -->
+<div class="cover">
+  <div class="cover-top">
+    <div class="brand-mark">
+      <img src="logo-icon.png" alt="Emperor Guild Studios logo">
+      <div>
+        <span>Emperor Guild Studios</span>
+        <small>Creative &amp; Digital Agency</small>
       </div>
     </div>
-    <nav class="topnav" aria-label="Section navigation">
-      <a href="#s1">Summary</a>
-      <a href="#s2">Understanding</a>
-      <a href="#s3">Objectives</a>
-      <a href="#s4">Deliverables</a>
-      <a href="#s5">Website</a>
-      <a href="#s6">App</a>
-      <a href="#s7">Integrations</a>
-      <a href="#s8">Timeline</a>
-      <a href="#s9">Investment</a>
-      <a href="#s10">Milestones</a>
-      <a href="#s11">Responsibilities</a>
-      <a href="#s12">Exclusions</a>
-      <a href="#s13">Extra Costs</a>
-      <a href="#s14">Terms</a>
-      <a href="#s15">Acceptance</a>
-    </nav>
+    <div class="cover-tag">Internal Proposal</div>
   </div>
-</header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Project Proposal</div>
-    <h1>Development of the <span>Gold Link</span> Marketplace Platform</h1>
-    <p class="hero-sub">Prepared by CodeLikeWyna Tech for Gold Link / Simpay Technologies — a secure digital marketplace connecting verified gold vendors and buyers.</p>
-    <div class="ingots" aria-hidden="true">
-      <div class="ingot i1"></div>
-      <div class="ingot i2"></div>
-      <div class="ingot i3"></div>
-    </div>
+  <div class="cover-title">
+    <div class="cover-eyebrow">Proposal Document</div>
+    <h1>Development &amp; Launch of a University CBT Learning Platform</h1>
+    <div class="cover-rule"></div>
   </div>
-</section>
 
-<div class="stat-strip">
-  <div class="stat-grid">
-    <div class="stat-card accent">
-      <div class="k">Total Investment</div>
-      <div class="v">₦2,840,000</div>
+  <div class="cover-meta">
+    <div>
+      <span>Submitted To</span>
+      <strong>Emperor Guild Studios</strong>
     </div>
-    <div class="stat-card">
-      <div class="k">Duration</div>
-      <div class="v">2 Months</div>
+    <div>
+      <span>Submitted By</span>
+      <strong>Samuel Winner, CEO</strong>
     </div>
-    <div class="stat-card">
-      <div class="k">Prepared For</div>
-      <div class="v">Gold Link / Simpay</div>
-    </div>
-    <div class="stat-card">
-      <div class="k">Payment Structure</div>
-      <div class="v">3 Milestones</div>
-      <div class="stat-ms" aria-hidden="true"><span class="a"></span><span class="b"></span><span class="c"></span></div>
+    <div>
+      <span>Date</span>
+      <strong>31st July 2026</strong>
     </div>
   </div>
 </div>
 
-<main class="page">
+<!-- ================= BODY ================= -->
+<div class="shell">
 
-  <section class="section reveal" id="s1">
-    <div class="section-head"><span class="section-num">01</span><h2>Executive Summary</h2></div>
-    <p>CodeLikeWyna Tech is pleased to present this proposal for the design, development, testing, and deployment of the Gold Link digital marketplace.</p>
-    <p>The Gold Link platform is intended to become a trusted marketplace where verified gold vendors and buyers can safely buy and sell physical gold through a secure digital platform. The solution will consist of:</p>
-    <div class="pill-grid">
-      <span class="pill">Marketing Website</span>
-      <span class="pill">Marketplace Web App</span>
-      <span class="pill">Android Application</span>
-      <span class="pill">iOS Application</span>
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">01</div><div class="tag-label">Executive Summary</div></div>
+    <h2 class="h-section">A proven model, rebuilt for scale</h2>
+    <p class="lead">This proposal seeks approval to begin development, branding, launch, and marketing of a university Computer Based Test (CBT) learning platform, based on a business model I previously created and managed successfully.</p>
+    <p>The proposed project will replicate and improve upon the success of <strong>MyGesHub</strong>, a platform I founded in 2020 to help university students prepare for General Studies (GES) examinations through realistic CBT practice.</p>
+    <p>To avoid future branding and ownership complications, I recommend the new platform be launched under a completely new brand name, owned outright by Emperor Guild Studios.</p>
+    <p>The objective is a scalable edtech product capable of generating recurring income while helping thousands of university students improve their academic performance.</p>
+  </section>
+
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">02</div><div class="tag-label">Background</div></div>
+    <h2 class="h-section">Where this idea comes from</h2>
+    <p>In 2020, I founded MyGesHub to solve a common problem: most University of Port Harcourt students preparing for GES examinations relied on PDFs, handwritten notes, and outdated study materials — methods that did not properly prepare them for the actual Computer Based Test.</p>
+    <p>I built a platform that let students practice in a real CBT environment. It quickly gained acceptance because it closely matched the exam experience while offering a large collection of practice questions, and the business went on to become financially successful.</p>
+    <p>Beyond revenue, the platform gave back to the student community — sponsoring activities, awarding scholarships, organising competitions, and rewarding outstanding students.</p>
+    <p>The business was eventually shut down after I came under pressure from a newly elected Students' Union Government (SUG) leadership, who repeatedly pressured me to join a cult confraternity group in exchange for continued promotion and support. Rather than compromise my values, I chose to discontinue the business.</p>
+    <p>Although the platform closed, the market demand never disappeared. The experience, market knowledge, customer insights, and business model remain valuable — and can now be rebuilt on a stronger, more scalable foundation under Emperor Guild Studios.</p>
+  </section>
+
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">03</div><div class="tag-label">Project Impact</div></div>
+    <h2 class="h-section">What the original platform achieved</h2>
+    <div class="gallery">
+      <figure class="tall">
+        <img src="image-1.png" alt="First competition winner receiving certification and cash prize">
+        <figcaption><span class="fig-num">Fig. 01</span><span class="fig-text">The first winner of the first edition of our student competition, receiving certification and cash prizes.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="image-2.png" alt="GES practice question bank">
+        <figcaption><span class="fig-num">Fig. 02</span><span class="fig-text">Over 1,000 GES practice questions available on the platform.</span></figcaption>
+      </figure>
+      <figure>
+        <img src="image-3.png" alt="Campus promotional banner">
+        <figcaption><span class="fig-num">Fig. 03</span><span class="fig-text">One of many promotional banners displayed across campus, featuring our brand ambassador.</span></figcaption>
+      </figure>
+      <figure class="gallery-full">
+        <img src="image-4.png" alt="Scholarship award to Brainiac Championship winner">
+        <figcaption><span class="fig-num">Fig. 04</span><span class="fig-text">Scholarship awarded to the 2nd edition winner of the students' competition — the Brainiac Championship.</span></figcaption>
+      </figure>
+      <figure class="gallery-full">
+        <img src="image-5.png" alt="Additional platform highlights">
+        <figcaption><span class="fig-num">Fig. 05</span><span class="fig-text">Additional highlights showcasing the platform's growth, graphics, community impact, and achievements.</span></figcaption>
+      </figure>
     </div>
-    <p style="margin-top:18px;">The project will be delivered over a period of <strong>two (2) months</strong>, beginning from the date the initial payment is received and all required project materials have been supplied by the client. Development will follow a phased approach, with the website being completed first before the mobile applications — aligned with the roadmap discussed during the planning meeting.</p>
-    <p>The total investment for the complete project is <strong>₦2,840,000</strong> (Two Million, Eight Hundred and Forty Thousand Naira Only). The project cost will be paid in three milestones tied to specific deliverables throughout the development process.</p>
-    <p>The platform will support secure transactions through Simpay, vendor verification using Smile Identity, escrow payment functionality, buyer and vendor dashboards, transaction history, instant messaging, watchlists, and other marketplace features.</p>
   </section>
 
-  <section class="section reveal" id="s2">
-    <div class="section-head"><span class="section-num">02</span><h2>Understanding of the Project</h2></div>
-    <p>Gold Link is intended to become a marketplace where verified vendors can list physical gold for sale while buyers can securely purchase gold using trusted payment methods. The platform will provide separate experiences for buyers and vendors, while allowing administrators to monitor all marketplace activity.</p>
-    <p>The first deliverable is a website that introduces the business, builds trust, and directs users to download the mobile applications. Following the completion of the website, development proceeds with the marketplace platform and the Android and iOS applications.</p>
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">04</div><div class="tag-label">Rationale</div></div>
+    <h2 class="h-section">Why Emperor Guild Studios should build this</h2>
+    <p>Unlike many startup ideas that begin without market validation, this business model has already been tested. I already understand:</p>
+    <ul class="styled">
+      <li>The student market</li>
+      <li>Student buying behaviour</li>
+      <li>Marketing strategies</li>
+      <li>Business economics</li>
+      <li>Pricing psychology</li>
+      <li>University environment</li>
+      <li>Customer acquisition methods</li>
+      <li>Customer retention methods</li>
+    </ul>
+    <p style="margin-top:20px;">This significantly reduces the risks normally associated with launching a new startup. Rather than starting from zero, Emperor Guild Studios can build upon an already proven concept while improving the technology, branding, scalability, and user experience. I will personally guide the strategic direction of the project using my previous experience and knowledge.</p>
   </section>
 
-  <section class="section reveal" id="s3">
-    <div class="section-head"><span class="section-num">03</span><h2>Project Objectives</h2></div>
-    <ul class="check-list">
-      <li>Build a professional online presence</li>
-      <li>Create a secure marketplace for buying and selling gold</li>
-      <li>Provide separate dashboards for buyers and vendors</li>
-      <li>Enable secure online payments</li>
-      <li>Implement escrow payment services</li>
-      <li>Verify users through KYC</li>
-      <li>Improve trust between buyers and sellers</li>
-      <li>Provide transaction tracking</li>
-      <li>Support future expansion into multiple African countries</li>
-      <li>Build a scalable platform for future features</li>
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">05</div><div class="tag-label">Market Opportunity</div></div>
+    <h2 class="h-section">A large, recurring, and understood market</h2>
+    <p>Based on my previous experience, research, and market data, the immediate target market contains over <strong>16,000 potential users</strong> within the University of Port Harcourt alone.</p>
+    <p>From historical usage patterns, an average student subscribes to three different GES courses during their academic journey — significantly increasing lifetime value per customer and creating a recurring revenue opportunity rather than a one-time purchase.</p>
+    <p>I already possess the mathematical models, market data, user behaviour statistics, and business analysis gathered from operating the previous platform. These insights will enable Emperor Guild Studios to make informed decisions, reduce uncertainty, and accelerate market penetration — a strong competitive advantage over launching an entirely new, untested educational product.</p>
+  </section>
+
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">06</div><div class="tag-label">Execution</div></div>
+    <h2 class="h-section">Why we can successfully execute this</h2>
+    <p>I believe Emperor Guild Studios already possesses the necessary resources for successful execution, including:</p>
+    <ul class="styled">
+      <li>Software development team</li>
+      <li>UI/UX design capabilities</li>
+      <li>Branding expertise</li>
+      <li>Digital marketing knowledge</li>
+      <li>Business strategy</li>
+      <li>Product management</li>
+      <li>Technical leadership</li>
+    </ul>
+    <p style="margin-top:20px;">With our existing manpower and infrastructure, we are well positioned to build, launch, market, and continuously improve the platform.</p>
+  </section>
+
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">07</div><div class="tag-label">Product</div></div>
+    <h2 class="h-section">Proposed platform features</h2>
+    <ul class="styled">
+      <li>Computer Based Test practice</li>
+      <li>Thousands of examination questions</li>
+      <li>Timed examinations</li>
+      <li>Performance analytics</li>
+      <li>Student leaderboard</li>
+      <li>Practice mode</li>
+      <li>Examination simulation</li>
+      <li>Secure user accounts</li>
+      <li>Mobile applications</li>
+      <li>Website platform</li>
+      <li>Payment integration</li>
+      <li>Administrative dashboard</li>
+      <li>Future expansion into multiple Nigerian universities</li>
     </ul>
   </section>
 
-  <section class="section reveal" id="s4">
-    <div class="section-head"><span class="section-num">04</span><h2>Project Deliverables</h2></div>
-    <p>CodeLikeWyna Tech will deliver:</p>
-    <div class="pill-grid">
-      <span class="pill">Marketing Website</span>
-      <span class="pill">Marketplace Android App</span>
-      <span class="pill">Marketplace iOS App</span>
-      <span class="pill">Administration Dashboard</span>
-      <span class="pill">API Integrations</span>
-      <span class="pill">Deployment</span>
-      <span class="pill">Testing</span>
-      <span class="pill">Technical Documentation</span>
-      <span class="pill">Source Code (upon full payment)</span>
-    </div>
-  </section>
-
-  <section class="section reveal" id="s5">
-    <div class="section-head"><span class="section-num">05</span><h2>Marketing Website</h2></div>
-    <p>The marketing website serves as the public face of the business and guides visitors to the mobile applications, rather than functioning as the buying portal.</p>
-    <div class="nav-strip" style="margin-top:18px;">
-      <span>Home</span><span>About Us</span><span>Services</span><span>How It Works</span>
-      <span>FAQ</span><span>Contact</span><span>Download App</span>
-      <span>Privacy Policy</span><span>Terms &amp; Conditions</span>
-    </div>
-  </section>
-
-  <section class="section reveal" id="s6">
-    <div class="section-head"><span class="section-num">06</span><h2>Marketplace iOS &amp; Android Application</h2></div>
-    <div class="subhead">In-App Navigation</div>
-    <div class="nav-strip">
-      <span>Dashboard</span><span>Marketplace</span><span>My Transactions</span>
-      <span>Watchlist</span><span>Gold Vault (Coming Soon)</span><span>Messages</span>
-      <span>Verify &amp; KYC</span><span>Settings</span><span>Support</span>
-    </div>
-    <div class="subhead">Core Features</div>
-    <ul class="check-list">
-      <li>Buyer &amp; vendor dashboards</li>
-      <li>Gold listings with product images</li>
-      <li>Gold description, type &amp; weight</li>
-      <li>Vendor profiles &amp; registration number display</li>
-      <li>Vendor ratings <em>(future enhancement)</em></li>
-      <li>Search &amp; filters</li>
-      <li>Transaction history &amp; gold holdings summary</li>
-      <li>Escrow payment &amp; direct purchase option</li>
-      <li>Live gold market price display (USD-pegged)</li>
-      <li>Admin management portal</li>
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">08</div><div class="tag-label">Business Opportunity</div></div>
+    <h2 class="h-section">A stable, expandable revenue product</h2>
+    <p>This project has the potential to become one of Emperor Guild Studios' stable revenue-generating products. Potential revenue sources include:</p>
+    <ul class="styled">
+      <li>Student subscriptions</li>
+      <li>Premium memberships</li>
+      <li>CBT access fees</li>
+      <li>Institutional partnerships</li>
+      <li>Advertising opportunities</li>
+      <li>Educational sponsorships</li>
+      <li>University collaborations</li>
     </ul>
-    <p style="margin-top:20px;">Submission to Google Play and the Apple App Store will be carried out after successful testing. Approval timelines for app stores are outside the control of CodeLikeWyna Tech, particularly for finance-related applications.</p>
+    <p style="margin-top:20px;">As the platform expands into additional universities, revenue opportunities will continue to increase. Longer term, Emperor Guild Studios can also expand beyond GES examinations into premium preparation services for JAMB and WAEC candidates — markets representing millions of students across Nigeria every year.</p>
   </section>
 
-  <section class="section reveal" id="s7">
-    <div class="section-head"><span class="section-num">07</span><h2>Third-Party Integrations</h2></div>
-    <p>The project is expected to integrate with the following third-party services:</p>
-    <table>
-      <thead><tr><th>Service</th><th>Purpose</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Simpay</strong></td><td>Transactions &amp; escrow service</td></tr>
-        <tr><td><strong>Smile Identity</strong></td><td>KYC / identity verification</td></tr>
-        <tr><td><strong>Gold Price Data Source</strong></td><td>Live market price feed</td></tr>
-      </tbody>
-    </table>
-    <p style="margin-top:16px;">Additional integrations may be introduced in future phases as required, and may attract additional charges.</p>
-  </section>
-
-  <section class="section reveal" id="s8">
-    <div class="section-head"><span class="section-num">08</span><h2>Project Timeline</h2></div>
-    <p>The total project duration is <strong>2 months</strong>, assuming all required documents, branding assets, approvals, and technical credentials are supplied promptly by the client.</p>
-  </section>
-
-  <section class="section reveal" id="s9">
-    <div class="section-head"><span class="section-num">09</span><h2>Project Investment</h2></div>
-    <p>The total investment for the design, development, testing, deployment, and delivery of the Gold Link platform — covering the complete scope referenced in chapters 4, 5 and 6 — is:</p>
-    <div class="invest-card">
-      <div class="invest-label">Total Project Cost</div>
-      <div class="invest-amount">₦2,840,000</div>
-      <div class="invest-note">Two Million, Eight Hundred and Forty Thousand Naira Only. Payable according to the milestone schedule outlined in Section 10.</div>
-      <div class="invest-includes">
-        <span class="inc">1 year domain</span>
-        <span class="inc">1 year Apple development fee</span>
-      </div>
-    </div>
-    <p style="margin-top:18px;">All payments made are non-refundable once work has commenced on the corresponding milestone, except where otherwise agreed in writing by both parties. Any additional features or services requested outside the agreed project scope will be quoted and billed separately through a written change request.</p>
-  </section>
-
-  <section class="section reveal" id="s10">
-    <div class="section-head"><span class="section-num">10</span><h2>Payment Milestones</h2></div>
-    <p>Payment is structured across three milestones, weighted to reflect delivery effort at each stage.</p>
-    <div class="milestone-bar">
-      <div class="ms-seg ms-seg-1"><span class="pct">40%</span><span class="label">Milestone 1</span></div>
-      <div class="ms-seg ms-seg-2"><span class="pct">40%</span><span class="label">Milestone 2</span></div>
-      <div class="ms-seg ms-seg-3"><span class="pct">20%</span><span class="label">Milestone 3</span></div>
-    </div>
-    <div class="milestone-cards">
-      <div class="ms-card">
-        <span class="tag">40% · ₦1,136,000</span>
-        <h4>Milestone 1</h4>
-        <div class="trigger">Paid before project commencement</div>
-        <ul>
-          <li>Marketing website &amp; landing page</li>
-          <li>UI/UX frontend design of app</li>
-          <li>Simpay backend for API communication with Gold Link app</li>
-        </ul>
-      </div>
-      <div class="ms-card">
-        <span class="tag">40% · ₦1,136,000</span>
-        <h4>Milestone 2</h4>
-        <div class="trigger">Paid before commencement of Milestone 2</div>
-        <ul>
-          <li>Backend &amp; API integration</li>
-          <li>KYC integration</li>
-        </ul>
-      </div>
-      <div class="ms-card">
-        <span class="tag">20% · ₦568,000</span>
-        <h4>Milestone 3</h4>
-        <div class="trigger">Paid after final deployment</div>
-        <ul>
-          <li>Android application</li>
-          <li>iOS application</li>
-          <li>Final testing &amp; deployment</li>
-          <li>Documentation</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" id="s11">
-    <div class="section-head"><span class="section-num">11</span><h2>Client Responsibilities</h2></div>
-    <p>The client agrees to provide:</p>
-    <ul class="check-list">
-      <li>Company registration documents</li>
-      <li>Logo &amp; branding assets</li>
-      <li>Business information</li>
-      <li>API credentials where applicable</li>
-      <li>Timely approvals &amp; feedback</li>
-      <li>Required legal / compliance documents for financial services</li>
-    </ul>
-    <p style="margin-top:16px;">Failure to provide required information on time may affect the project schedule.</p>
-  </section>
-
-  <section class="section reveal" id="s12">
-    <div class="section-head"><span class="section-num">12</span><h2>Items Excluded From This Proposal</h2></div>
-    <p>The following are not included unless specifically agreed in writing:</p>
-    <div class="note-grid">
-      <div class="note-block">
-        <h4>Not in scope</h4>
-        <ul><li>Cloud savings functionality</li><li>Real-world Gold Vault integration</li></ul>
-      </div>
-      <div class="note-block">
-        <h4>Also excluded</h4>
-        <ul>
-          <li>Custom blockchain integrations</li>
-          <li>Future feature requests</li>
-          <li>Additional marketplace modules outside agreed scope</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" id="s13">
-    <div class="section-head"><span class="section-num">13</span><h2>Additional Costs <span style="color:var(--gray-light);font-weight:600;font-size:16px;">(that may occur)</span></h2></div>
-    <p>The quoted development fee does not include ongoing or third-party costs. Only if needed, these will be billed separately and approved by the client before implementation. Examples include:</p>
-    <table>
-      <tbody>
-        <tr><td>Gold price API subscription fees</td><td>Dedicated IP address</td></tr>
-        <tr><td>Smile Identity verification charges</td><td>Domain renewals (annual)</td></tr>
-        <tr><td>Payment gateway transaction fees</td><td>Apple Developer Program fee (annual, $99)</td></tr>
-        <tr><td>SMS / OTP services</td><td>Apple account management fee (different account)</td></tr>
-        <tr><td>Email delivery services</td><td>Government licensing / regulatory fees</td></tr>
-        <tr><td>Push notification services</td><td>CDN services</td></tr>
-        <tr><td>Cloud storage &amp; backup</td><td>Any additional service requested after commencement</td></tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section class="section reveal" id="s14">
-    <div class="section-head"><span class="section-num">14</span><h2>Terms &amp; Conditions</h2></div>
-    <ul class="terms-list">
-      <li>The project duration is two (2) months from the date the initial payment is received and all required project materials are provided.</li>
-      <li>Any delay caused by late client feedback, missing documents, branding assets, API credentials, approvals, or legal requirements will automatically extend the delivery timeline.</li>
-      <li>If client-caused delays significantly increase engineering effort or keep development resources allocated beyond the agreed schedule, CodeLikeWyna Tech reserves the right to apply additional charges after notifying the client.</li>
-      <li>Any work requested outside the agreed project scope will be treated as a change request and quoted separately.</li>
-      <li>Third-party approval processes, including Apple App Store review for finance-related applications, are outside the control of CodeLikeWyna Tech.</li>
-      <li>Ownership of the completed source code and intellectual property transfers to the client only after full payment has been received.</li>
-      <li>A post-launch bug-fix warranty applies only to issues directly related to the approved project scope. New features, enhancements, or changes requested after delivery will be treated as separate work.</li>
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">09</div><div class="tag-label">Branding</div></div>
+    <h2 class="h-section">A new, wholly-owned brand</h2>
+    <p>Although this proposal is based on the success of MyGesHub, I recommend that Emperor Guild Studios launches the new platform under a completely new brand name. This is to:</p>
+    <ul class="styled single">
+      <li>Avoid branding conflicts</li>
+      <li>Establish Emperor Guild Studios as the official owner of the product</li>
+      <li>Create stronger long-term intellectual property</li>
+      <li>Build a unique national educational brand</li>
     </ul>
   </section>
 
-  <section class="section reveal" id="s15">
-    <div class="section-head"><span class="section-num">15</span><h2>Acceptance</h2></div>
-    <p>The amount may be subject to change if the amount quoted is not agreed upon within the next 30 days. By signing this proposal, both parties acknowledge that they understand and accept the project scope, payment milestones, delivery timeline, responsibilities, and terms outlined in this document.</p>
-    <div class="accept" style="margin-top:24px;">
-      <div class="subhead" style="color:var(--gray-light);margin:0;">Signatures</div>
-      <div class="accept-grid">
-        <div class="accept-col">
-          <h4>Prepared By</h4>
-          <div class="sig-line"><span class="filled">CodeLikeWyna Tech</span></div>
-          <div class="sig-line"><span class="filled">29th July 2026</span> — Date</div>
-        </div>
-        <div class="accept-col">
-          <h4>Accepted By</h4>
-          <div class="sig-line">Client Name</div>
-          <div class="sig-line">Company</div>
-          <div class="sig-line">Date</div>
-          <div class="sig-line">Signature</div>
-        </div>
-      </div>
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">10</div><div class="tag-label">Budget</div></div>
+    <h2 class="h-section">Initial project budget</h2>
+    <p>To successfully commence development and launch preparations, I respectfully request an initial project budget of <strong>₦600,000</strong>. This will cover startup and standing costs including, but not limited to:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Estimated Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Apple Developer Program</td><td>$99 annual developer account</td></tr>
+          <tr><td>Google Play Console</td><td>$25 developer registration</td></tr>
+          <tr><td>Domain name purchase</td><td>Website domain registration</td></tr>
+          <tr><td>Web hosting and servers</td><td>Backend infrastructure</td></tr>
+          <tr><td>Cloud storage and database services</td><td>Application infrastructure</td></tr>
+          <tr><td>Development tools and software</td><td>Productivity and development resources</td></tr>
+          <tr><td>Application deployment costs</td><td>Mobile application publishing</td></tr>
+          <tr><td>Testing devices and services</td><td>Quality assurance</td></tr>
+          <tr><td>Branding and design assets</td><td>Product identity</td></tr>
+          <tr><td>Initial marketing preparations</td><td>Product launch activities</td></tr>
+          <tr><td>Miscellaneous operational expenses</td><td>Other project requirements</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td>Total Requested Budget</td><td>₦600,000</td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <p style="margin-top:18px;">This funding will provide the resources necessary to begin development without unnecessary delays.</p>
+  </section>
+
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">11</div><div class="tag-label">Marketing</div></div>
+    <h2 class="h-section">Marketing budget</h2>
+    <p>Following successful completion of the software, a separate marketing budget will be presented for approval. Having previously managed this market, I already possess significant knowledge regarding:</p>
+    <ul class="styled">
+      <li>Customer acquisition</li>
+      <li>Student ambassador programs</li>
+      <li>Campus marketing</li>
+      <li>Referral campaigns</li>
+      <li>Competition-based promotion</li>
+      <li>Social proof strategies</li>
+      <li>Partnership opportunities</li>
+    </ul>
+    <p style="margin-top:20px;">This experience will reduce marketing experimentation and improve the efficiency of customer acquisition.</p>
+  </section>
+
+  <section class="block reveal">
+    <div class="tag-row"><div class="tag-num">12</div><div class="tag-label">A Personal Note</div></div>
+    <h2 class="h-section">Equity consideration</h2>
+    <div class="callout">
+      <p class="lead">Please, I want to make a little request from Emperor Guild too.</p>
+      <p>As the original creator of the business concept, founder of the previous platform, and strategic lead for this project, I respectfully request that an equity allocation be considered.</p>
+      <p style="margin-bottom:0;">The percentage of ownership can be discussed and mutually agreed upon by Emperor Guild Studios' management, to ensure fairness for all parties while recognising the intellectual contribution and strategic guidance being provided.</p>
     </div>
   </section>
 
-</main>
+  <section class="block reveal conclusion">
+    <div class="tag-row"><div class="tag-num">13</div><div class="tag-label">Conclusion</div></div>
+    <h2 class="h-section">Recommendation</h2>
+    <p>This proposal presents an opportunity for Emperor Guild Studios to build upon a proven business model with demonstrated market demand. The previous platform positively impacted students academically while generating revenue and supporting community initiatives through scholarships, competitions, and student rewards.</p>
+    <p>With Emperor Guild Studios' technical capabilities, operational structure, and marketing expertise, I am confident that we can develop a stronger, more scalable, and more profitable educational technology platform.</p>
+    <p>I respectfully request approval of this proposal and the initial project budget of <strong>₦600,000</strong> to commence development. I remain committed to providing strategic leadership throughout the planning, development, launch, and growth of the project.</p>
 
-<footer class="doc-footer">
-  <div class="fmark"><span class="dot"></span> CodeLikeWyna Tech</div>
-  <div>Gold Link Marketplace Proposal · 29 July 2026</div>
+    <div class="signature">
+      <div class="sign-rule"></div>
+      <div class="name">Samuel Winner</div>
+      <div class="role">Chief Executive Officer (CEO) — Emperor Guild Studios</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <strong>Emperor Guild Studios</strong> &nbsp;·&nbsp; Creative &amp; Digital Agency &nbsp;·&nbsp; Proposal submitted 31st July 2026
 </footer>
 
 <script>
-  const sections = document.querySelectorAll('.section');
-  const topLinks = document.querySelectorAll('.topnav a');
-  const byHref = (list, id) => Array.from(list).find(l => l.getAttribute('href') === `#${id}`);
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        topLinks.forEach(l => l.classList.remove('active'));
-        const t = byHref(topLinks, entry.target.id);
-        if(t) t.classList.add('active');
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
       }
     });
-  }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
-  sections.forEach(s => navObserver.observe(s));
+  },{threshold:0.12});
+  items.forEach(it=>io.observe(it));
 </script>
 
 </body>
