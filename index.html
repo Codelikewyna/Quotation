@@ -2,633 +2,860 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Emperor Guild — Quotation for Skyy Aluminium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold Link Marketplace — Project Proposal | CodeLikeWyna Tech</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400;1,9..40,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --deep:#241436;
-    --purple:#4C1D95;
-    --purple-mid:#6D28D9;
-    --purple-soft:#F4F0FA;
-    --ink:#1a1a1a;
-    --grey:#5b5b66;
-    --line:#E4DEF0;
-    --black:#0d0d0f;
+    --black:#0B0B0C;
+    --black-soft:#1A1A1D;
+    --yellow:#F4C10F;
+    --yellow-deep:#C6960B;
+    --yellow-pale:#FFF4CC;
+    --white:#FFFFFF;
+    --paper:#F1EFE9;
+    --gray:#6E6E76;
+    --gray-light:#9A9AA1;
+    --line:#E8E6DF;
+    --line-dark:#2A2A2E;
+    --page-w:960px;
   }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    color:var(--ink);
-    background:#f2f1f5;
-    line-height:1.6;
-  }
-  .page{
-    max-width:840px;
-    margin:0 auto;
-    background:#ffffff;
-    box-shadow:0 0 40px rgba(36,20,54,0.12);
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans', sans-serif;background:var(--paper);color:var(--black);-webkit-font-smoothing:antialiased;line-height:1.65;}
+  ::selection{background:var(--yellow);color:var(--black);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ul{list-style:none;}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease, transform .55s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} .reveal{opacity:1;transform:none;transition:none;}}
+
+  header.topbar{position:sticky;top:0;z-index:100;background:rgba(11,11,12,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark);}
+  .topbar-inner{max-width:1220px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{display:flex;align-items:center;gap:12px;flex-shrink:0;}
+  .brand-mark{width:38px;height:38px;border-radius:9px;background:var(--yellow);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+  .brand-mark img{width:100%;height:100%;object-fit:cover;}
+  .brand-mark .fallback{font-weight:900;font-size:13px;color:var(--black);display:none;align-items:center;justify-content:center;width:100%;height:100%;}
+  .brand-text{color:var(--white);}
+  .brand-name{font-size:14px;font-weight:800;line-height:1.15;}
+  .brand-sub{font-size:9.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gray-light);}
+  .topnav{display:flex;gap:1px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:flex-end;}
+  .topnav::-webkit-scrollbar{display:none;}
+  .topnav a{font-size:12px;font-weight:600;color:var(--gray-light);padding:8px 10px;border-radius:7px;white-space:nowrap;transition:color .15s ease, background .15s ease;}
+  .topnav a:hover{color:var(--white);background:rgba(255,255,255,0.06);}
+  .topnav a.active{color:var(--black);background:var(--yellow);font-weight:700;}
+  @media (max-width:1080px){.topnav{display:none;}}
+
+  .hero{background:var(--black);color:var(--white);position:relative;overflow:hidden;}
+  .hero-inner{max-width:1220px;margin:0 auto;padding:84px 40px 64px;position:relative;z-index:2;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:2.2px;text-transform:uppercase;color:var(--yellow);font-weight:700;margin-bottom:26px;}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--yellow);display:inline-block;}
+  .hero h1{font-size:clamp(34px, 4.4vw, 54px);font-weight:900;letter-spacing:-1.6px;line-height:1.05;max-width:820px;}
+  .hero h1 span{color:var(--yellow);}
+  .hero-sub{margin-top:20px;font-size:15.5px;color:var(--gray-light);max-width:66ch;}
+  .ingots{display:flex;gap:10px;margin-top:44px;}
+  .ingot{height:12px;border-radius:6px;background:linear-gradient(90deg, var(--yellow-deep), var(--yellow) 55%, var(--yellow-pale));}
+  .ingot.i1{width:120px;} .ingot.i2{width:80px;} .ingot.i3{width:44px;}
+  .hero::after{content:"";position:absolute;top:-160px;right:-120px;width:480px;height:480px;background:radial-gradient(circle, rgba(244,193,15,0.14) 0%, rgba(244,193,15,0) 70%);z-index:1;}
+
+  .stat-strip{max-width:1220px;margin:0 auto;padding:0 40px;transform:translateY(-40px);position:relative;z-index:3;}
+  .stat-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:16px;}
+  @media (max-width:900px){.stat-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.stat-grid{grid-template-columns:1fr;}}
+  .stat-card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;box-shadow:0 14px 30px -18px rgba(11,11,12,0.25);}
+  .stat-card .k{font-size:10.5px;text-transform:uppercase;letter-spacing:1.4px;color:var(--gray);font-weight:800;margin-bottom:8px;}
+  .stat-card .v{font-size:18px;font-weight:800;letter-spacing:-0.3px;color:var(--black);}
+  .stat-card.accent{background:var(--black);border-color:var(--black);}
+  .stat-card.accent .k{color:var(--yellow);}
+  .stat-card.accent .v{color:var(--white);}
+
+  .page{max-width:var(--page-w);margin:0 auto;padding:76px 56px 100px;}
+  @media (max-width:760px){.page{padding:56px 22px 80px;}}
+
+  .section{padding:44px 0;border-bottom:1px solid var(--line);scroll-margin-top:96px;}
+  .section:last-child{border-bottom:none;}
+  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;flex-wrap:wrap;}
+  .section-num{font-size:12.5px;font-weight:800;color:var(--yellow-deep);letter-spacing:0.5px;background:var(--yellow-pale);padding:3px 10px;border-radius:20px;}
+  .section-head h2{font-size:23px;font-weight:800;letter-spacing:-0.5px;}
+  .section p{font-size:15.5px;color:#3A3A3E;margin-bottom:14px;max-width:74ch;}
+  .section p:last-child{margin-bottom:0;}
+  .section p strong{color:var(--black);font-weight:700;}
+
+  .pill-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .pill{font-size:13px;font-weight:600;padding:7px 14px;border:1px solid var(--line);border-radius:20px;background:var(--white);color:var(--black-soft);}
+
+  .check-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:10px;}
+  @media (max-width:640px){.check-list{grid-template-columns:1fr;}}
+  .check-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:#3A3A3E;}
+  .check-list li::before{content:"";flex-shrink:0;width:16px;height:16px;margin-top:3px;border-radius:5px;background:linear-gradient(135deg, var(--yellow), var(--yellow-deep));}
+
+  .check-list.numbered{counter-reset:obj;}
+  .check-list.numbered li{counter-increment:obj;}
+  .check-list.numbered li::before{content:counter(obj);background:var(--black);color:var(--yellow);font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:5px;}
+
+  .subhead{font-size:12px;text-transform:uppercase;letter-spacing:1.4px;font-weight:800;color:var(--gray);margin:26px 0 12px;}
+  .subhead:first-child{margin-top:0;}
+
+  .nav-strip{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;}
+  .nav-strip span{font-size:12.5px;font-weight:700;padding:6px 12px;background:var(--black);color:var(--white);border-radius:6px;}
+  .nav-strip span:nth-child(odd){background:var(--black-soft);}
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .compare-wrap{overflow-x:auto;margin-top:20px;border:1px solid var(--line);border-radius:16px;background:var(--white);}
+  table.compare{width:100%;border-collapse:collapse;min-width:640px;font-size:13.5px;}
+  table.compare th, table.compare td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--line);}
+  table.compare th:first-child, table.compare td:first-child{text-align:left;font-weight:600;color:var(--black-soft);}
+  table.compare thead th{background:var(--black);color:var(--white);font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:800;position:sticky;top:0;}
+  table.compare thead th:first-child{text-align:left;}
+  table.compare thead th.pkg-col{color:var(--yellow);}
+  table.compare tbody tr:nth-child(even){background:#FAFAF7;}
+  table.compare tbody tr:last-child td{border-bottom:none;}
+  table.compare .price-row td{font-weight:800;font-size:15px;color:var(--black);background:var(--yellow-pale);}
+  .yes{color:var(--yellow-deep);font-weight:900;font-size:15px;}
+  .no{color:var(--gray-light);}
+
+  /* ---------- PACKAGE CARDS ---------- */
+  .pkg-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin-top:26px;}
+  @media (max-width:860px){.pkg-grid{grid-template-columns:1fr;}}
+  .pkg-card{border:1px solid var(--line);border-radius:18px;padding:26px 26px 28px;background:var(--white);display:flex;flex-direction:column;}
+  .pkg-card.highlight{background:var(--black);color:var(--white);border-color:var(--black);position:relative;overflow:hidden;}
+  .pkg-card.highlight::after{content:"";position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:radial-gradient(circle, rgba(244,193,15,0.18), transparent 70%);}
+  .pkg-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:var(--yellow);color:var(--black);padding:4px 10px;border-radius:20px;margin-bottom:14px;align-self:flex-start;position:relative;}
+  .pkg-card:not(.highlight) .pkg-badge{background:var(--yellow-pale);color:var(--yellow-deep);}
+  .pkg-name{font-size:18px;font-weight:800;letter-spacing:-0.3px;}
+  .pkg-price{font-size:26px;font-weight:900;letter-spacing:-0.6px;margin-top:6px;color:var(--yellow-deep);}
+  .pkg-card.highlight .pkg-price{color:var(--yellow);}
+  .pkg-tagline{font-size:13px;color:var(--gray);margin-top:8px;margin-bottom:18px;position:relative;}
+  .pkg-card.highlight .pkg-tagline{color:var(--gray-light);}
+  .pkg-sub{font-size:10.5px;text-transform:uppercase;letter-spacing:1.2px;font-weight:800;color:var(--gray);margin:14px 0 8px;position:relative;}
+  .pkg-card.highlight .pkg-sub{color:var(--gray-light);}
+  .pkg-sub.excl{color:var(--gray-light);}
+  .pkg-list{display:flex;flex-direction:column;gap:7px;position:relative;}
+  .pkg-list li{font-size:13px;padding-left:18px;position:relative;color:#3A3A3E;}
+  .pkg-card.highlight .pkg-list li{color:#D8D8DC;}
+  .pkg-list li::before{content:"✓";position:absolute;left:0;color:var(--yellow-deep);font-weight:900;}
+  .pkg-card.highlight .pkg-list li::before{color:var(--yellow);}
+  .pkg-list.excl li::before{content:"×";color:var(--gray-light);}
+  .pkg-list.excl li{color:var(--gray);}
+
+  .invest-card{background:var(--black);color:var(--white);border-radius:20px;padding:34px 36px;position:relative;overflow:hidden;}
+  .invest-card::after{content:"";position:absolute;top:-80px;right:-80px;width:260px;height:260px;background:radial-gradient(circle, rgba(244,193,15,0.18), transparent 70%);}
+  .invest-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--yellow);font-weight:700;margin-bottom:10px;position:relative;}
+  .invest-amount{font-size:clamp(26px, 3.2vw, 34px);font-weight:900;letter-spacing:-1px;border-bottom:3px solid var(--yellow);display:inline-block;padding-bottom:6px;position:relative;}
+  .invest-note{margin-top:12px;font-size:13px;color:var(--gray-light);max-width:56ch;position:relative;z-index:1;}
+  .invest-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:16px;margin-top:8px;}
+  @media (max-width:760px){.invest-grid{grid-template-columns:1fr;}}
+
+  .milestone-bar{display:flex;width:100%;height:52px;border-radius:12px;overflow:hidden;margin:18px 0 8px;}
+  .ms-seg{display:flex;flex-direction:column;justify-content:center;padding:0 16px;}
+  .ms-seg .pct{font-size:16px;font-weight:900;letter-spacing:-0.3px;}
+  .ms-seg .label{font-size:9.5px;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;opacity:0.85;}
+  .ms-seg-1{background:var(--yellow-deep);color:var(--black);flex:0 0 40%;}
+  .ms-seg-2{background:var(--yellow);color:var(--black);flex:0 0 40%;}
+  .ms-seg-3{background:var(--black);color:var(--yellow);flex:0 0 20%;}
+
+  .pay-block{border:1px solid var(--line);border-radius:16px;padding:24px 26px 26px;background:var(--white);margin-top:20px;}
+  .pay-block h3{font-size:16px;font-weight:800;display:flex;align-items:center;gap:10px;}
+  .pay-block h3 .amt{font-size:13px;font-weight:700;color:var(--yellow-deep);background:var(--yellow-pale);padding:3px 10px;border-radius:20px;}
+  .ms-cards{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px;margin-top:16px;}
+  @media (max-width:760px){.ms-cards{grid-template-columns:1fr;}}
+  .ms-card{border:1px solid var(--line);border-radius:12px;padding:16px 16px 18px;background:#FAFAF7;}
+  .ms-card .tag{display:inline-block;font-size:10.5px;font-weight:800;color:var(--black);background:var(--yellow-pale);padding:3px 9px;border-radius:20px;margin-bottom:10px;}
+  .ms-card h4{font-size:13.5px;font-weight:800;margin-bottom:2px;}
+  .ms-card .trigger{font-size:11.5px;color:var(--gray);margin-bottom:10px;}
+  .ms-card ul{display:flex;flex-direction:column;gap:5px;}
+  .ms-card ul li{font-size:12.5px;color:#3A3A3E;padding-left:13px;position:relative;}
+  .ms-card ul li::before{content:"–";position:absolute;left:0;color:var(--yellow-deep);font-weight:800;}
+
+  table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px;}
+  th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gray);font-weight:800;padding:10px 14px;border-bottom:2px solid var(--black);}
+  td{padding:12px 14px;border-bottom:1px solid var(--line);color:#3A3A3E;}
+  tr:last-child td{border-bottom:none;}
+
+  .note-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px;}
+  @media (max-width:640px){.note-grid{grid-template-columns:1fr;}}
+  .note-block{border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:var(--white);}
+  .note-block h4{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;color:var(--black);}
+  .note-block ul{display:flex;flex-direction:column;gap:8px;}
+  .note-block li{font-size:13.5px;color:#3A3A3E;padding-left:16px;position:relative;}
+  .note-block li::before{content:"×";position:absolute;left:0;color:var(--yellow-deep);font-weight:900;}
+  .note-block ul.plain{gap:7px;}
+  .note-block ul.plain li{padding-left:0;font-size:13px;}
+  .note-block ul.plain li::before{content:none;}
+
+  .terms-list{list-style:none;counter-reset:term;display:flex;flex-direction:column;gap:16px;margin-top:8px;}
+  .terms-list li{counter-increment:term;padding-left:38px;position:relative;font-size:14.5px;color:#3A3A3E;}
+  .terms-list li strong{display:block;color:var(--black);font-weight:800;font-size:14px;margin-bottom:3px;}
+  .terms-list li::before{content:counter(term);position:absolute;left:0;top:-1px;width:24px;height:24px;border-radius:7px;background:var(--black);color:var(--yellow);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+
+  .accept{background:var(--black-soft);border-radius:20px;padding:40px 42px;color:var(--white);}
+  .accept-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:26px;}
+  @media (max-width:640px){.accept-grid{grid-template-columns:1fr;}}
+  .accept-col h4{font-size:11.5px;text-transform:uppercase;letter-spacing:1.6px;color:var(--yellow);font-weight:800;margin-bottom:18px;}
+  .sig-line{border-bottom:1px solid rgba(255,255,255,0.25);padding:14px 0 8px;margin-bottom:16px;font-size:13px;color:var(--gray-light);}
+  .sig-line .filled{color:var(--white);font-weight:600;}
+
+  footer.doc-footer{border-top:1px solid var(--line);max-width:var(--page-w);margin:0 auto;padding:32px 56px 56px;display:flex;justify-content:space-between;align-items:center;color:var(--gray);font-size:12.5px;flex-wrap:wrap;gap:10px;}
+  .doc-footer .fmark{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--black);}
+  .doc-footer .fmark .dot{width:8px;height:8px;border-radius:50%;background:var(--yellow);}
+
+  @media (max-width:640px){
+    .topbar-inner, .hero-inner, .stat-strip{padding-left:22px;padding-right:22px;}
+    .invest-card, .accept, .pay-block{padding:24px 20px;}
   }
 
-  /* HEADER / LETTERHEAD */
-  .letterhead{
-    background:linear-gradient(135deg,var(--deep) 0%, var(--purple) 55%, var(--black) 130%);
-    color:#fff;
-    padding:40px 48px 34px;
-    position:relative;
-    overflow:hidden;
-  }
-  .letterhead::after{
-    content:"";
-    position:absolute;
-    right:-60px; top:-60px;
-    width:220px; height:220px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.05);
-  }
-  .letterhead::before{
-    content:"";
-    position:absolute;
-    right:40px; bottom:-90px;
-    width:160px; height:160px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.04);
-  }
-  .brand-row{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    position:relative;
-    z-index:2;
-  }
-  .logo-mark{
-    width:56px;height:56px;
-    flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-  }
-  .logo-mark img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-  }
-  .brand-text .name{
-    font-size:22px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    margin:0;
-  }
-  .brand-text .tag{
-    font-size:11.5px;
-    letter-spacing:2.5px;
-    text-transform:uppercase;
-    color:rgba(255,255,255,0.7);
-    margin:2px 0 0;
-  }
-  .doc-title{
-    position:relative;
-    z-index:2;
-    margin-top:30px;
-  }
-  .doc-title h1{
-    font-size:28px;
-    font-weight:700;
-    margin:0 0 6px;
-    letter-spacing:0.5px;
-  }
-  .doc-title p{
-    margin:0;
-    font-size:14.5px;
-    color:rgba(255,255,255,0.82);
-    font-weight:300;
-  }
-
-  /* META STRIP */
-  .meta{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:20px;
-    padding:26px 48px;
-    background:var(--purple-soft);
-    border-bottom:1px solid var(--line);
-  }
-  .meta .block h4{
-    margin:0 0 4px;
-    font-size:10.5px;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    color:var(--purple);
-    font-weight:600;
-  }
-  .meta .block p{
-    margin:0;
-    font-size:14px;
-    font-weight:500;
-    color:var(--ink);
-  }
-  .meta .block span{
-    display:block;
-    font-size:12.5px;
-    color:var(--grey);
-    font-weight:300;
-    margin-top:1px;
-  }
-
-  /* BODY */
-  .content{
-    padding:8px 48px 10px;
-  }
-  section{
-    padding:28px 0;
-    border-bottom:1px solid var(--line);
-  }
-  section:last-of-type{border-bottom:none;}
-  h2{
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    color:var(--purple);
-    font-weight:700;
-    margin:0 0 16px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  h2::before{
-    content:"";
-    width:22px;height:3px;
-    background:var(--purple-mid);
-    border-radius:2px;
-    display:inline-block;
-  }
-  h3{
-    font-size:15px;
-    font-weight:600;
-    color:var(--deep);
-    margin:20px 0 10px;
-  }
-  p{
-    font-size:14px;
-    color:#333;
-    margin:0 0 12px;
-    font-weight:300;
-  }
-  ul{
-    margin:0 0 14px;
-    padding-left:20px;
-  }
-  li{
-    font-size:14px;
-    color:#333;
-    margin-bottom:6px;
-    font-weight:300;
-  }
-  strong{font-weight:600; color:var(--deep);}
-
-  .pill-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:6px;
-  }
-  .pill{
-    background:var(--purple-soft);
-    border:1px solid var(--line);
-    color:var(--deep);
-    font-size:12.5px;
-    font-weight:500;
-    padding:6px 14px;
-    border-radius:20px;
-  }
-
-  .module-card{
-    background:#fafafd;
-    border:1px solid var(--line);
-    border-left:4px solid var(--purple-mid);
-    border-radius:8px;
-    padding:16px 20px;
-    margin-bottom:14px;
-  }
-  .module-card h4{
-    margin:0 0 8px;
-    font-size:14.5px;
-    color:var(--deep);
-    font-weight:600;
-  }
-  .module-card .items{
-    font-size:13px;
-    color:var(--grey);
-    line-height:1.8;
-  }
-
-  .example-box{
-    background:var(--deep);
-    color:#fff;
-    border-radius:12px;
-    padding:24px 26px;
-    margin-top:6px;
-  }
-  .example-box h4{
-    margin:0 0 10px;
-    font-size:14px;
-    font-weight:600;
-    color:#fff;
-  }
-  .example-box ul li{color:rgba(255,255,255,0.88);}
-  .example-box .total-line{
-    margin-top:10px;
-    font-weight:600;
-    color:#fff;
-    font-size:14.5px;
-  }
-  .example-box .flow{margin-top:16px;}
-  .example-box .flow ul li{color:rgba(255,255,255,0.85);}
-
-  table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:8px;
-  }
-  th{
-    text-align:left;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    color:#fff;
-    background:var(--deep);
-    padding:12px 16px;
-    font-weight:600;
-  }
-  th.amount, td.amount{text-align:right;}
-  td{
-    padding:14px 16px;
-    font-size:14px;
-    border-bottom:1px solid var(--line);
-    vertical-align:top;
-  }
-  tr:nth-child(even) td{background:#faf9fc;}
-  .item-name{font-weight:600; color:var(--deep);}
-  .item-sub{font-size:12.5px; color:var(--grey); font-weight:300; margin-top:2px;}
-
-  .note-box{
-    background:var(--purple-soft);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:16px 20px;
-    font-size:13px;
-    color:var(--grey);
-    margin-top:16px;
-  }
-  .note-box strong{color:var(--deep);}
-
-  .highlight-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-    margin-top:6px;
-  }
-  .highlight{
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:18px;
-    background:#fafafd;
-  }
-  .highlight h4{
-    margin:0 0 6px;
-    font-size:12.5px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    color:var(--purple);
-    font-weight:700;
-  }
-  .highlight p{margin:0; font-size:13.5px; color:#333;}
-
-  .discount-banner{
-    background:linear-gradient(120deg,var(--purple) 0%, var(--deep) 100%);
-    color:#fff;
-    border-radius:12px;
-    padding:22px 24px;
-    margin-top:16px;
-    display:flex;
-    align-items:center;
-    gap:18px;
-  }
-  .discount-banner .badge{
-    background:#fff;
-    color:var(--deep);
-    font-weight:800;
-    font-size:20px;
-    border-radius:50%;
-    width:64px;height:64px;
-    flex-shrink:0;
-    display:flex;align-items:center;justify-content:center;
-  }
-  .discount-banner p{margin:0; color:rgba(255,255,255,0.92); font-size:13.5px;}
-  .discount-banner strong{color:#fff;}
-
-  .payment-terms{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-    margin-top:6px;
-  }
-  .term-card{
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:18px;
-    text-align:center;
-  }
-  .term-card .pct{
-    font-size:26px;
-    font-weight:700;
-    color:var(--purple);
-  }
-  .term-card .label{
-    font-size:12.5px;
-    color:var(--grey);
-    margin-top:4px;
-  }
-
-  .fees-note{
-    font-size:13px;
-    color:var(--grey);
-    background:#fafafd;
-    border-left:3px solid var(--purple-mid);
-    padding:12px 16px;
-    border-radius:6px;
-    margin-top:10px;
-  }
-
-  /* FOOTER */
-  .footer{
-    background:var(--black);
-    color:rgba(255,255,255,0.75);
-    padding:32px 48px;
-    text-align:center;
-  }
-  .footer .name{
-    color:#fff;
-    font-weight:700;
-    font-size:16px;
-    letter-spacing:1px;
-    margin-bottom:4px;
-  }
-  .footer .tag{
-    font-size:11.5px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:rgba(255,255,255,0.5);
-    margin-bottom:14px;
-  }
-  .footer .addr{
-    font-size:12.5px;
-    color:rgba(255,255,255,0.6);
-    font-weight:300;
-  }
-  .footer .div{
-    width:40px;height:1px;
-    background:rgba(255,255,255,0.2);
-    margin:16px auto;
-  }
-
+  @page{ margin:16mm; }
   @media print{
-    body{background:#fff;}
-    .page{box-shadow:none;}
+    *{-webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    body{background:var(--white);}
+    header.topbar{position:static;}
+    .topnav{display:none;}
+    .stat-strip{transform:none; margin-top:24px;}
+    .hero-inner{padding-top:40px;padding-bottom:40px;}
+    .page{padding:40px 4px 40px;}
+    .section{break-inside:avoid; padding:26px 0;}
+    .invest-card, .accept, .pay-block, .pkg-card{break-inside:avoid;}
+    .pkg-grid, .ms-cards, .compare-wrap{break-inside:avoid;}
+    a[href]{color:inherit;}
   }
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- LETTERHEAD -->
-  <div class="letterhead">
-    <div class="brand-row">
-      <div class="logo-mark"><img src="logo-icon.png" alt="Emperor Guild Logo"></div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="clw-logo.jpg" alt="CodeLikeWyna Tech logo"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fallback">CLW</div>
+      </div>
       <div class="brand-text">
-        <p class="name">EMPEROR GUILD</p>
-        <p class="tag">Creative &amp; Digital Agency</p>
+        <div class="brand-name">CodeLikeWyna Tech</div>
+        <div class="brand-sub">Project Proposal</div>
       </div>
     </div>
-    <div class="doc-title">
-      <h1>Quotation</h1>
-      <p>Custom Accounting &amp; Business Management Software</p>
+    <nav class="topnav" aria-label="Section navigation">
+      <a href="#s1">Summary</a>
+      <a href="#s2">Understanding</a>
+      <a href="#s3">Objectives</a>
+      <a href="#s4">Packages</a>
+      <a href="#s5">Website</a>
+      <a href="#s6">Marketplace</a>
+      <a href="#s7">Mobile Apps</a>
+      <a href="#s8">Admin</a>
+      <a href="#s9">Integrations</a>
+      <a href="#s10">Gold Vault</a>
+      <a href="#s11">Timeline</a>
+      <a href="#s12">Investment</a>
+      <a href="#s13">Payment</a>
+      <a href="#s14">Responsibilities</a>
+      <a href="#s15">Exclusions</a>
+      <a href="#s16">Extra Costs</a>
+      <a href="#s17">Terms</a>
+      <a href="#s18">Acceptance</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Project Proposal</div>
+    <h1>Development of the <span>Gold Link</span> Marketplace Platform</h1>
+    <p class="hero-sub">Prepared by CodeLikeWyna Tech for Gold Link — a secure digital marketplace connecting verified gold vendors and buyers, available in three scoped packages.</p>
+    <div class="ingots" aria-hidden="true">
+      <div class="ingot i1"></div>
+      <div class="ingot i2"></div>
+      <div class="ingot i3"></div>
     </div>
   </div>
+</section>
 
-  <!-- META -->
-  <div class="meta">
-    <div class="block">
-      <h4>Prepared For</h4>
-      <p>Skyy Aluminium</p>
+<div class="stat-strip">
+  <div class="stat-grid">
+    <div class="stat-card accent">
+      <div class="k">Starting From</div>
+      <div class="v">₦1,450,000</div>
     </div>
-    <div class="block">
-      <h4>Prepared By</h4>
-      <p>Emperor Guild Tech</p>
+    <div class="stat-card">
+      <div class="k">Duration</div>
+      <div class="v">Up to 2 Months</div>
     </div>
-    <div class="block">
-      <h4>Date Issued</h4>
-      <p>18 August 2026</p>
+    <div class="stat-card">
+      <div class="k">Prepared For</div>
+      <div class="v">Gold Link</div>
     </div>
-    <div class="block">
-      <h4>Build Duration</h4>
-      <p>60 Days</p>
+    <div class="stat-card">
+      <div class="k">Package Options</div>
+      <div class="v">Basic · Professional · Premium</div>
     </div>
   </div>
+</div>
 
-  <div class="content">
+<main class="page">
 
-    <!-- OVERVIEW -->
-    <section>
-      <h2>Overview</h2>
-      <p>Emperor Guild is pleased to present this quotation for a fully custom Accounting and Business Management Software for Skyy Aluminium — designed and tailored specifically around how Skyy Aluminium actually runs its business.</p>
-      <p>Unlike other softwares, this system will be built around your products, your pricing, your staff structure, and your day-to-day sales and stock process — so nothing is forced to fit a generic template.</p>
-    </section>
+  <section class="section reveal" id="s1">
+    <div class="section-head"><span class="section-num">01</span><h2>Executive Summary</h2></div>
+    <p>CodeLikeWyna Tech is pleased to present this proposal for the design, development, testing, and deployment of the Gold Link digital marketplace platform.</p>
+    <p>Gold Link is intended to become a trusted digital marketplace where verified gold vendors can list physical gold for sale and buyers can securely discover and purchase gold through a structured digital platform.</p>
+    <p>The proposed solution will include, depending on the selected package:</p>
+    <div class="pill-grid">
+      <span class="pill">Marketing Website</span>
+      <span class="pill">Marketplace Platform</span>
+      <span class="pill">Android Application</span>
+      <span class="pill">iOS Application</span>
+      <span class="pill">Administration Dashboard</span>
+      <span class="pill">Payment Integration</span>
+      <span class="pill">KYC / Identity Verification</span>
+      <span class="pill">Gold Price Display</span>
+      <span class="pill">Transaction Management</span>
+    </div>
+    <p style="margin-top:18px;">The project will follow a phased development approach, beginning with the public-facing website and progressing into the marketplace and mobile application components. The platform will support separate experiences for buyers and vendors, with administrative controls for managing marketplace activities.</p>
+    <p>The project has been structured into <strong>three packages</strong> to allow Gold Link to select the level of functionality required at launch.</p>
+  </section>
 
-    <!-- CORE FEATURES -->
-    <section>
-      <h2>Core Features</h2>
-      <p>At the foundation, the system will handle the everyday essentials of running your business:</p>
-      <div class="pill-row">
-        <span class="pill">Cash Receipts</span>
-        <span class="pill">Invoicing</span>
-        <span class="pill">Stock Counting</span>
-        <span class="pill">Partial Payments</span>
-        <span class="pill">Discounts (Auto / Manual)</span>
-      </div>
-    </section>
+  <section class="section reveal" id="s2">
+    <div class="section-head"><span class="section-num">02</span><h2>Understanding of the Project</h2></div>
+    <p>Gold Link is designed as a digital marketplace connecting verified gold vendors with buyers. Vendors will be able to create profiles and list physical gold with information such as gold type, weight, description, images, pricing and other relevant details. Buyers will be able to browse available gold listings, review vendor information, initiate transactions and manage their purchases.</p>
+    <p>The platform is expected to support:</p>
+    <ul class="check-list">
+      <li>Buyer accounts</li>
+      <li>Vendor accounts</li>
+      <li>Separate buyer and vendor dashboards</li>
+      <li>Gold listings</li>
+      <li>Vendor registration information</li>
+      <li>Gold price display</li>
+      <li>Transaction management</li>
+      <li>Secure payment through your provider</li>
+      <li>KYC verification</li>
+      <li>Escrow functionality</li>
+      <li>Messaging</li>
+      <li>Transaction history</li>
+      <li>Gold holdings information</li>
+      <li>Administrative management</li>
+    </ul>
+    <p style="margin-top:18px;">The Gold Vault feature will remain marked as <strong>Coming Soon</strong> until the required real-world asset integration is available.</p>
+    <p>The public website will primarily serve as the marketing and information platform for Gold Link, while the marketplace functionality will be delivered through the selected application/platform package.</p>
+  </section>
 
-    <!-- MODULES -->
-    <section>
-      <h2>Full Module Breakdown</h2>
-      <p>The platform is organised into six connected modules, so every part of the business — sales, stock, money, customers, staff, and reporting — lives in one place.</p>
+  <section class="section reveal" id="s3">
+    <div class="section-head"><span class="section-num">03</span><h2>Project Objectives</h2></div>
+    <p>The objectives of the Gold Link project are to:</p>
+    <ul class="check-list numbered">
+      <li>Build a professional digital presence for Gold Link</li>
+      <li>Create a secure marketplace for buying and selling physical gold</li>
+      <li>Provide separate experiences for buyers and vendors</li>
+      <li>Enable secure digital transactions</li>
+      <li>Support direct purchase and, where included, escrow transactions</li>
+      <li>Improve trust between buyers and sellers through verification and vendor information</li>
+      <li>Provide transaction tracking and history</li>
+      <li>Support KYC and identity verification</li>
+      <li>Display relevant gold market pricing information</li>
+      <li>Build a scalable foundation for future expansion into additional markets and features</li>
+    </ul>
+  </section>
 
-      <div class="module-card">
-        <h4>Sales</h4>
-        <div class="items">POS &nbsp;•&nbsp; Orders &nbsp;•&nbsp; Invoices &nbsp;•&nbsp; Receipts &nbsp;•&nbsp; Payments</div>
-      </div>
-      <div class="module-card">
-        <h4>Inventory</h4>
-        <div class="items">Products &nbsp;•&nbsp; Stock &nbsp;•&nbsp; Purchases &nbsp;•&nbsp; Suppliers &nbsp;•&nbsp; Warehouses &nbsp;•&nbsp; Transfers</div>
-      </div>
-      <div class="module-card">
-        <h4>Accounting</h4>
-        <div class="items">Income &nbsp;•&nbsp; Expenses &nbsp;•&nbsp; Accounts Receivable &nbsp;•&nbsp; Accounts Payable &nbsp;•&nbsp; General Ledger &nbsp;•&nbsp; P&amp;L &nbsp;•&nbsp; Balance Sheet &nbsp;•&nbsp; Cash Flow</div>
-      </div>
-      <div class="module-card">
-        <h4>Customers</h4>
-        <div class="items">CRM &nbsp;•&nbsp; Purchase History &nbsp;•&nbsp; Credit &nbsp;•&nbsp; Loyalty &nbsp;•&nbsp; Communication</div>
-      </div>
-      <div class="module-card">
-        <h4>People</h4>
-        <div class="items">Employees &nbsp;•&nbsp; Roles &nbsp;•&nbsp; Permissions &nbsp;•&nbsp; Attendance &nbsp;•&nbsp; Payroll</div>
-      </div>
-      <div class="module-card">
-        <h4>Management</h4>
-        <div class="items">Dashboard &nbsp;•&nbsp; Analytics &nbsp;•&nbsp; Reports &nbsp;•&nbsp; Multi-branch &nbsp;•&nbsp; Audit Logs</div>
-      </div>
-      <div class="module-card">
-        <h4>Automation</h4>
-        <div class="items">Low-stock Alerts &nbsp;•&nbsp; Debt Reminders &nbsp;•&nbsp; Invoice Reminders &nbsp;•&nbsp; Payment Notifications &nbsp;•&nbsp; Scheduled Reports</div>
-      </div>
-    </section>
+  <section class="section reveal" id="s4">
+    <div class="section-head"><span class="section-num">04</span><h2>Package Options</h2></div>
+    <p>Gold Link may select one of the following development packages.</p>
 
-    <!-- HOW IT WORKS -->
-    <section>
-      <h2>How It Works — A Simple Example</h2>
-      <p>When a customer makes a purchase — using a supermarket-style example:</p>
-      <div class="example-box">
-        <h4>A customer buys:</h4>
-        <ul>
-          <li>2 bottles of Coke = ₦1,000</li>
-          <li>1 bag of rice = ₦70,000</li>
-        </ul>
-        <div class="total-line">Total = ₦71,000</div>
-        <div class="flow">
-          <h4>The software would:</h4>
-          <ul>
-            <li>Add the products to the customer's cart</li>
-            <li>Calculate the ₦71,000 total</li>
-            <li>Apply any discount</li>
-            <li>Record the customer</li>
-            <li>Reduce Coke stock by 2 and rice stock by 1</li>
-            <li>Ask how the customer wants to pay</li>
-            <li>Record cash, transfer, or card payment</li>
-            <li>Generate a receipt</li>
-            <li>Add the ₦71,000 sale to the business's sales records</li>
-            <li>Update the business reports and profit calculations</li>
-          </ul>
-        </div>
-      </div>
-      <p style="margin-top:16px;">Every sale on any product Skyy Aluminium deals in will follow this same automatic flow, tailored to your actual product list and pricing structure.</p>
-    </section>
-
-    <!-- INVESTMENT -->
-    <section>
-      <h2>Investment</h2>
-      <p>Below is a breakdown of the software development cost and the recommended hardware needed to run the system smoothly.</p>
-      <table>
+    <div class="compare-wrap">
+      <table class="compare">
         <thead>
           <tr>
-            <th>Item</th>
-            <th class="amount">Cost (₦)</th>
+            <th>Feature</th>
+            <th class="pkg-col">Basic</th>
+            <th class="pkg-col">Professional</th>
+            <th class="pkg-col">Premium</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <div class="item-name">Custom Software Development</div>
-              <div class="item-sub">By Emperor Guild Tech — full custom build tailored to Skyy Aluminium, covering all modules above</div>
-            </td>
-            <td class="amount">450,000</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="item-name">Laptops (Recommended)</div>
-              <div class="item-sub">2 laptops, needed to run the software comfortably</div>
-            </td>
-            <td class="amount">600,000</td>
-          </tr>
-          <tr>
-            <td>
-              <div class="item-name">Printer (Recommended)</div>
-              <div class="item-sub">For printing receipts and invoices</div>
-            </td>
-            <td class="amount">300,000</td>
-          </tr>
+          <tr class="price-row"><td>Investment</td><td>₦1,450,000</td><td>₦2,100,000</td><td>₦2,840,000</td></tr>
+          <tr><td>Marketing Website</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>UI/UX Design</td><td>Core</td><td>Full</td><td>Full</td></tr>
+          <tr><td>Marketplace Platform</td><td>Core</td><td>Full</td><td>Full</td></tr>
+          <tr><td>Buyer Dashboard</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Vendor Dashboard</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Gold Listings</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Vendor Profile &amp; Registration Number</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Gold Price Display</td><td>Basic</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Search &amp; Filters</td><td>Basic</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Transaction History</td><td>Basic</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Gold Holdings Summary</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Watchlist</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Messaging</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Smile Identity KYC</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Simpay Integration</td><td>Core</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Direct Purchase</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Escrow Payment</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Administration Dashboard</td><td>Basic</td><td>Standard</td><td>Advanced</td></tr>
+          <tr><td>Android Application</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Google Play Store Submission</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>iOS Application</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Apple App Store Submission</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Gold Vault</td><td>Coming Soon</td><td>Coming Soon</td><td>Coming Soon</td></tr>
+          <tr><td>Technical Documentation</td><td>Basic</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Source Code</td><td>After Full Payment</td><td>After Full Payment</td><td>After Full Payment</td></tr>
         </tbody>
       </table>
-      <div class="note-box">
-        <strong>Note:</strong> the software development cost (₦450,000) covers the build itself. The laptops and printer are recommended hardware to run the system smoothly and are not mandatory to purchase through Emperor Guild — Skyy Aluminium is free to source these independently if preferred.
-      </div>
-      <div class="fees-note">
-        <strong>Other fees may apply</strong> — such as domain renewal, and SMS/email notification charges, based on usage and scalability.
-      </div>
-    </section>
+    </div>
 
-    <!-- PAYMENT TERMS -->
-    <section>
-      <h2>Payment Terms</h2>
-      <p>Payment can be made in instalments, structured as follows:</p>
-      <div class="payment-terms">
-        <div class="term-card">
-          <div class="pct">50%</div>
-          <div class="label">Initial Payment<br>to commence work</div>
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <span class="pkg-badge">Basic</span>
+        <div class="pkg-name">Basic Package</div>
+        <div class="pkg-price">₦1,450,000</div>
+        <div class="pkg-tagline">Designed for launching Gold Link with the core marketplace experience and Android application.</div>
+        <div class="pkg-sub">Includes</div>
+        <ul class="pkg-list">
+          <li>Marketing website</li>
+          <li>Core marketplace functionality</li>
+          <li>Buyer &amp; vendor dashboards</li>
+          <li>Gold listings &amp; vendor profiles</li>
+          <li>Vendor registration number display</li>
+          <li>Basic gold price display</li>
+          <li>Basic search &amp; filtering</li>
+          <li>Basic transaction history</li>
+          <li>Basic payment integration</li>
+          <li>Direct purchase functionality</li>
+          <li>Basic administration dashboard</li>
+          <li>Android application</li>
+          <li>Google Play Store submission</li>
+          <li>Basic technical documentation</li>
+        </ul>
+        <div class="pkg-sub excl">Not Included</div>
+        <ul class="pkg-list excl">
+          <li>iOS application</li>
+          <li>Apple App Store submission</li>
+          <li>Smile Identity KYC integration</li>
+          <li>Escrow payment</li>
+          <li>In-app messaging</li>
+          <li>Gold holdings summary</li>
+          <li>Watchlist</li>
+          <li>Advanced administration features</li>
+        </ul>
+      </div>
+
+      <div class="pkg-card">
+        <span class="pkg-badge">Professional</span>
+        <div class="pkg-name">Professional Package</div>
+        <div class="pkg-price">₦2,100,000</div>
+        <div class="pkg-tagline">Designed for a more complete marketplace experience across Android, iOS and the web platform.</div>
+        <div class="pkg-sub">Includes everything in Basic, plus</div>
+        <ul class="pkg-list">
+          <li>Full marketplace platform</li>
+          <li>Full UI/UX implementation</li>
+          <li>Advanced buyer &amp; vendor dashboards</li>
+          <li>Gold holdings summary</li>
+          <li>Watchlist</li>
+          <li>In-app messaging</li>
+          <li>Smile Identity KYC integration</li>
+          <li>Full payment integration</li>
+          <li>Enhanced transaction management</li>
+          <li>Standard administration dashboard</li>
+          <li>iOS application</li>
+          <li>Apple App Store submission</li>
+          <li>Enhanced technical documentation</li>
+        </ul>
+        <div class="pkg-sub excl">Not Included</div>
+        <ul class="pkg-list excl">
+          <li>Escrow payment functionality</li>
+          <li>Advanced administration features beyond agreed scope</li>
+          <li>Gold Vault real-world asset integration</li>
+        </ul>
+      </div>
+
+      <div class="pkg-card highlight">
+        <span class="pkg-badge">Premium · Complete Scope</span>
+        <div class="pkg-name">Premium Package</div>
+        <div class="pkg-price">₦2,840,000</div>
+        <div class="pkg-tagline">The complete Gold Link marketplace implementation based on the full project scope.</div>
+        <div class="pkg-sub">Includes everything in Professional, plus</div>
+        <ul class="pkg-list">
+          <li>Full marketplace functionality</li>
+          <li>Escrow payment functionality</li>
+          <li>Advanced administration dashboard</li>
+          <li>Complete transaction management</li>
+          <li>Full buyer &amp; vendor experiences</li>
+          <li>Full Android application</li>
+          <li>Full iOS application</li>
+          <li>Google Play &amp; Apple App Store submission</li>
+          <li>Full API integrations within agreed scope</li>
+          <li>Full technical documentation</li>
+          <li>Final testing and deployment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="s5">
+    <div class="section-head"><span class="section-num">05</span><h2>Marketing Website</h2></div>
+    <p>The marketing website will serve as the public-facing website for Gold Link. The website is intended primarily to introduce the business, explain the platform, build trust and direct users to the Gold Link application rather than function as the primary gold purchasing portal.</p>
+    <div class="subhead">Website Pages</div>
+    <div class="nav-strip">
+      <span>Home</span><span>About Us</span><span>Services</span><span>How It Works</span>
+      <span>FAQ</span><span>Contact</span><span>Download App</span>
+      <span>Privacy Policy</span><span>Terms &amp; Conditions</span>
+    </div>
+    <p>The exact content and final page structure will be based on the approved project requirements and materials supplied by the client.</p>
+  </section>
+
+  <section class="section reveal" id="s6">
+    <div class="section-head"><span class="section-num">06</span><h2>Marketplace Platform</h2></div>
+    <p>The marketplace platform will provide the core digital environment for buyers and vendors.</p>
+
+    <div class="subhead">Buyer Features <span style="font-weight:500;color:var(--gray-light);text-transform:none;letter-spacing:0;">(depending on package)</span></div>
+    <ul class="check-list">
+      <li>Buyer dashboard</li>
+      <li>Browse gold listings</li>
+      <li>Gold type &amp; weight information</li>
+      <li>Product images</li>
+      <li>Vendor information</li>
+      <li>Search &amp; filters</li>
+      <li>Transaction history</li>
+      <li>Watchlist</li>
+      <li>Gold holdings summary</li>
+      <li>Messaging</li>
+      <li>Direct purchase</li>
+      <li>KYC verification</li>
+      <li>Escrow transactions where included</li>
+    </ul>
+
+    <div class="subhead">Vendor Features <span style="font-weight:500;color:var(--gray-light);text-transform:none;letter-spacing:0;">(depending on package)</span></div>
+    <ul class="check-list">
+      <li>Vendor dashboard</li>
+      <li>Vendor profile</li>
+      <li>Vendor registration number</li>
+      <li>Gold listing management</li>
+      <li>Gold type &amp; weight</li>
+      <li>Product description &amp; images</li>
+      <li>Transaction management</li>
+      <li>Buyer communication</li>
+      <li>Sales history</li>
+      <li>Account settings</li>
+    </ul>
+
+    <div class="subhead">Gold Price Display</div>
+    <p>The platform will display gold market pricing based on the agreed gold price data source and the approved pricing methodology. The displayed market reference price may differ from the final price set by individual vendors.</p>
+    <p>The gold price source or API may attract third-party usage charges, which are separate from the development fee.</p>
+  </section>
+
+  <section class="section reveal" id="s7">
+    <div class="section-head"><span class="section-num">07</span><h2>Mobile Applications</h2></div>
+    <div class="subhead">Android Application</div>
+    <p>The Android application will provide access to the Gold Link marketplace through supported Android devices. The Android application will include the features contained within the selected package. The Basic package includes Google Play Store submission only.</p>
+    <div class="subhead">iOS Application</div>
+    <p>The iOS application is included only in the <strong>Professional</strong> and <strong>Premium</strong> packages. Apple App Store submission is also included only in these packages.</p>
+    <p>App Store review and approval timelines are controlled by Apple and are therefore outside the control of CodeLikeWyna Tech. Financial and marketplace applications may also require additional documentation, compliance information or clarification during the store review process.</p>
+  </section>
+
+  <section class="section reveal" id="s8">
+    <div class="section-head"><span class="section-num">08</span><h2>Administration Dashboard</h2></div>
+    <p>The administration dashboard will allow authorized Gold Link administrators to manage relevant platform activities.</p>
+    <div class="note-grid" style="grid-template-columns:1fr 1fr 1fr;">
+      <div class="note-block">
+        <h4 style="color:var(--gray);">Basic</h4>
+        <ul class="plain">
+          <li>User management</li>
+          <li>Vendor management</li>
+          <li>Gold listing management</li>
+          <li>Basic transaction monitoring</li>
+          <li>Basic platform controls</li>
+        </ul>
+      </div>
+      <div class="note-block">
+        <h4 style="color:var(--gray);">Standard</h4>
+        <ul class="plain">
+          <li>User &amp; vendor management</li>
+          <li>Listing management</li>
+          <li>Transaction monitoring</li>
+          <li>KYC-related management</li>
+          <li>Marketplace management</li>
+          <li>Standard admin controls</li>
+        </ul>
+      </div>
+      <div class="note-block">
+        <h4 style="color:var(--gray);">Advanced</h4>
+        <ul class="plain">
+          <li>Full marketplace management</li>
+          <li>User &amp; vendor management</li>
+          <li>Transaction &amp; escrow management</li>
+          <li>Listing &amp; KYC management</li>
+          <li>Platform monitoring</li>
+          <li>Advanced admin controls</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="s9">
+    <div class="section-head"><span class="section-num">09</span><h2>Third-Party Integrations</h2></div>
+    <p>The project may integrate with the following services, depending on the selected package:</p>
+    <table>
+      <thead><tr><th>Service</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Payment rail</strong></td><td>Payment and transaction services</td></tr>
+        <tr><td><strong>Smile Identity</strong></td><td>KYC and identity verification</td></tr>
+        <tr><td><strong>Gold Price Data Source</strong></td><td>Gold market price information</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:16px;">The final implementation of each integration is subject to the availability of the required API documentation, credentials, technical access and third-party service capabilities. Additional integrations not specifically included in the selected package will be treated as separate work.</p>
+    <p>The project planning discussions identified a chosen payment rail, Smile Identity and an external gold-price data source as key integrations for the platform.</p>
+  </section>
+
+  <section class="section reveal" id="s10">
+    <div class="section-head"><span class="section-num">10</span><h2>Gold Vault</h2></div>
+    <p>The Gold Vault feature will be displayed as <strong>Coming Soon</strong> in the application. The full Gold Vault functionality is not included in the current development scope because it depends on the future integration of real-world gold/asset infrastructure and related external services.</p>
+    <p>Any future implementation of Gold Vault will be separately scoped and quoted once the required third-party infrastructure and technical requirements are available.</p>
+  </section>
+
+  <section class="section reveal" id="s11">
+    <div class="section-head"><span class="section-num">11</span><h2>Project Timeline</h2></div>
+    <p>The estimated project duration is <strong>up to two (2) months</strong>. The timeline begins after:</p>
+    <ul class="check-list numbered">
+      <li>The required initial payment has been received</li>
+      <li>The required branding materials have been supplied</li>
+      <li>Required API credentials and technical documentation have been supplied</li>
+      <li>Required company and compliance documents have been supplied</li>
+      <li>The client has approved the relevant project requirements</li>
+    </ul>
+    <p style="margin-top:18px;">Development will be carried out in phases, beginning with the website and progressing into the marketplace and application components.</p>
+    <p>Client delays, unavailable third-party services, delayed approvals, missing documents or changes to the agreed scope may extend the delivery timeline.</p>
+    <p>The meeting discussions also established that the website would be developed first before proceeding into the wider application roadmap.</p>
+  </section>
+
+  <section class="section reveal" id="s12">
+    <div class="section-head"><span class="section-num">12</span><h2>Project Investment</h2></div>
+    <div class="invest-grid">
+      <div class="invest-card">
+        <div class="invest-label">Basic Package</div>
+        <div class="invest-amount">₦1,450,000</div>
+        <div class="invest-note">One Million, Four Hundred and Fifty Thousand Naira Only. Includes the Basic package scope stated in Section 4.</div>
+      </div>
+      <div class="invest-card">
+        <div class="invest-label">Professional Package</div>
+        <div class="invest-amount">₦2,100,000</div>
+        <div class="invest-note">Two Million, One Hundred Thousand Naira Only. Includes the Professional package scope stated in Section 4.</div>
+      </div>
+      <div class="invest-card">
+        <div class="invest-label">Premium Package</div>
+        <div class="invest-amount">₦2,840,000</div>
+        <div class="invest-note">Two Million, Eight Hundred and Forty Thousand Naira Only. Includes the complete Premium package scope stated in Section 4.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="s13">
+    <div class="section-head"><span class="section-num">13</span><h2>Payment Structure</h2></div>
+    <p>Payment will be made according to project milestones.</p>
+
+    <div class="pay-block">
+      <h3>Basic Package <span class="amt">₦1,450,000 total</span></h3>
+      <div class="milestone-bar">
+        <div class="ms-seg ms-seg-1"><span class="pct">40%</span><span class="label">Commencement</span></div>
+        <div class="ms-seg ms-seg-2"><span class="pct">40%</span><span class="label">Development</span></div>
+        <div class="ms-seg ms-seg-3"><span class="pct">20%</span><span class="label">Final</span></div>
+      </div>
+      <div class="ms-cards">
+        <div class="ms-card">
+          <span class="tag">40% · ₦580,000</span>
+          <h4>Project Commencement</h4>
+          <ul><li>Marketing website</li><li>Initial UI/UX</li><li>Core platform setup</li></ul>
         </div>
-        <div class="term-card">
-          <div class="pct">50%</div>
-          <div class="label">Balance Payment<br>on completion / delivery</div>
+        <div class="ms-card">
+          <span class="tag">40% · ₦580,000</span>
+          <h4>Development Stage</h4>
+          <ul><li>Marketplace development</li><li>Backend &amp; API integration</li><li>Payment integration</li><li>Core Android development</li></ul>
+        </div>
+        <div class="ms-card">
+          <span class="tag">20% · ₦290,000</span>
+          <h4>Final Stage</h4>
+          <ul><li>Final testing</li><li>Android deployment</li><li>Google Play submission</li><li>Documentation &amp; delivery</li></ul>
         </div>
       </div>
+    </div>
 
-      <div class="discount-banner">
-        <div class="badge">10%</div>
-        <p><strong>Early Approval Discount:</strong> If this proposal is approved within 15 days of the date issued (by 2 September 2026), Skyy Aluminium will receive a 10% discount on the initial payment.</p>
+    <div class="pay-block">
+      <h3>Professional Package <span class="amt">₦2,100,000 total</span></h3>
+      <div class="milestone-bar">
+        <div class="ms-seg ms-seg-1"><span class="pct">40%</span><span class="label">Commencement · ₦840,000</span></div>
+        <div class="ms-seg ms-seg-2"><span class="pct">40%</span><span class="label">Development · ₦840,000</span></div>
+        <div class="ms-seg ms-seg-3"><span class="pct">20%</span><span class="label">Final · ₦420,000</span></div>
       </div>
-    </section>
+      <p style="margin-top:14px;">The milestones cover website development, UI/UX, backend/API development, KYC integration, marketplace development, Android and iOS applications, testing, deployment and documentation according to the Professional package scope.</p>
+    </div>
 
-    <!-- TIMELINE -->
-    <section>
-      <h2>Project Timeline</h2>
-      <div class="highlight-grid">
-        <div class="highlight">
-          <h4>Build Duration</h4>
-          <p>60 days from commencement of work and receipt of initial payment.</p>
+    <div class="pay-block">
+      <h3>Premium Package <span class="amt">₦2,840,000 total</span></h3>
+      <div class="milestone-bar">
+        <div class="ms-seg ms-seg-1"><span class="pct">40%</span><span class="label">Commencement</span></div>
+        <div class="ms-seg ms-seg-2"><span class="pct">40%</span><span class="label">Development</span></div>
+        <div class="ms-seg ms-seg-3"><span class="pct">20%</span><span class="label">Final</span></div>
+      </div>
+      <div class="ms-cards">
+        <div class="ms-card">
+          <span class="tag">40% · ₦1,136,000</span>
+          <h4>Project Commencement</h4>
+          <ul><li>Marketing website</li><li>UI/UX design</li><li>Initial application development</li><li>Payment backend/API communication</li></ul>
         </div>
-        <div class="highlight">
-          <h4>Proposal Validity</h4>
-          <p>This quotation is valid for review and discussion from the date issued, 18 August 2026.</p>
+        <div class="ms-card">
+          <span class="tag">40% · ₦1,136,000</span>
+          <h4>Development Stage</h4>
+          <ul><li>Backend &amp; API development</li><li>KYC integration</li><li>Marketplace development</li><li>Core app functionality</li><li>Escrow implementation</li></ul>
+        </div>
+        <div class="ms-card">
+          <span class="tag">20% · ₦568,000</span>
+          <h4>Final Stage</h4>
+          <ul><li>Android &amp; iOS applications</li><li>Final testing &amp; deployment</li><li>App Store submissions</li><li>Documentation &amp; delivery</li></ul>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- WHY CUSTOM -->
-    <section>
-      <h2>Why a Custom Build</h2>
-      <ul>
-        <li>Built and owned as software developed specifically for Skyy Aluminium — not a generic template</li>
-        <li>Skyy Aluminium can request edits and adjustments at any time to tailor it exactly as needed</li>
-        <li>Can be extended to work across different companies and branches under Skyy Aluminium</li>
-        <li>Connects to mobile phones, so owners and managers can check sales, stock, and reports on the go</li>
-      </ul>
-    </section>
+    <p style="margin-top:20px;">The milestone structure is designed to ensure that each major stage is funded before the corresponding development work begins.</p>
+  </section>
 
-    <!-- NEXT STEPS -->
-    <section style="padding-bottom:36px;">
-      <h2>Next Steps</h2>
-      <p>This quotation is a starting point for discussion. Emperor Guild is happy to walk through each module in more detail, adjust the scope, or arrange a live demo of similar systems before work begins.</p>
-    </section>
+  <section class="section reveal" id="s14">
+    <div class="section-head"><span class="section-num">14</span><h2>Client Responsibilities</h2></div>
+    <p>The client agrees to provide the following where applicable:</p>
+    <ul class="check-list">
+      <li>Company registration documents</li>
+      <li>Business information</li>
+      <li>Logo &amp; branding assets</li>
+      <li>Required legal &amp; compliance documents</li>
+      <li>API credentials</li>
+      <li>Third-party service credentials</li>
+      <li>Required technical documentation</li>
+      <li>Timely feedback &amp; approvals</li>
+      <li>Required content for the website</li>
+      <li>Information required for app store submission</li>
+    </ul>
+    <p style="margin-top:18px;">The client is responsible for ensuring that all supplied business, financial, legal and regulatory information is accurate and authorized for use.</p>
+    <p>Failure to provide required materials or approvals on time may affect the project timeline.</p>
+  </section>
 
-  </div>
+  <section class="section reveal" id="s15">
+    <div class="section-head"><span class="section-num">15</span><h2>Items Excluded From This Proposal</h2></div>
+    <p>The following are not included unless specifically stated within the selected package or separately agreed in writing:</p>
+    <div class="note-grid">
+      <div class="note-block">
+        <h4>Not in scope</h4>
+        <ul>
+          <li>Real-world Gold Vault integration</li>
+          <li>Custom blockchain integration</li>
+          <li>Cloud savings functionality</li>
+          <li>New marketplace modules outside agreed scope</li>
+          <li>Additional payment providers</li>
+        </ul>
+      </div>
+      <div class="note-block">
+        <h4>Also excluded</h4>
+        <ul>
+          <li>Additional KYC providers</li>
+          <li>Additional mobile applications</li>
+          <li>New features requested after development has commenced</li>
+          <li>Regulatory licensing or government approvals</li>
+          <li>Third-party services / custom integrations not listed here</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:16px;">Any feature requested outside the selected package will be treated as a change request and may attract an additional development fee.</p>
+  </section>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="name">EMPEROR GUILD</div>
-    <div class="tag">Creative &amp; Digital Agency</div>
-    <div class="div"></div>
-    <div class="addr">1 Celfa Street, Ozuoba, Port Harcourt 500102, Rivers State</div>
-  </div>
+  <section class="section reveal" id="s16">
+    <div class="section-head"><span class="section-num">16</span><h2>Third-Party &amp; Operational Costs</h2></div>
+    <p>The development investment does not include recurring third-party or operational service charges unless explicitly stated. Potential additional costs may include:</p>
+    <table>
+      <tbody>
+        <tr><td>Gold price API subscription / usage fees</td><td>SMS / OTP services</td></tr>
+        <tr><td>Smile Identity verification charges</td><td>Email delivery services</td></tr>
+        <tr><td>Payment gateway transaction fees</td><td>Push notification services</td></tr>
+        <tr><td>Domain renewal</td><td>Cloud storage &amp; backup</td></tr>
+        <tr><td>Hosting &amp; cloud infrastructure</td><td>CDN services</td></tr>
+        <tr><td>Apple Developer Program fees</td><td>Additional API services</td></tr>
+        <tr><td>Government licensing / regulatory fees</td><td>Additional third-party integrations</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:16px;">Where a third-party cost is required for implementation, the client will be informed before the cost is incurred where reasonably possible.</p>
+  </section>
 
-</div>
+  <section class="section reveal" id="s17">
+    <div class="section-head"><span class="section-num">17</span><h2>Terms &amp; Conditions</h2></div>
+    <ul class="terms-list">
+      <li><strong>Project Commencement</strong>The project begins after the required initial payment has been received and the necessary project materials have been supplied.</li>
+      <li><strong>Project Timeline</strong>The stated timeline assumes timely cooperation from the client and availability of all required third-party services.</li>
+      <li><strong>Client Delays</strong>Delays caused by missing documents, late feedback, unavailable credentials, delayed approvals, branding materials or compliance requirements may extend the project timeline.</li>
+      <li><strong>Scope Changes</strong>Any feature or functionality outside the selected package will be treated as a change request and may attract additional charges.</li>
+      <li><strong>Third-Party Services</strong>CodeLikeWyna Tech is not responsible for delays, downtime, pricing changes, restrictions or approval decisions caused by third-party service providers.</li>
+      <li><strong>App Store Approval</strong>Google Play Store and Apple App Store review and approval processes are controlled by the respective platforms. CodeLikeWyna Tech cannot guarantee a specific approval date.</li>
+      <li><strong>Regulatory Requirements</strong>The client is responsible for providing required business, financial, legal and regulatory documentation for the operation and publication of the platform.</li>
+      <li><strong>Payment</strong>Payments are tied to the agreed project milestones. Work on a subsequent milestone will commence after the corresponding payment has been received.</li>
+      <li><strong>Refunds</strong>Payments made for a milestone are non-refundable once work on that milestone has commenced, except where otherwise agreed in writing by both parties.</li>
+      <li><strong>Source Code and Ownership</strong>Ownership of the completed project source code and intellectual property transfers to the client after full payment of the agreed project cost has been received.</li>
+      <li><strong>Post-Launch Bug Fixes</strong>A post-launch bug-fix period will apply to issues directly related to the approved project scope. New features, modifications, enhancements or changes requested after delivery are not considered bugs and will be quoted separately.</li>
+      <li><strong>Project Continuity</strong>If client-caused delays significantly extend the project beyond the agreed timeline or require development resources to remain allocated for an extended period, additional charges may apply after prior notification.</li>
+    </ul>
+  </section>
+
+  <section class="section reveal" id="s18">
+    <div class="section-head"><span class="section-num">18</span><h2>Acceptance</h2></div>
+    <p>This proposal is valid for <strong>30 days</strong> from the date of issue. The selected package and final project cost will be confirmed upon acceptance.</p>
+    <p>By signing this proposal, both parties acknowledge that they have reviewed and accepted the selected package, project scope, payment structure, responsibilities, estimated timeline and terms outlined in this document.</p>
+    <p>Any amendment to the agreed scope or commercial terms must be confirmed in writing by both parties.</p>
+
+    <div class="accept" style="margin-top:24px;">
+      <div class="subhead" style="color:var(--gray-light);margin:0;">Signatures</div>
+      <div class="accept-grid">
+        <div class="accept-col">
+          <h4>Prepared By</h4>
+          <div class="sig-line"><span class="filled">CodeLikeWyna Tech</span></div>
+          <div class="sig-line">Name</div>
+          <div class="sig-line">Signature</div>
+          <div class="sig-line">Date</div>
+        </div>
+        <div class="accept-col">
+          <h4>Accepted By</h4>
+          <div class="sig-line"><span class="filled">Gold Link</span></div>
+          <div class="sig-line">Client Name</div>
+          <div class="sig-line">Company</div>
+          <div class="sig-line">Signature</div>
+          <div class="sig-line">Date</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="doc-footer">
+  <div class="fmark"><span class="dot"></span> CodeLikeWyna Tech</div>
+  <div>Gold Link Marketplace Project Proposal</div>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  const topLinks = document.querySelectorAll('.topnav a');
+  const byHref = (list, id) => Array.from(list).find(l => l.getAttribute('href') === `#${id}`);
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        topLinks.forEach(l => l.classList.remove('active'));
+        const t = byHref(topLinks, entry.target.id);
+        if(t) t.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -65% 0px', threshold: 0 });
+  sections.forEach(s => navObserver.observe(s));
+</script>
+
 </body>
 </html>
