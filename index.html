@@ -30,9 +30,7 @@
   img{max-width:100%;display:block;}
   ul{list-style:none;}
 
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease, transform .55s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;} .reveal{opacity:1;transform:none;transition:none;}}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
 
   header.topbar{position:sticky;top:0;z-index:100;background:rgba(11,11,12,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark);}
   .topbar-inner{max-width:1220px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
@@ -298,7 +296,7 @@
 
 <main class="page">
 
-  <section class="section reveal" id="s1">
+  <section class="section" id="s1">
     <div class="section-head"><span class="section-num">01</span><h2>Executive Summary</h2></div>
     <p>CodeLikeWyna Tech is pleased to present this proposal for the design, development, testing, and deployment of the Gold Link digital marketplace platform.</p>
     <p>Gold Link is intended to become a trusted digital marketplace where verified gold vendors can list physical gold for sale and buyers can securely discover and purchase gold through a structured digital platform.</p>
@@ -318,7 +316,7 @@
     <p>The project has been structured into <strong>three packages</strong> to allow Gold Link to select the level of functionality required at launch.</p>
   </section>
 
-  <section class="section reveal" id="s2">
+  <section class="section" id="s2">
     <div class="section-head"><span class="section-num">02</span><h2>Understanding of the Project</h2></div>
     <p>Gold Link is designed as a digital marketplace connecting verified gold vendors with buyers. Vendors will be able to create profiles and list physical gold with information such as gold type, weight, description, images, pricing and other relevant details. Buyers will be able to browse available gold listings, review vendor information, initiate transactions and manage their purchases.</p>
     <p>The platform is expected to support:</p>
@@ -342,7 +340,7 @@
     <p>The public website will primarily serve as the marketing and information platform for Gold Link, while the marketplace functionality will be delivered through the selected application/platform package.</p>
   </section>
 
-  <section class="section reveal" id="s3">
+  <section class="section" id="s3">
     <div class="section-head"><span class="section-num">03</span><h2>Project Objectives</h2></div>
     <p>The objectives of the Gold Link project are to:</p>
     <ul class="check-list numbered">
@@ -359,7 +357,7 @@
     </ul>
   </section>
 
-  <section class="section reveal" id="s4">
+  <section class="section" id="s4">
     <div class="section-head"><span class="section-num">04</span><h2>Package Options</h2></div>
     <p>Gold Link may select one of the following development packages.</p>
 
@@ -492,7 +490,7 @@
     </div>
   </section>
 
-  <section class="section reveal" id="s5">
+  <section class="section" id="s5">
     <div class="section-head"><span class="section-num">05</span><h2>Marketing Website</h2></div>
     <p>The marketing website will serve as the public-facing website for Gold Link. The website is intended primarily to introduce the business, explain the platform, build trust and direct users to the Gold Link application rather than function as the primary gold purchasing portal.</p>
     <div class="subhead">Website Pages</div>
@@ -504,7 +502,7 @@
     <p>The exact content and final page structure will be based on the approved project requirements and materials supplied by the client.</p>
   </section>
 
-  <section class="section reveal" id="s6">
+  <section class="section" id="s6">
     <div class="section-head"><span class="section-num">06</span><h2>Marketplace Platform</h2></div>
     <p>The marketplace platform will provide the core digital environment for buyers and vendors.</p>
 
@@ -544,7 +542,7 @@
     <p>The gold price source or API may attract third-party usage charges, which are separate from the development fee.</p>
   </section>
 
-  <section class="section reveal" id="s7">
+  <section class="section" id="s7">
     <div class="section-head"><span class="section-num">07</span><h2>Mobile Applications</h2></div>
     <div class="subhead">Android Application</div>
     <p>The Android application will provide access to the Gold Link marketplace through supported Android devices. The Android application will include the features contained within the selected package. The Basic package includes Google Play Store submission only.</p>
@@ -553,7 +551,7 @@
     <p>App Store review and approval timelines are controlled by Apple and are therefore outside the control of CodeLikeWyna Tech. Financial and marketplace applications may also require additional documentation, compliance information or clarification during the store review process.</p>
   </section>
 
-  <section class="section reveal" id="s8">
+  <section class="section" id="s8">
     <div class="section-head"><span class="section-num">08</span><h2>Administration Dashboard</h2></div>
     <p>The administration dashboard will allow authorized Gold Link administrators to manage relevant platform activities.</p>
     <div class="note-grid" style="grid-template-columns:1fr 1fr 1fr;">
@@ -592,7 +590,7 @@
     </div>
   </section>
 
-  <section class="section reveal" id="s9">
+  <section class="section" id="s9">
     <div class="section-head"><span class="section-num">09</span><h2>Third-Party Integrations</h2></div>
     <p>The project may integrate with the following services, depending on the selected package:</p>
     <table>
@@ -607,13 +605,13 @@
     <p>The project planning discussions identified a chosen payment rail, Smile Identity and an external gold-price data source as key integrations for the platform.</p>
   </section>
 
-  <section class="section reveal" id="s10">
+  <section class="section" id="s10">
     <div class="section-head"><span class="section-num">10</span><h2>Gold Vault</h2></div>
     <p>The Gold Vault feature will be displayed as <strong>Coming Soon</strong> in the application. The full Gold Vault functionality is not included in the current development scope because it depends on the future integration of real-world gold/asset infrastructure and related external services.</p>
     <p>Any future implementation of Gold Vault will be separately scoped and quoted once the required third-party infrastructure and technical requirements are available.</p>
   </section>
 
-  <section class="section reveal" id="s11">
+  <section class="section" id="s11">
     <div class="section-head"><span class="section-num">11</span><h2>Project Timeline</h2></div>
     <p>The estimated project duration is <strong>up to two (2) months</strong>. The timeline begins after:</p>
     <ul class="check-list numbered">
@@ -628,7 +626,7 @@
     <p>The meeting discussions also established that the website would be developed first before proceeding into the wider application roadmap.</p>
   </section>
 
-  <section class="section reveal" id="s12">
+  <section class="section" id="s12">
     <div class="section-head"><span class="section-num">12</span><h2>Project Investment</h2></div>
     <div class="invest-grid">
       <div class="invest-card">
@@ -649,7 +647,7 @@
     </div>
   </section>
 
-  <section class="section reveal" id="s13">
+  <section class="section" id="s13">
     <div class="section-head"><span class="section-num">13</span><h2>Payment Structure</h2></div>
     <p>Payment will be made according to project milestones.</p>
 
@@ -718,7 +716,7 @@
     <p style="margin-top:20px;">The milestone structure is designed to ensure that each major stage is funded before the corresponding development work begins.</p>
   </section>
 
-  <section class="section reveal" id="s14">
+  <section class="section" id="s14">
     <div class="section-head"><span class="section-num">14</span><h2>Client Responsibilities</h2></div>
     <p>The client agrees to provide the following where applicable:</p>
     <ul class="check-list">
@@ -737,7 +735,7 @@
     <p>Failure to provide required materials or approvals on time may affect the project timeline.</p>
   </section>
 
-  <section class="section reveal" id="s15">
+  <section class="section" id="s15">
     <div class="section-head"><span class="section-num">15</span><h2>Items Excluded From This Proposal</h2></div>
     <p>The following are not included unless specifically stated within the selected package or separately agreed in writing:</p>
     <div class="note-grid">
@@ -765,7 +763,7 @@
     <p style="margin-top:16px;">Any feature requested outside the selected package will be treated as a change request and may attract an additional development fee.</p>
   </section>
 
-  <section class="section reveal" id="s16">
+  <section class="section" id="s16">
     <div class="section-head"><span class="section-num">16</span><h2>Third-Party &amp; Operational Costs</h2></div>
     <p>The development investment does not include recurring third-party or operational service charges unless explicitly stated. Potential additional costs may include:</p>
     <table>
@@ -782,7 +780,7 @@
     <p style="margin-top:16px;">Where a third-party cost is required for implementation, the client will be informed before the cost is incurred where reasonably possible.</p>
   </section>
 
-  <section class="section reveal" id="s17">
+  <section class="section" id="s17">
     <div class="section-head"><span class="section-num">17</span><h2>Terms &amp; Conditions</h2></div>
     <ul class="terms-list">
       <li><strong>Project Commencement</strong>The project begins after the required initial payment has been received and the necessary project materials have been supplied.</li>
@@ -800,7 +798,7 @@
     </ul>
   </section>
 
-  <section class="section reveal" id="s18">
+  <section class="section" id="s18">
     <div class="section-head"><span class="section-num">18</span><h2>Acceptance</h2></div>
     <p>This proposal is valid for <strong>30 days</strong> from the date of issue. The selected package and final project cost will be confirmed upon acceptance.</p>
     <p>By signing this proposal, both parties acknowledge that they have reviewed and accepted the selected package, project scope, payment structure, responsibilities, estimated timeline and terms outlined in this document.</p>
@@ -839,11 +837,6 @@
   const sections = document.querySelectorAll('.section');
   const topLinks = document.querySelectorAll('.topnav a');
   const byHref = (list, id) => Array.from(list).find(l => l.getAttribute('href') === `#${id}`);
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
   const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
